@@ -482,6 +482,13 @@
       "exitCode": 1,
       "result": "9 findings concern pending owner approvals/reviewer/timestamps on prepared terms/privacy and release review. No approval fabricated.",
       "ranAt": "2026-10-14"
+    },
+    {
+      "id": "final-review-fixes",
+      "ranAt": "2026-10-14T13:03:56.051Z",
+      "command": "npm run typecheck; npm run build; npm test; npm run test:browser",
+      "exitCode": 0,
+      "result": "One independent whole-branch review; three important findings plus two author findings fixed RED to GREEN. 33 Node tests and 2 browser journeys pass; typecheck/build and four-file LSP diagnostics clean. See docs/release-review.md."
     }
   ],
   "claims": [
@@ -745,10 +752,11 @@
         "clean-install",
         "dependency-scans",
         "secrets-scan",
-        "legal-candidate"
+        "legal-candidate",
+        "final-review-fixes"
       ],
       "plannedFor": "2026-10-18",
-      "note": "Whole-branch review and owner release approval remain; latency deviation stays disclosed."
+      "note": "Technical review and fixes complete; owner release approval remains. Latency deviation stays disclosed."
     },
     {
       "id": "submission",

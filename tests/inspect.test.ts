@@ -52,3 +52,35 @@ test('opacity-hidden text and fields split across forms cannot pass',async()=>{
  assert.deepEqual(report.results.map(r=>r.status),['Failed','Failed']);
  });
 });
+
+test('clipped text and clipped controls stay Unverified',async()=>{
+ await serve('<p style="clip-path:inset(100%)">Hours</p><p style="position:absolute;clip:rect(0,0,0,0)">Legacy hours</p><form style="clip-path:inset(100%)"><label>Name<input required></label></form>',async url=>{
+  const report=await inspectPage(url,[
+   {id:'clip-text',sourceQuote:'Show Hours',kind:'visible_text',params:{text:'Hours'}},
+   {id:'legacy',sourceQuote:'Show Legacy hours',kind:'visible_text',params:{text:'Legacy hours'}},
+   {id:'clip-control',sourceQuote:'Name field required',kind:'form_structure',params:{labels:['Name'],requiredLabels:['Name']}}
+  ],new AbortController().signal);
+  assert.deepEqual(report.results.map(r=>r.status),['Unverified','Unverified','Unverified']);
+ });
+});
+test('effective fieldset disabling fails while the first-legend field stays enabled',async()=>{
+ await serve('<form><fieldset disabled><legend><label>Title<input required></label></legend><label>Name<input required></label></fieldset></form>',async url=>{
+  const report=await inspectPage(url,[
+   {id:'disabled',sourceQuote:'Name required',kind:'form_structure',params:{labels:['Name'],requiredLabels:['Name']}},
+   {id:'legend',sourceQuote:'Title required',kind:'form_structure',params:{labels:['Title'],requiredLabels:['Title']}}
+  ],new AbortController().signal);
+  assert.deepEqual(report.results.map(r=>r.status),['Failed','Verified']);
+ });
+});
+test('base URL cannot make an external destination pass as local',async()=>{
+ await serve('<base href="https://example.invalid/"><a href="/contact">Contact</a>',async url=>{
+  const report=await inspectPage(url,[{id:'contact',sourceQuote:'Local Contact link',kind:'link_destination',params:{label:'Contact',hrefPrefix:new URL('/contact',url).href}}],new AbortController().signal);
+  assert.equal(report.results[0].status,'Failed');assert.match(report.results[0].measuredFacts.join(' '),/https:\/\/example\.invalid\/contact/);
+ });
+});
+test('an accessible name does not manufacture the promised visible link text',async()=>{
+ await serve('<a href="mailto:hello@example.test" aria-label="Email">Something else</a>',async url=>{
+  const report=await inspectPage(url,[{id:'email',sourceQuote:'Link labelled Email',kind:'link_destination',params:{label:'Email',hrefPrefix:'mailto:hello@example.test'}}],new AbortController().signal);
+  assert.equal(report.results[0].status,'Failed');
+ });
+});

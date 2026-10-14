@@ -29,3 +29,17 @@ test('invalidatesReportAfterEdit, preserves inputs on timeout, and supports keyb
   await page.getByLabel('Client brief').focus();await page.keyboard.press('Tab');assert.equal(await page.getByRole('button',{name:'Draft checks',exact:true}).evaluate(el=>el===document.activeElement),true);
  }finally{await browser.close();child.kill()}
 });
+
+test('form list editing preserves spaces and separators during typing',async()=>{
+ const child=spawn(process.execPath,['src/server.ts'],{stdio:'ignore',windowsHide:true}),browser=await launchBrowser();
+ try{
+  const page=await browser.newPage();
+  for(let i=0;i<100;i++){try{await page.goto('http://127.0.0.1:4318');break}catch{await new Promise(r=>setTimeout(r,100))}}
+  await page.getByLabel('Client brief').fill('A form needs fields labelled "First name" and "Email address", both required.');
+  await page.getByRole('button',{name:'Add a manual check'}).click();await page.getByLabel('Check 1 type').selectOption('form_structure');
+  const labels=page.getByLabel('Field labels (comma separated)',{exact:true}),required=page.getByLabel('Required labels',{exact:true});
+  await labels.pressSequentially('First name, Email address');assert.equal(await labels.inputValue(),'First name, Email address');
+  await required.pressSequentially('First name, Email address');assert.equal(await required.inputValue(),'First name, Email address');
+  await page.getByLabel('I reviewed every check against the brief').check();assert.equal(await labels.inputValue(),'First name, Email address');
+ }finally{await browser.close();child.kill()}
+});

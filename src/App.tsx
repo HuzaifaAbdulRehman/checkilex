@@ -79,9 +79,16 @@ function CheckEditor({check:c,index,disabled,onChange,onRemove}:{check:DraftChec
   <label>Original wording<textarea aria-label={'Check '+(index+1)+' source quote'} maxLength={1000} disabled={disabled} rows={2} value={c.sourceQuote} onChange={e=>onChange({...c,sourceQuote:e.target.value})}/></label>
   {c.kind==='visible_text'&&<label>Exact visible text<input disabled={disabled} maxLength={500} value={c.params.text} onChange={e=>params({text:e.target.value})}/></label>}
   {c.kind==='link_destination'&&<div className="paired"><label>Link label<input disabled={disabled} value={c.params.label} maxLength={500} onChange={e=>params({...c.params,label:e.target.value})}/></label><label>Exact destination<input disabled={disabled} value={c.params.hrefPrefix} maxLength={500} onChange={e=>params({...c.params,hrefPrefix:e.target.value})}/></label></div>}
-  {c.kind==='form_structure'&&<div className="paired"><label>Field labels (comma separated)<input disabled={disabled} value={c.params.labels.join(', ')} onChange={e=>params({...c.params,labels:e.target.value.split(',').map(v=>v.trim())})}/></label><label>Required labels<input disabled={disabled} value={c.params.requiredLabels.join(', ')} onChange={e=>params({...c.params,requiredLabels:e.target.value.split(',').map(v=>v.trim()).filter(Boolean)})}/></label></div>}
+  {c.kind==='form_structure'&&<div className="paired"><CommaListInput label="Field labels (comma separated)" disabled={disabled} value={c.params.labels} onChange={labels=>params({...c.params,labels})}/><CommaListInput label="Required labels" disabled={disabled} value={c.params.requiredLabels} onChange={requiredLabels=>params({...c.params,requiredLabels})}/></div>}
   {c.kind==='horizontal_overflow'&&<p className="scope-inline">Measures horizontal overflow at the two stated viewports. Review broader responsive requirements separately.</p>}
   {c.kind==='unverified'&&<label>What needs manual proof?<textarea disabled={disabled} rows={2} maxLength={500} value={c.params.reason} onChange={e=>params({reason:e.target.value})}/></label>}
   <p className="check-note">{c.reviewNotes}</p>
  </article>;
+}
+
+function CommaListInput({label,disabled,value,onChange}:{label:string;disabled:boolean;value:string[];onChange:(values:string[])=>void}){
+ const [raw,setRaw]=useState(()=>value.join(', '));
+ return <label>{label}<input disabled={disabled} value={raw} onChange={e=>{
+  setRaw(e.target.value);onChange(e.target.value.split(',').map(v=>v.trim()).filter(Boolean));
+ }}/></label>;
 }

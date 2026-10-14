@@ -55,7 +55,10 @@ All four failed, while an email-delivery promise remained Unverified:
 Separate tests cover duplicate matches, opacity-hidden content, fields spread
 across different forms, rejected target addresses, unavailable pages and
 cancellation. Escape fixtures received no cross-origin or non-read requests.
-These bounded cases do not establish correctness on arbitrary websites.
+Final review also added clipping, disabled-fieldset, HTML base and visible-link-text
+regressions. All 33 Node tests and both browser journeys passed after the fixes;
+see [release review](release-review.md). These bounded cases do not establish
+correctness on arbitrary websites.
 
 ## Latency and limits
 

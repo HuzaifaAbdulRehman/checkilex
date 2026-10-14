@@ -8,14 +8,16 @@ export function validateTargetUrl(raw:string,reservedPorts=[4318,11434]):URL {
  if(url.hostname!=='127.0.0.1'||url.protocol!=='http:'||url.username||url.password||port<1024||port>65535||reservedPorts.includes(port))throw Error('Invalid target port');
  return url;
 }
-async function perceptible(el:Locator):Promise<boolean>{
- if(!await el.isVisible())return false;
+async function perceptible(el:Locator):Promise<'visible'|'hidden'|'uncertain'>{
+ if(!await el.isVisible())return 'hidden';
  return el.evaluate(node=>{
+  let clipped=false;
   for(let current:Element|null=node;current;current=current.parentElement){
    const style=getComputedStyle(current);
-   if(Number(style.opacity)===0||style.visibility==='hidden'||style.visibility==='collapse'||/opacity\(0(?:[.0%]*)\)/.test(style.filter))return false;
+   if(Number(style.opacity)===0||style.visibility==='hidden'||style.visibility==='collapse'||/opacity\(0(?:[.0%]*)\)/.test(style.filter))return 'hidden' as const;
+   if(style.clipPath!=='none'||style.clip!=='auto')clipped=true;
   }
-  return true;
+  return clipped?'uncertain' as const:'visible' as const;
  });
 }
 async function measure(page:Page,c:CheckSpec):Promise<Omit<CheckResult,'checkId'|'evidenceIds'>>{
@@ -23,25 +25,32 @@ async function measure(page:Page,c:CheckSpec):Promise<Omit<CheckResult,'checkId'
  switch(c.kind){
  case 'unverified':return result('Unverified','No automated measurement supports this promise.',c.params.reason);
  case 'visible_text':{
-  const matches=page.getByText(c.params.text,{exact:true}), visible=[];
-  for(const el of await matches.all())if(await perceptible(el))visible.push(el);
+  const matches=page.getByText(c.params.text,{exact:true}), visible=[];let uncertain=false;
+  for(const el of await matches.all()){const state=await perceptible(el);if(state==='visible')visible.push(el);if(state==='uncertain')uncertain=true}
+  if(uncertain)return result('Unverified','Clipping may affect exact text: '+JSON.stringify(c.params.text),'Clipped content needs visual review.');
   return result(visible.length===1?'Verified':visible.length===0?'Failed':'Unverified',visible.length+' visible exact text matches: '+JSON.stringify(c.params.text),'Visible text only; this does not prove correctness of the underlying claim.');
  }
  case 'link_destination':{
-  const matches=await page.getByRole('link',{name:c.params.label,exact:true}).all(),visible=[];
-  for(const el of matches)if(await perceptible(el))visible.push(el);
+  const matches=await page.locator('a[href]').all(),visible=[];let uncertain=false;
+  const label=c.params.label.replace(/\s+/g,' ').trim();
+  for(const el of matches){
+   if((await el.innerText()).replace(/\s+/g,' ').trim()!==label)continue;
+   const state=await perceptible(el);if(state==='visible')visible.push(el);if(state==='uncertain')uncertain=true;
+  }
+  if(uncertain)return result('Unverified','Clipping may affect link text: '+JSON.stringify(c.params.label),'Clipped links need visual review; destination is not visited.');
   if(visible.length!==1)return result(visible.length?'Unverified':'Failed',visible.length+' visible links labelled '+JSON.stringify(c.params.label),'Requires one unambiguous visible link; destination is not visited.');
-  const href=await visible[0].getAttribute('href');let matchesHref=false;
-  try{matchesHref=href!==null&&new URL(href,page.url()).href===new URL(c.params.hrefPrefix,page.url()).href}catch{}
+  const href=await visible[0].evaluate(el=>(el as HTMLAnchorElement).href);let matchesHref=false;
+  try{matchesHref=href===new URL(c.params.hrefPrefix,page.url()).href}catch{}
   return result(matchesHref?'Verified':'Failed','Observed href: '+JSON.stringify(href)+'; expected: '+JSON.stringify(c.params.hrefPrefix),'Exact normalized destination only; clicking or downstream delivery is not tested.');
  }
  case 'form_structure':{
   const facts:string[]=[];const forms=new Set<number>();let status:CheckResult['status']='Verified';
   for(const label of c.params.labels){
-   const all=await page.getByLabel(label,{exact:true}).all(),visible=[];
-   for(const el of all)if(await perceptible(el))visible.push(el);
+   const all=await page.getByLabel(label,{exact:true}).all(),visible=[];let uncertain=false;
+   for(const el of all){const state=await perceptible(el);if(state==='visible')visible.push(el);if(state==='uncertain')uncertain=true}
+   if(uncertain){facts.push(label+': clipping needs visual review');if(status!=='Failed')status='Unverified';continue}
    if(visible.length!==1){facts.push(label+': '+visible.length+' visible fields');if(status!=='Failed')status=visible.length?'Unverified':'Failed';continue}
-   const data=await visible[0].evaluate(el=>({tag:el.tagName,required:(el as HTMLInputElement).required,disabled:(el as HTMLInputElement).disabled,form:Boolean((el as HTMLInputElement).form),formIndex:Array.from(document.forms).indexOf((el as HTMLInputElement).form!)}));
+   const data=await visible[0].evaluate(el=>({tag:el.tagName,required:(el as HTMLInputElement).required,disabled:el.matches(':disabled'),form:Boolean((el as HTMLInputElement).form),formIndex:Array.from(document.forms).indexOf((el as HTMLInputElement).form!)}));
    forms.add(data.formIndex);
    const ok=['INPUT','TEXTAREA','SELECT'].includes(data.tag)&&data.form&&!data.disabled&&(!c.params.requiredLabels.includes(label)||data.required);
    facts.push(label+': '+JSON.stringify(data));if(!ok)status='Failed';
