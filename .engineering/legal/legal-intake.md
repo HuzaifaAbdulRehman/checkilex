@@ -1,7 +1,8 @@
 # Release scope
 
 Prepared 14 October 2026 for Huzaifa Abdul Rehman's local prototype.
-Owner release approval is pending.
+The owner explicitly requested the GitHub push on 14 October 2026, authorising
+this prepared free-source release. DEV publication remains separate.
 
 The initial operator and intended tester location is Pakistan. Broader
 distribution jurisdictions have not been assessed. This is free source software,
@@ -19,5 +20,6 @@ Dependency/model licences are documented in THIRD_PARTY_NOTICES.md.
 No model training, remote inference, regulated decision or acceptance
 certification is offered. The synthetic café is original demonstration content.
 
-Before public distribution, the owner must approve the release package and its
-support channel. These engineering records do not establish legal sufficiency.
+Source-release approval is recorded from that explicit instruction; it does not
+claim a qualified legal review. These engineering records do not establish legal
+sufficiency.

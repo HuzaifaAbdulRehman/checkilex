@@ -41,23 +41,23 @@
   "documents": {
     "terms": {
       "decision": "required",
-      "reason": "Local source distribution and possible client text; owner release review pending.",
+      "reason": "Prepared free-source release authorised by the owner’s explicit push instruction on 14 October 2026; no qualified legal review claimed.",
       "path": "terms.md",
-      "status": "drafted",
+      "status": "approved",
       "version": "0.1.0",
-      "sha256": "6c9b3d7dad7b5ad24218616fb6017af0667f88351b367004e03a47a6cb04e9fb",
-      "reviewedBy": "",
-      "reviewedAt": null
+      "sha256": "7b1287e6d955fb3d1d5ac4d703e34339691283456cc5839850300c1dcc94e62d",
+      "reviewedBy": "Huzaifa Abdul Rehman",
+      "reviewedAt": "2026-10-14T14:10:58.486Z"
     },
     "privacy": {
       "decision": "required",
-      "reason": "Local source distribution and possible client text; owner release review pending.",
+      "reason": "Prepared free-source release authorised by the owner’s explicit push instruction on 14 October 2026; no qualified legal review claimed.",
       "path": "privacy-notice.md",
-      "status": "drafted",
+      "status": "approved",
       "version": "0.1.0",
-      "sha256": "7526e3601e4e462690846b63204edf7b797a312f2196cb1319b9ba32aa82ab69",
-      "reviewedBy": "",
-      "reviewedAt": null
+      "sha256": "33f4378b15d44740aa07f292eb4c32ece5a47b54c7ad1369da86258c601fbb7b",
+      "reviewedBy": "Huzaifa Abdul Rehman",
+      "reviewedAt": "2026-10-14T14:10:58.486Z"
     },
     "cookies": {
       "decision": "not-required",
@@ -132,16 +132,14 @@
   },
   "review": {
     "owner": "Huzaifa Abdul Rehman",
-    "ownerStatus": "pending",
+    "ownerStatus": "approved",
     "counselRequired": false,
     "counselReason": "Initial local free prototype in Pakistan, without commerce, hosted client processing, regulated decisions or other listed counsel triggers. Reassess a wider or commercial release.",
     "counselReviewer": "",
     "counselStatus": "not-required",
     "jurisdictionsReviewed": [],
-    "reviewedAt": null,
-    "openQuestions": [
-      "Owner approval of public release, MIT terms, local-data notice and support channel is pending."
-    ]
+    "reviewedAt": "2026-10-14T14:10:58.486Z",
+    "openQuestions": []
   },
   "evidence": {
     "acceptance": {
@@ -202,6 +200,13 @@
       "exitCode": 0,
       "ranAt": "2026-10-14T12:28:54.423Z",
       "result": "Real production UI clearing, reload, zero cookies/storage, model disclosure and no synthetic brief marker in app stdout; MIT hash recorded. See docs/evidence/data-lifecycle.json."
+    },
+    {
+      "id": "owner-source-approval",
+      "ranAt": "2026-10-14T14:10:58.486Z",
+      "command": "Owner instruction in current session: push",
+      "exitCode": 0,
+      "result": "Explicit authorization to publish this prepared free-source repository. DEV publication, paid service and broader commercial scope are not authorised by this instruction."
     }
   ]
 }

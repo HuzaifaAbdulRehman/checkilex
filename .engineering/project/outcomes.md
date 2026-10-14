@@ -1,7 +1,7 @@
 # Outcome review
 
 Review date: 14 October 2026.
-Decision: iterate; prepare an honest prototype submission, pending owner release approval.
+Decision: iterate; source release approved, DEV submission still pending.
 
 ## Expected and actual
 

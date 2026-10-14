@@ -1,6 +1,6 @@
 # Publication handoff
 
-Status: prepared local draft; nothing pushed or published.
+Status: source release approved; DEV post remains a local draft.
 Owner: Huzaifa Abdul Rehman. Deadline: 19 October 2026, 11:59 AM Karachi.
 Prepare publication by 10:30 AM.
 
@@ -15,15 +15,15 @@ No private session or account material is included.
 
 The owner created the public repository
 [HuzaifaAbdulRehman/checkilex](https://github.com/HuzaifaAbdulRehman/checkilex).
-Read-only GitHub metadata confirmed it is empty. The local branch is
-build/local-evidence. Obtain explicit authorization to push and publish this DEV
-entry. Source and media URLs in the post remain pending that push.
+Before the first push, read-only GitHub metadata confirmed it was empty.
+The local branch is build/local-evidence. The owner explicitly authorised this
+source push on 14 October 2026. DEV publication still requires its own approval.
+Verify source and media URLs after the push.
 
 After approval:
 
-1. Record owner approval of the prepared source licence/data notice and release
-   scope; rerun the strict legal-release check. A structural pass is not legal
-   clearance.
+1. Source-scope approval is recorded from the owner’s explicit push instruction.
+   The strict legal-release check passes; this is not legal clearance.
 2. Publish the reviewed commit using the GitHub identity already configured on
    this laptop. Do not include .runtime, profiles, node_modules or downloaded
    binaries. Keep the evaluated frozen bytes.

@@ -1,6 +1,6 @@
 # Local data notice
 
-Version 0.1.0, prepared 14 October 2026. Owner approval pending.
+Version 0.1.0, prepared 14 October 2026. Source release approved by the owner on 14 October 2026.
 
 Briefs can contain client or personal information. Use text you are authorised
 to process and inspect only your own developer-controlled local pages.

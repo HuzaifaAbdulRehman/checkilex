@@ -1,6 +1,6 @@
 # Local software terms
 
-Version 0.1.0, prepared 14 October 2026. Owner approval pending.
+Version 0.1.0, prepared 14 October 2026. Source release approved by the owner on 14 October 2026.
 
 Checkilex is free MIT-licensed source software from Huzaifa Abdul Rehman.
 The permission, notice requirements and warranty disclaimer in the repository's

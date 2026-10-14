@@ -1,6 +1,6 @@
 # Checkilex
 
-Status: measured prototype; release review and publication approval pending.
+Status: measured prototype; source release approved, DEV publication pending.
 Owner: Huzaifa Abdul Rehman. Decision date: 14 October 2026.
 
 ## Project profile

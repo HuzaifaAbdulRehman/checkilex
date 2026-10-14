@@ -496,6 +496,13 @@
       "command": "npm run typecheck; npm run build; node --test tests/report.test.ts tests/server.test.ts; npm run test:browser; node .runtime/capture-checkilex.mjs",
       "exitCode": 0,
       "result": "Checkilex app/report/package branding and repository links updated; 5 affected Node tests, 2 browser journeys, production build/typecheck and three-file diagnostics pass. Real inspection using replayed synthetic draft plus title/export assertions and 4 inspected screenshots. Historical video and frozen benchmark bytes retained. GitHub metadata confirms public empty repository; local origin configured, no push."
+    },
+    {
+      "id": "source-release-approval",
+      "ranAt": "2026-10-14T14:10:58.486Z",
+      "command": "Owner: push; node scripts/legal-release.mjs check --dir . --strict",
+      "exitCode": 0,
+      "result": "Owner explicitly authorised the prepared GitHub source push; strict legal-release check passed after recording source-scope approval. No qualified legal review or DEV publication claimed."
     }
   ],
   "claims": [
@@ -710,6 +717,12 @@
       "status": "accepted",
       "claimIds": [],
       "text": "Owner chose Checkilex and supplied the public repository URL. Update current branding/links and local origin; preserve frozen evaluation inputs and historical recording. Local folder remains site-delivery-check. No push or DEV publication authorized."
+    },
+    {
+      "id": "source-push-authorized",
+      "status": "accepted",
+      "claimIds": [],
+      "text": "Owner explicitly said push after the Checkilex update. Authorise this prepared source release to the supplied repository; do not infer DEV publication authorization."
     }
   ],
   "gates": [
@@ -755,7 +768,7 @@
       "requiredEvidence": "Frozen eval and baseline, zero false Verified on planted defects, measured latency, keyboard/mobile checks, local network/retention checks, clean setup, exact lockfile advisory scan, selected dependency/licenses and applicable legal-release owner review, actual demo video and README.",
       "owner": "Huzaifa Abdul Rehman",
       "targetDate": null,
-      "status": "blocked",
+      "status": "passed",
       "claimIds": [
         "constrained-mapping"
       ],
@@ -766,10 +779,11 @@
         "dependency-scans",
         "secrets-scan",
         "legal-candidate",
-        "final-review-fixes"
+        "final-review-fixes",
+        "source-release-approval"
       ],
       "plannedFor": "2026-10-18",
-      "note": "Technical review and fixes complete; owner release approval remains. Latency deviation stays disclosed."
+      "note": "Technical review/fixes complete; owner explicitly authorised the free-source push. Strict legal record passes; unmet latency remains disclosed. DEV publication approval is separate."
     },
     {
       "id": "submission",
@@ -803,6 +817,6 @@
   ],
   "validationNotes": [
     "The current project-evidence checker rejects future gate.targetDate values through its generic past-only validDate function. Future planned dates are retained in plannedFor and in brief.md; targetDate is null. No playbook code or clock was changed.",
-    "Implementation approved; public release still awaits owner approval. No push or DEV edit has occurred."
+    "Implementation and prepared free-source release approved. DEV publication remains pending; verify GitHub receipt after pushing."
   ]
 }
