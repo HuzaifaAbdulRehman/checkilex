@@ -1,0 +1,153 @@
+{
+  "checks": [
+    {
+      "id": "c1",
+      "sourceQuote": "Show \"Open daily, 8am–6pm\"",
+      "kind": "visible_text",
+      "params": {
+        "text": "Open daily, 8am–6pm"
+      }
+    },
+    {
+      "id": "c2",
+      "sourceQuote": "Add a link labelled \"Email\" to hello@junipercafe.test",
+      "kind": "link_destination",
+      "params": {
+        "label": "Email",
+        "hrefPrefix": "mailto:hello@junipercafe.test"
+      }
+    },
+    {
+      "id": "c3",
+      "sourceQuote": "Contact form must deliver email",
+      "kind": "unverified",
+      "params": {
+        "reason": "Requires an actual delivery test outside this inspector."
+      }
+    },
+    {
+      "id": "fields",
+      "sourceQuote": "Synthetic measurement fixture",
+      "kind": "form_structure",
+      "params": {
+        "labels": [
+          "Name",
+          "Email"
+        ],
+        "requiredLabels": [
+          "Name",
+          "Email"
+        ]
+      }
+    },
+    {
+      "id": "overflow",
+      "sourceQuote": "Synthetic measurement fixture",
+      "kind": "horizontal_overflow",
+      "params": {}
+    }
+  ],
+  "results": [
+    {
+      "checkId": "c1",
+      "status": "Failed",
+      "measuredFacts": [
+        "1366px: 0 visible exact text matches: \"Open daily, 8am–6pm\"",
+        "390px: 0 visible exact text matches: \"Open daily, 8am–6pm\""
+      ],
+      "limitations": [
+        "Visible text only; this does not prove correctness of the underlying claim."
+      ],
+      "evidenceIds": [
+        "1366",
+        "390"
+      ]
+    },
+    {
+      "checkId": "c2",
+      "status": "Failed",
+      "measuredFacts": [
+        "1366px: Observed href: \"mailto:wrong@junipercafe.test\"; expected: \"mailto:hello@junipercafe.test\"",
+        "390px: Observed href: \"mailto:wrong@junipercafe.test\"; expected: \"mailto:hello@junipercafe.test\""
+      ],
+      "limitations": [
+        "Exact normalized destination only; clicking or downstream delivery is not tested."
+      ],
+      "evidenceIds": [
+        "1366",
+        "390"
+      ]
+    },
+    {
+      "checkId": "c3",
+      "status": "Unverified",
+      "measuredFacts": [
+        "1366px: No automated measurement supports this promise.",
+        "390px: No automated measurement supports this promise."
+      ],
+      "limitations": [
+        "Requires an actual delivery test outside this inspector."
+      ],
+      "evidenceIds": [
+        "1366",
+        "390"
+      ]
+    },
+    {
+      "checkId": "fields",
+      "status": "Failed",
+      "measuredFacts": [
+        "1366px: Name: {\"tag\":\"INPUT\",\"required\":true,\"disabled\":false,\"form\":true}",
+        "1366px: Email: {\"tag\":\"INPUT\",\"required\":false,\"disabled\":false,\"form\":true}",
+        "390px: Name: {\"tag\":\"INPUT\",\"required\":true,\"disabled\":false,\"form\":true}",
+        "390px: Email: {\"tag\":\"INPUT\",\"required\":false,\"disabled\":false,\"form\":true}"
+      ],
+      "limitations": [
+        "Visible enabled labelled form fields and native required attributes only. No submission or email delivery was tested."
+      ],
+      "evidenceIds": [
+        "1366",
+        "390"
+      ]
+    },
+    {
+      "checkId": "overflow",
+      "status": "Failed",
+      "measuredFacts": [
+        "1366px: Content 1366px; viewport 1366px.",
+        "390px: Content 972px; viewport 390px."
+      ],
+      "limitations": [
+        "Horizontal overflow only at this viewport; not a general responsive-design assessment."
+      ],
+      "evidenceIds": [
+        "1366",
+        "390"
+      ]
+    }
+  ],
+  "captures": [
+    {
+      "id": "1366",
+      "width": 1366,
+      "height": 900,
+      "file": "docs/screenshots/fixture-defective-1366.png"
+    },
+    {
+      "id": "390",
+      "width": 390,
+      "height": 844,
+      "file": "docs/screenshots/fixture-defective-390.png"
+    }
+  ],
+  "targetUrl": "http://127.0.0.1:51543/defective",
+  "timestamp": "2026-10-14T11:59:47.740Z",
+  "versions": {
+    "chromium": "153.0.8010.12",
+    "playwright": "1.63.0"
+  },
+  "fingerprint": "",
+  "notices": [],
+  "synthetic": true,
+  "review": "Synthetic developer-reviewed check data; not a customer acceptance."
+}
