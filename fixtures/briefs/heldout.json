@@ -1,0 +1,152 @@
+﻿[
+  {
+    "id": "held-en-text",
+    "language": "en",
+    "brief": "Show \"Roasted in small batches\".",
+    "expectedKinds": [
+      "visible_text"
+    ],
+    "expectedText": "Roasted in small batches"
+  },
+  {
+    "id": "held-en-link",
+    "language": "en",
+    "brief": "Add a link labelled \"Write to us\" to mailto:studio@example.test.",
+    "expectedKinds": [
+      "link_destination"
+    ],
+    "expectedLabel": "Write to us",
+    "expectedHref": "mailto:studio@example.test"
+  },
+  {
+    "id": "held-en-form",
+    "language": "en",
+    "brief": "The form needs fields labelled \"Name\" and \"Message\", both required.",
+    "expectedKinds": [
+      "form_structure"
+    ],
+    "expectedLabels": [
+      "Name",
+      "Message"
+    ],
+    "expectedRequiredLabels": [
+      "Name",
+      "Message"
+    ]
+  },
+  {
+    "id": "held-en-overflow",
+    "language": "en",
+    "brief": "The page must have no horizontal scrolling on mobile.",
+    "expectedKinds": [
+      "horizontal_overflow"
+    ]
+  },
+  {
+    "id": "held-en-optional",
+    "language": "en",
+    "brief": "Maybe add an Instagram feed later.",
+    "expectedKinds": [
+      "unverified"
+    ]
+  },
+  {
+    "id": "held-en-negated",
+    "language": "en",
+    "brief": "Do not show a pricing table.",
+    "expectedKinds": [
+      "unverified"
+    ]
+  },
+  {
+    "id": "held-en-conflict",
+    "language": "en",
+    "brief": "Show \"Book now\" and do not show \"Book now\".",
+    "expectedKinds": [
+      "unverified"
+    ]
+  },
+  {
+    "id": "held-en-payment",
+    "language": "en",
+    "brief": "Payments must arrive securely in my bank account.",
+    "expectedKinds": [
+      "unverified"
+    ]
+  },
+  {
+    "id": "held-ur-text",
+    "language": "ur-Latn",
+    "brief": "Hero mein \"Made by hand\" saaf nazar aana chahiye.",
+    "expectedKinds": [
+      "visible_text"
+    ],
+    "expectedText": "Made by hand"
+  },
+  {
+    "id": "held-ur-link",
+    "language": "ur-Latn",
+    "brief": "\"Rabtaa\" label ka link mailto:salam@example.test par lagao.",
+    "expectedKinds": [
+      "link_destination"
+    ],
+    "expectedLabel": "Rabtaa",
+    "expectedHref": "mailto:salam@example.test"
+  },
+  {
+    "id": "held-ur-form",
+    "language": "ur-Latn",
+    "brief": "Form mein \"Naam\" aur \"Paigham\" label ke fields rakho, dono required hon.",
+    "expectedKinds": [
+      "form_structure"
+    ],
+    "expectedLabels": [
+      "Naam",
+      "Paigham"
+    ],
+    "expectedRequiredLabels": [
+      "Naam",
+      "Paigham"
+    ]
+  },
+  {
+    "id": "held-ur-overflow",
+    "language": "ur-Latn",
+    "brief": "Phone ki screen par page daein baein scroll na ho.",
+    "expectedKinds": [
+      "horizontal_overflow"
+    ]
+  },
+  {
+    "id": "held-ur-delivery",
+    "language": "ur-Latn",
+    "brief": "Form se bheja gaya paigham mere inbox tak zaroor pohanchna chahiye.",
+    "expectedKinds": [
+      "unverified"
+    ]
+  },
+  {
+    "id": "held-ur-optional",
+    "language": "ur-Latn",
+    "brief": "Agar waqt milay to gallery laga dena, lazmi nahi.",
+    "expectedKinds": [
+      "unverified"
+    ]
+  },
+  {
+    "id": "held-ur-vague",
+    "language": "ur-Latn",
+    "brief": "Website ka hero classy aur premium feel dena chahiye.",
+    "expectedKinds": [
+      "unverified"
+    ]
+  },
+  {
+    "id": "held-ur-conflict",
+    "language": "ur-Latn",
+    "brief": "\"Order now\" button dikhao lekin \"Order now\" button bilkul mat dikhana.",
+    "expectedKinds": [
+      "unverified"
+    ]
+  }
+]

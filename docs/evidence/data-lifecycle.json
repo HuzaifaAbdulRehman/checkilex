@@ -1,0 +1,16 @@
+{
+  "date": "2026-10-14T12:28:54.423Z",
+  "synthetic": true,
+  "clearAndReload": "passed",
+  "storage": {
+    "local": 0,
+    "session": 0
+  },
+  "cookies": 0,
+  "appLogContainsMarker": false,
+  "requestsOnlyAppOrigin": true,
+  "disclosureVisible": true,
+  "licenseSha256": "391e12cf3851e6aac3215170a5c3f9695bfa210b4b6137ea93f4745720049106",
+  "licenseNote": "MIT file available with source. No clickwrap or record of legal acceptance is claimed.",
+  "limit": "UI reset/reload is not secure erasure of RAM or Ollama context. Exported files are user-managed."
+}

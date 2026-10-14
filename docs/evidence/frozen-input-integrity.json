@@ -1,0 +1,8 @@
+{
+  "date": "2026-10-14T12:46:43.024Z",
+  "jsonFiles": 28,
+  "v2StagedHashesMatch": true,
+  "v1ModelRevision": "c4401da",
+  "v1ModelHashMatches": true,
+  "note": "gitattributes disables newline conversion only for frozen evaluation inputs."
+}

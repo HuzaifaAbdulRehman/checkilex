@@ -1,3 +1,4 @@
+import {groundingOptions,assertGrounded} from './grounding.ts';
 import { validateBrief, validateDraft } from './checks.ts';
 import type { DraftCheck } from './checks.ts';
 export type ModelDraft={checks:DraftCheck[];raw:string;model:string;elapsedMs:number;settings:typeof MODEL_SETTINGS;runtimeMs:number|null};
@@ -26,9 +27,24 @@ export const OUTPUT_SCHEMA={type:'array',maxItems:8,items:{anyOf:[
 export function createDrafter(fetcher:typeof fetch=fetch,timeoutMs=45000){
  return async(brief:string,signal:AbortSignal):Promise<ModelDraft>=>{
   validateBrief(brief);signal.throwIfAborted();
-  const format=structuredClone(OUTPUT_SCHEMA);
-  const quotes=[brief,...brief.split(/(?<=[.!?])\s+|\n+/)].flatMap(s=>s.length<=1000?[s]:Array.from({length:Math.ceil(s.length/1000)},(_,i)=>s.slice(i*1000,(i+1)*1000))).map(s=>s.trim()).filter(Boolean);
-  for(const variant of format.items.anyOf)Object.assign(variant.properties.sourceQuote,{enum:[...new Set(quotes)]});
+  const quotes=[...brief.split(/(?<=[.!?])\s+|\n+/),brief].flatMap(s=>s.length<=1000?[s]:Array.from({length:Math.ceil(s.length/1000)},(_,i)=>s.slice(i*1000,(i+1)*1000))).map(s=>s.trim()).filter(Boolean);
+  const choices:object[]=[];
+  for(const sourceQuote of new Set(quotes)){
+   const options=groundingOptions(sourceQuote);
+   for(const source of OUTPUT_SCHEMA.items.anyOf){
+    const candidate:any=structuredClone(source),kind=candidate.properties.kind.const,p=candidate.properties.params.properties;
+    if(kind==='visible_text'&&(!options.concrete||!options.literals.length))continue;
+    if(kind==='link_destination'&&(!options.concrete||!options.literals.length||!options.destinations.length))continue;
+    if(kind==='form_structure'&&(!options.concrete||!options.literals.length))continue;
+    if(kind==='horizontal_overflow'&&!options.overflow)continue;
+    candidate.properties.sourceQuote={const:sourceQuote};
+    if(kind==='visible_text')p.text={enum:options.literals};
+    if(kind==='link_destination'){p.label={enum:options.literals};p.hrefPrefix={enum:options.destinations}}
+    if(kind==='form_structure'){p.labels={const:options.literals};p.requiredLabels=options.allRequired?{const:options.literals}:{type:'array',items:{enum:options.literals}}}
+    choices.push(candidate);
+   }
+  }
+  const format={type:'array',maxItems:8,items:{anyOf:choices}};
   const deadline=AbortSignal.any([signal,AbortSignal.timeout(timeoutMs)]),start=performance.now();
   let response:Response;
   try{
@@ -45,7 +61,7 @@ export function createDrafter(fetcher:typeof fetch=fetch,timeoutMs=45000){
   if((payload.done_reason&&payload.done_reason!=='stop')||payload.done!==true||!payload.message||typeof payload.message.content!=='string')throw Error('Incomplete model output');
   const raw=payload.message.content;
   let parsed:unknown;try{parsed=JSON.parse(raw)}catch{throw Error('Invalid JSON from local model')}
-  let checks:DraftCheck[];try{checks=validateDraft(brief,parsed)}catch(e){throw Object.assign(new Error(e instanceof Error?e.message:String(e)),{raw})}
+  let checks:DraftCheck[];try{checks=validateDraft(brief,parsed);for(const check of checks)assertGrounded(check)}catch(e){throw Object.assign(new Error(e instanceof Error?e.message:String(e)),{raw})}
   return {checks,raw,model:'qwen3:1.7b',elapsedMs:Math.round(performance.now()-start),settings:MODEL_SETTINGS,runtimeMs:typeof payload.total_duration==='number'?payload.total_duration/1e6:null};
  };
 }

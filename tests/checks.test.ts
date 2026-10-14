@@ -22,3 +22,10 @@ test('unsupported promises remain unverified in the explicit baseline', () => {
   assert.equal(baselineDraft('Contact form must deliver email')[0].kind, 'unverified');
   assert.deepEqual(validateDraft(brief, []), []);
 });
+
+test('English baseline preserves email punctuation and recognizes explicit form labels',()=>{
+ const link=baselineDraft('Add a link labelled "Email" to hello@junipercafe.test.')[0];
+ assert.equal(link.kind,'link_destination');if(link.kind==='link_destination')assert.equal(link.params.hrefPrefix,'mailto:hello@junipercafe.test');
+ const form=baselineDraft('Contact form must have fields labelled "Name" and "Email", both required.')[0];
+ assert.equal(form.kind,'form_structure');
+});

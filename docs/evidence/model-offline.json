@@ -1,0 +1,24 @@
+{
+  "date": "2026-10-14T12:37:24.769Z",
+  "synthetic": true,
+  "modelStopped": true,
+  "message": "Local model unavailable. Start npm run model.",
+  "briefPreserved": true,
+  "manualCheckAddedByExplicitAction": true,
+  "result": {
+    "checkId": "manual-f3905d51-9298-4b61-8b90-661fc3b6f339",
+    "status": "Unverified",
+    "measuredFacts": [
+      "1366px: No automated measurement supports this promise.",
+      "390px: No automated measurement supports this promise."
+    ],
+    "limitations": [
+      "Add the missing requirement and choose a supported measurement, or keep it for manual proof."
+    ],
+    "evidenceIds": [
+      "1366",
+      "390"
+    ]
+  },
+  "scope": "Model-unavailable exercise, not a machine-wide internet-disconnection test."
+}

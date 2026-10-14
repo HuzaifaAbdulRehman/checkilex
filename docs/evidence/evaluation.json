@@ -1,0 +1,1232 @@
+{
+  "date": "2026-10-14T12:15:11.831Z",
+  "synthetic": true,
+  "hashes": {
+    "src/model.ts": "7901c2d3ba2879d246a2deafeab43ecb61c85d3785eedfea5c270baba2842aa6",
+    "scripts/baseline.ts": "fb11b83671a0e5e430ab8f23b1692aec056e9c2045a1e706e02b087aee014c45",
+    "fixtures/briefs/development.json": "fb958b4623bc4b771c48e81b7d436e0591be90e1e8c4820672243308d0e96d68",
+    "fixtures/briefs/heldout.json": "b7f6b66e0b012635214e13fea4d9fdce263c9a4ffae2028d989a77e8944c65d2"
+  },
+  "development": {
+    "totalCases": 8,
+    "mappingCorrect": 7,
+    "baselineCorrect": 8,
+    "extractionErrors": 0,
+    "rows": [
+      {
+        "id": "dev-en-text",
+        "language": "en",
+        "brief": "Show \"Open daily, 8am–6pm\".",
+        "expectedKinds": [
+          "visible_text"
+        ],
+        "expectedText": "Open daily, 8am–6pm",
+        "draft": {
+          "checks": [
+            {
+              "id": "c1",
+              "sourceQuote": "Show \"Open daily, 8am–6pm\".",
+              "kind": "visible_text",
+              "params": {
+                "text": "Open daily, 8am–6pm"
+              },
+              "reviewNotes": "Exact visible text only."
+            }
+          ],
+          "raw": "[\n  {\n    \"id\": \"c1\",\n    \"sourceQuote\": \"Show \\\"Open daily, 8am–6pm\\\".\",\n    \"kind\": \"visible_text\",\n    \"params\": {\n      \"text\": \"Open daily, 8am–6pm\"\n    },\n    \"reviewNotes\": \"Exact visible text only.\"\n  }\n]",
+          "model": "qwen3:1.7b",
+          "elapsedMs": 32013,
+          "settings": {
+            "temperature": 0,
+            "num_ctx": 4096,
+            "num_predict": 1400
+          },
+          "runtimeMs": 31966.6802
+        },
+        "mappingCorrect": true,
+        "baselineCorrect": true,
+        "baseline": [
+          {
+            "id": "b0",
+            "sourceQuote": "Show \"Open daily, 8am–6pm\".",
+            "reviewNotes": "Keyword baseline; review before measuring.",
+            "kind": "visible_text",
+            "params": {
+              "text": "Open daily, 8am–6pm"
+            }
+          }
+        ]
+      },
+      {
+        "id": "dev-en-link",
+        "language": "en",
+        "brief": "Add a link labelled \"Email\" to hello@junipercafe.test.",
+        "expectedKinds": [
+          "link_destination"
+        ],
+        "expectedLabel": "Email",
+        "expectedHref": "mailto:hello@junipercafe.test",
+        "draft": {
+          "checks": [
+            {
+              "id": "c1",
+              "sourceQuote": "Add a link labelled \"Email\" to hello@junipercafe.test.",
+              "kind": "link_destination",
+              "params": {
+                "label": "Email",
+                "hrefPrefix": "mailto:hello@junipercafe.test"
+              },
+              "reviewNotes": "Destination only; email delivery is not tested."
+            }
+          ],
+          "raw": "[\n  {\n    \"id\": \"c1\",\n    \"sourceQuote\": \"Add a link labelled \\\"Email\\\" to hello@junipercafe.test.\",\n    \"kind\": \"link_destination\",\n    \"params\": {\n      \"label\": \"Email\",\n      \"hrefPrefix\": \"mailto:hello@junipercafe.test\"\n    },\n    \"reviewNotes\": \"Destination only; email delivery is not tested.\"\n  }\n]",
+          "model": "qwen3:1.7b",
+          "elapsedMs": 10373,
+          "settings": {
+            "temperature": 0,
+            "num_ctx": 4096,
+            "num_predict": 1400
+          },
+          "runtimeMs": 10368.1813
+        },
+        "mappingCorrect": true,
+        "baselineCorrect": true,
+        "baseline": [
+          {
+            "id": "b0",
+            "sourceQuote": "Add a link labelled \"Email\" to hello@junipercafe.test.",
+            "reviewNotes": "Keyword baseline; review before measuring.",
+            "kind": "link_destination",
+            "params": {
+              "label": "Email",
+              "hrefPrefix": "mailto:hello@junipercafe.test"
+            }
+          }
+        ]
+      },
+      {
+        "id": "dev-en-form",
+        "language": "en",
+        "brief": "Contact form must have fields labelled \"Name\" and \"Email\", both required.",
+        "expectedKinds": [
+          "form_structure"
+        ],
+        "draft": {
+          "checks": [
+            {
+              "id": "c1",
+              "sourceQuote": "Contact form must have fields labelled \"Name\" and \"Email\", both required.",
+              "kind": "form_structure",
+              "params": {
+                "labels": [
+                  "Name",
+                  "Email"
+                ],
+                "requiredLabels": [
+                  "Email"
+                ]
+              },
+              "reviewNotes": "Form structure only; required labels are a subset."
+            }
+          ],
+          "raw": "[\n  {\n    \"id\": \"c1\",\n    \"sourceQuote\": \"Contact form must have fields labelled \\\"Name\\\" and \\\"Email\\\", both required.\",\n    \"kind\": \"form_structure\",\n    \"params\": {\n      \"labels\": [\"Name\", \"Email\"],\n      \"requiredLabels\": [\"Email\"]\n    },\n    \"reviewNotes\": \"Form structure only; required labels are a subset.\"\n  }\n]",
+          "model": "qwen3:1.7b",
+          "elapsedMs": 9594,
+          "settings": {
+            "temperature": 0,
+            "num_ctx": 4096,
+            "num_predict": 1400
+          },
+          "runtimeMs": 9587.7482
+        },
+        "mappingCorrect": true,
+        "baselineCorrect": true,
+        "baseline": [
+          {
+            "id": "b0",
+            "sourceQuote": "Contact form must have fields labelled \"Name\" and \"Email\", both required.",
+            "reviewNotes": "Keyword baseline; review before measuring.",
+            "kind": "form_structure",
+            "params": {
+              "labels": [
+                "Name",
+                "Email"
+              ],
+              "requiredLabels": [
+                "Name",
+                "Email"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": "dev-en-unsupported",
+        "language": "en",
+        "brief": "Contact form must deliver email.",
+        "expectedKinds": [
+          "unverified"
+        ],
+        "draft": {
+          "checks": [
+            {
+              "id": "c1",
+              "sourceQuote": "Contact form must deliver email.",
+              "kind": "unverified",
+              "params": {
+                "reason": "Requires an actual delivery test outside this inspector."
+              },
+              "reviewNotes": "Manual evidence needed."
+            }
+          ],
+          "raw": "[\n  {\n    \"id\": \"c1\",\n    \"sourceQuote\": \"Contact form must deliver email.\",\n    \"kind\": \"unverified\",\n    \"params\": {\n      \"reason\": \"Requires an actual delivery test outside this inspector.\"\n    },\n    \"reviewNotes\": \"Manual evidence needed.\"\n  }\n]",
+          "model": "qwen3:1.7b",
+          "elapsedMs": 7479,
+          "settings": {
+            "temperature": 0,
+            "num_ctx": 4096,
+            "num_predict": 1400
+          },
+          "runtimeMs": 7473.2285
+        },
+        "mappingCorrect": true,
+        "baselineCorrect": true,
+        "baseline": [
+          {
+            "id": "b0",
+            "sourceQuote": "Contact form must deliver email.",
+            "reviewNotes": "Keyword baseline; review before measuring.",
+            "kind": "unverified",
+            "params": {
+              "reason": "Requires manual evidence or clarification."
+            }
+          }
+        ]
+      },
+      {
+        "id": "dev-ur-text",
+        "language": "ur-Latn",
+        "brief": "Page par \"Fresh coffee daily\" likha nazar aana chahiye.",
+        "expectedKinds": [
+          "visible_text"
+        ],
+        "expectedText": "Fresh coffee daily",
+        "draft": {
+          "checks": [
+            {
+              "id": "c1",
+              "sourceQuote": "Page par \"Fresh coffee daily\" likha nazar aana chahiye.",
+              "kind": "visible_text",
+              "params": {
+                "text": "Fresh coffee daily"
+              },
+              "reviewNotes": "Exact visible text only."
+            }
+          ],
+          "raw": "[\n  {\n    \"id\": \"c1\",\n    \"sourceQuote\": \"Page par \\\"Fresh coffee daily\\\" likha nazar aana chahiye.\",\n    \"kind\": \"visible_text\",\n    \"params\": {\n      \"text\": \"Fresh coffee daily\"\n    },\n    \"reviewNotes\": \"Exact visible text only.\"\n  }\n]",
+          "model": "qwen3:1.7b",
+          "elapsedMs": 8724,
+          "settings": {
+            "temperature": 0,
+            "num_ctx": 4096,
+            "num_predict": 1400
+          },
+          "runtimeMs": 8719.0188
+        },
+        "mappingCorrect": true,
+        "baselineCorrect": true,
+        "baseline": [
+          {
+            "id": "b0",
+            "sourceQuote": "Page par \"Fresh coffee daily\" likha nazar aana chahiye.",
+            "reviewNotes": "Keyword baseline; review before measuring.",
+            "kind": "visible_text",
+            "params": {
+              "text": "Fresh coffee daily"
+            }
+          }
+        ]
+      },
+      {
+        "id": "dev-ur-link",
+        "language": "ur-Latn",
+        "brief": "\"Call\" label wala link tel:+12025550123 par hona chahiye.",
+        "expectedKinds": [
+          "link_destination"
+        ],
+        "expectedLabel": "Call",
+        "expectedHref": "tel:+12025550123",
+        "draft": {
+          "checks": [
+            {
+              "id": "c1",
+              "sourceQuote": "\"Call\" label wala link tel:+12025550123 par hona chahiye.",
+              "kind": "link_destination",
+              "params": {
+                "label": "Call",
+                "hrefPrefix": "tel:+12025550123"
+              },
+              "reviewNotes": "Destination only; phone call delivery is not tested."
+            }
+          ],
+          "raw": "[\n  {\n    \"id\": \"c1\",\n    \"sourceQuote\": \"\\\"Call\\\" label wala link tel:+12025550123 par hona chahiye.\",\n    \"kind\": \"link_destination\",\n    \"params\": {\n      \"label\": \"Call\",\n      \"hrefPrefix\": \"tel:+12025550123\"\n    },\n    \"reviewNotes\": \"Destination only; phone call delivery is not tested.\"\n  }\n]",
+          "model": "qwen3:1.7b",
+          "elapsedMs": 12278,
+          "settings": {
+            "temperature": 0,
+            "num_ctx": 4096,
+            "num_predict": 1400
+          },
+          "runtimeMs": 12273.4059
+        },
+        "mappingCorrect": true,
+        "baselineCorrect": true,
+        "baseline": [
+          {
+            "id": "b0",
+            "sourceQuote": "\"Call\" label wala link tel:+12025550123 par hona chahiye.",
+            "reviewNotes": "Keyword baseline; review before measuring.",
+            "kind": "link_destination",
+            "params": {
+              "label": "Call",
+              "hrefPrefix": "tel:+12025550123"
+            }
+          }
+        ]
+      },
+      {
+        "id": "dev-ur-overflow",
+        "language": "ur-Latn",
+        "brief": "Mobile par horizontal scroll nahi hona chahiye.",
+        "expectedKinds": [
+          "horizontal_overflow"
+        ],
+        "draft": {
+          "checks": [
+            {
+              "id": "c1",
+              "sourceQuote": "Mobile par horizontal scroll nahi hona chahiye.",
+              "kind": "horizontal_overflow",
+              "params": {},
+              "reviewNotes": "Horizontal overflow check at two sizes, not general responsiveness."
+            }
+          ],
+          "raw": "[\n  {\n    \"id\": \"c1\",\n    \"sourceQuote\": \"Mobile par horizontal scroll nahi hona chahiye.\",\n    \"kind\": \"horizontal_overflow\",\n    \"params\": {},\n    \"reviewNotes\": \"Horizontal overflow check at two sizes, not general responsiveness.\"\n  }\n]",
+          "model": "qwen3:1.7b",
+          "elapsedMs": 7930,
+          "settings": {
+            "temperature": 0,
+            "num_ctx": 4096,
+            "num_predict": 1400
+          },
+          "runtimeMs": 7925.4376
+        },
+        "mappingCorrect": true,
+        "baselineCorrect": true,
+        "baseline": [
+          {
+            "id": "b0",
+            "sourceQuote": "Mobile par horizontal scroll nahi hona chahiye.",
+            "reviewNotes": "Keyword baseline; review before measuring.",
+            "kind": "horizontal_overflow",
+            "params": {}
+          }
+        ]
+      },
+      {
+        "id": "dev-ur-optional",
+        "language": "ur-Latn",
+        "brief": "Shayad baad mein dark mode rakh dein, abhi zaroori nahi.",
+        "expectedKinds": [
+          "unverified"
+        ],
+        "draft": {
+          "checks": [
+            {
+              "id": "c1",
+              "sourceQuote": "Shayad baad mein dark mode rakh dein, abhi zaroori nahi.",
+              "kind": "visible_text",
+              "params": {
+                "text": "Shayad baad mein dark mode rakh dein, abhi zaroori nahi."
+              },
+              "reviewNotes": "Exact visible text only."
+            }
+          ],
+          "raw": "[{\"id\":\"c1\",\"sourceQuote\":\"Shayad baad mein dark mode rakh dein, abhi zaroori nahi.\",\"kind\":\"visible_text\",\"params\":{\"text\":\"Shayad baad mein dark mode rakh dein, abhi zaroori nahi.\"},\"reviewNotes\":\"Exact visible text only.\"}]",
+          "model": "qwen3:1.7b",
+          "elapsedMs": 9089,
+          "settings": {
+            "temperature": 0,
+            "num_ctx": 4096,
+            "num_predict": 1400
+          },
+          "runtimeMs": 9085.0672
+        },
+        "mappingCorrect": false,
+        "baselineCorrect": true,
+        "baseline": [
+          {
+            "id": "b0",
+            "sourceQuote": "Shayad baad mein dark mode rakh dein, abhi zaroori nahi.",
+            "reviewNotes": "Keyword baseline; review before measuring.",
+            "kind": "unverified",
+            "params": {
+              "reason": "Keyword baseline cannot map this requirement."
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "heldout": {
+    "totalCases": 16,
+    "mappingCorrect": 12,
+    "baselineCorrect": 14,
+    "extractionErrors": 0,
+    "rows": [
+      {
+        "id": "held-en-text",
+        "language": "en",
+        "brief": "Show \"Roasted in small batches\".",
+        "expectedKinds": [
+          "visible_text"
+        ],
+        "expectedText": "Roasted in small batches",
+        "draft": {
+          "checks": [
+            {
+              "id": "c1",
+              "sourceQuote": "Show \"Roasted in small batches\".",
+              "kind": "visible_text",
+              "params": {
+                "text": "Roasted in small batches"
+              },
+              "reviewNotes": "Exact visible text only."
+            }
+          ],
+          "raw": "[{\"id\":\"c1\",\"sourceQuote\":\"Show \\\"Roasted in small batches\\\".\",\"kind\":\"visible_text\",\"params\":{\"text\":\"Roasted in small batches\"},\"reviewNotes\":\"Exact visible text only.\"}]",
+          "model": "qwen3:1.7b",
+          "elapsedMs": 6054,
+          "settings": {
+            "temperature": 0,
+            "num_ctx": 4096,
+            "num_predict": 1400
+          },
+          "runtimeMs": 6048.8182
+        },
+        "mappingCorrect": true,
+        "baselineCorrect": true,
+        "baseline": [
+          {
+            "id": "b0",
+            "sourceQuote": "Show \"Roasted in small batches\".",
+            "reviewNotes": "Keyword baseline; review before measuring.",
+            "kind": "visible_text",
+            "params": {
+              "text": "Roasted in small batches"
+            }
+          }
+        ]
+      },
+      {
+        "id": "held-en-link",
+        "language": "en",
+        "brief": "Add a link labelled \"Write to us\" to mailto:studio@example.test.",
+        "expectedKinds": [
+          "link_destination"
+        ],
+        "expectedLabel": "Write to us",
+        "expectedHref": "mailto:studio@example.test",
+        "draft": {
+          "checks": [
+            {
+              "id": "c1",
+              "sourceQuote": "Add a link labelled \"Write to us\" to mailto:studio@example.test.",
+              "kind": "link_destination",
+              "params": {
+                "label": "Write to us",
+                "hrefPrefix": "mailto:studio@example.test"
+              },
+              "reviewNotes": "Destination only; email delivery is not tested."
+            }
+          ],
+          "raw": "[\n  {\n    \"id\": \"c1\",\n    \"sourceQuote\": \"Add a link labelled \\\"Write to us\\\" to mailto:studio@example.test.\",\n    \"kind\": \"link_destination\",\n    \"params\": {\n      \"label\": \"Write to us\",\n      \"hrefPrefix\": \"mailto:studio@example.test\"\n    },\n    \"reviewNotes\": \"Destination only; email delivery is not tested.\"\n  }\n]",
+          "model": "qwen3:1.7b",
+          "elapsedMs": 11092,
+          "settings": {
+            "temperature": 0,
+            "num_ctx": 4096,
+            "num_predict": 1400
+          },
+          "runtimeMs": 11087.1143
+        },
+        "mappingCorrect": true,
+        "baselineCorrect": true,
+        "baseline": [
+          {
+            "id": "b0",
+            "sourceQuote": "Add a link labelled \"Write to us\" to mailto:studio@example.test.",
+            "reviewNotes": "Keyword baseline; review before measuring.",
+            "kind": "link_destination",
+            "params": {
+              "label": "Write to us",
+              "hrefPrefix": "mailto:studio@example.test"
+            }
+          }
+        ]
+      },
+      {
+        "id": "held-en-form",
+        "language": "en",
+        "brief": "The form needs fields labelled \"Name\" and \"Message\", both required.",
+        "expectedKinds": [
+          "form_structure"
+        ],
+        "expectedLabels": [
+          "Name",
+          "Message"
+        ],
+        "expectedRequiredLabels": [
+          "Name",
+          "Message"
+        ],
+        "draft": {
+          "checks": [
+            {
+              "id": "c1",
+              "sourceQuote": "The form needs fields labelled \"Name\" and \"Message\", both required.",
+              "kind": "form_structure",
+              "params": {
+                "labels": [
+                  "Name",
+                  "Message"
+                ],
+                "requiredLabels": [
+                  "Name"
+                ]
+              },
+              "reviewNotes": "Exact labels and required labels only."
+            }
+          ],
+          "raw": "[\n  {\n    \"id\": \"c1\",\n    \"sourceQuote\": \"The form needs fields labelled \\\"Name\\\" and \\\"Message\\\", both required.\",\n    \"kind\": \"form_structure\",\n    \"params\": {\n      \"labels\": [\"Name\", \"Message\"],\n      \"requiredLabels\": [\"Name\"]\n    },\n    \"reviewNotes\": \"Exact labels and required labels only.\"\n  }\n]",
+          "model": "qwen3:1.7b",
+          "elapsedMs": 12729,
+          "settings": {
+            "temperature": 0,
+            "num_ctx": 4096,
+            "num_predict": 1400
+          },
+          "runtimeMs": 12725.8217
+        },
+        "mappingCorrect": false,
+        "baselineCorrect": true,
+        "baseline": [
+          {
+            "id": "b0",
+            "sourceQuote": "The form needs fields labelled \"Name\" and \"Message\", both required.",
+            "reviewNotes": "Keyword baseline; review before measuring.",
+            "kind": "form_structure",
+            "params": {
+              "labels": [
+                "Name",
+                "Message"
+              ],
+              "requiredLabels": [
+                "Name",
+                "Message"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": "held-en-overflow",
+        "language": "en",
+        "brief": "The page must have no horizontal scrolling on mobile.",
+        "expectedKinds": [
+          "horizontal_overflow"
+        ],
+        "draft": {
+          "checks": [
+            {
+              "id": "c1",
+              "sourceQuote": "The page must have no horizontal scrolling on mobile.",
+              "kind": "horizontal_overflow",
+              "params": {},
+              "reviewNotes": "Horizontal overflow check at two sizes, not general responsiveness."
+            }
+          ],
+          "raw": "[\n  {\n    \"id\": \"c1\",\n    \"sourceQuote\": \"The page must have no horizontal scrolling on mobile.\",\n    \"kind\": \"horizontal_overflow\",\n    \"params\": {},\n    \"reviewNotes\": \"Horizontal overflow check at two sizes, not general responsiveness.\"\n  }\n]",
+          "model": "qwen3:1.7b",
+          "elapsedMs": 8020,
+          "settings": {
+            "temperature": 0,
+            "num_ctx": 4096,
+            "num_predict": 1400
+          },
+          "runtimeMs": 8016.0296
+        },
+        "mappingCorrect": true,
+        "baselineCorrect": true,
+        "baseline": [
+          {
+            "id": "b0",
+            "sourceQuote": "The page must have no horizontal scrolling on mobile.",
+            "reviewNotes": "Keyword baseline; review before measuring.",
+            "kind": "horizontal_overflow",
+            "params": {}
+          }
+        ]
+      },
+      {
+        "id": "held-en-optional",
+        "language": "en",
+        "brief": "Maybe add an Instagram feed later.",
+        "expectedKinds": [
+          "unverified"
+        ],
+        "draft": {
+          "checks": [
+            {
+              "id": "c1",
+              "sourceQuote": "Maybe add an Instagram feed later.",
+              "kind": "unverified",
+              "params": {
+                "reason": "Requires manual evidence needed."
+              },
+              "reviewNotes": "Manual evidence needed."
+            }
+          ],
+          "raw": "[\n  {\n    \"id\": \"c1\",\n    \"sourceQuote\": \"Maybe add an Instagram feed later.\",\n    \"kind\": \"unverified\",\n    \"params\": {\n      \"reason\": \"Requires manual evidence needed.\"\n    },\n    \"reviewNotes\": \"Manual evidence needed.\"\n  }\n]",
+          "model": "qwen3:1.7b",
+          "elapsedMs": 7210,
+          "settings": {
+            "temperature": 0,
+            "num_ctx": 4096,
+            "num_predict": 1400
+          },
+          "runtimeMs": 7207.0779
+        },
+        "mappingCorrect": true,
+        "baselineCorrect": true,
+        "baseline": [
+          {
+            "id": "b0",
+            "sourceQuote": "Maybe add an Instagram feed later.",
+            "reviewNotes": "Keyword baseline; review before measuring.",
+            "kind": "unverified",
+            "params": {
+              "reason": "Requires manual evidence or clarification."
+            }
+          }
+        ]
+      },
+      {
+        "id": "held-en-negated",
+        "language": "en",
+        "brief": "Do not show a pricing table.",
+        "expectedKinds": [
+          "unverified"
+        ],
+        "draft": {
+          "checks": [
+            {
+              "id": "c1",
+              "sourceQuote": "Do not show a pricing table.",
+              "kind": "unverified",
+              "params": {
+                "reason": "Requires an actual delivery test outside this inspector."
+              },
+              "reviewNotes": "Manual evidence needed."
+            }
+          ],
+          "raw": "[\n  {\n    \"id\": \"c1\",\n    \"sourceQuote\": \"Do not show a pricing table.\",\n    \"kind\": \"unverified\",\n    \"params\": {\n      \"reason\": \"Requires an actual delivery test outside this inspector.\"\n    },\n    \"reviewNotes\": \"Manual evidence needed.\"\n  }\n]",
+          "model": "qwen3:1.7b",
+          "elapsedMs": 7870,
+          "settings": {
+            "temperature": 0,
+            "num_ctx": 4096,
+            "num_predict": 1400
+          },
+          "runtimeMs": 7866.9262
+        },
+        "mappingCorrect": true,
+        "baselineCorrect": true,
+        "baseline": [
+          {
+            "id": "b0",
+            "sourceQuote": "Do not show a pricing table.",
+            "reviewNotes": "Keyword baseline; review before measuring.",
+            "kind": "unverified",
+            "params": {
+              "reason": "Requires manual evidence or clarification."
+            }
+          }
+        ]
+      },
+      {
+        "id": "held-en-conflict",
+        "language": "en",
+        "brief": "Show \"Book now\" and do not show \"Book now\".",
+        "expectedKinds": [
+          "unverified"
+        ],
+        "draft": {
+          "checks": [
+            {
+              "id": "c1",
+              "sourceQuote": "Show \"Book now\" and do not show \"Book now\".",
+              "kind": "unverified",
+              "params": {
+                "reason": "Ambiguity. Cannot determine which text to show."
+              },
+              "reviewNotes": "Cannot determine which text to show."
+            }
+          ],
+          "raw": "[{\"id\":\"c1\",\"sourceQuote\":\"Show \\\"Book now\\\" and do not show \\\"Book now\\\".\",\"kind\":\"unverified\",\"params\":{\"reason\":\"Ambiguity. Cannot determine which text to show.\"},\"reviewNotes\":\"Cannot determine which text to show.\"}]",
+          "model": "qwen3:1.7b",
+          "elapsedMs": 7494,
+          "settings": {
+            "temperature": 0,
+            "num_ctx": 4096,
+            "num_predict": 1400
+          },
+          "runtimeMs": 7490.7841
+        },
+        "mappingCorrect": true,
+        "baselineCorrect": true,
+        "baseline": [
+          {
+            "id": "b0",
+            "sourceQuote": "Show \"Book now\" and do not show \"Book now\".",
+            "reviewNotes": "Keyword baseline; review before measuring.",
+            "kind": "unverified",
+            "params": {
+              "reason": "Requires manual evidence or clarification."
+            }
+          }
+        ]
+      },
+      {
+        "id": "held-en-payment",
+        "language": "en",
+        "brief": "Payments must arrive securely in my bank account.",
+        "expectedKinds": [
+          "unverified"
+        ],
+        "draft": {
+          "checks": [
+            {
+              "id": "c1",
+              "sourceQuote": "Payments must arrive securely in my bank account.",
+              "kind": "unverified",
+              "params": {
+                "reason": "Requires an actual delivery test outside this inspector."
+              },
+              "reviewNotes": "Manual evidence needed."
+            }
+          ],
+          "raw": "[\n  {\n    \"id\": \"c1\",\n    \"sourceQuote\": \"Payments must arrive securely in my bank account.\",\n    \"kind\": \"unverified\",\n    \"params\": {\n      \"reason\": \"Requires an actual delivery test outside this inspector.\"\n    },\n    \"reviewNotes\": \"Manual evidence needed.\"\n  }\n]",
+          "model": "qwen3:1.7b",
+          "elapsedMs": 7942,
+          "settings": {
+            "temperature": 0,
+            "num_ctx": 4096,
+            "num_predict": 1400
+          },
+          "runtimeMs": 7939.5338
+        },
+        "mappingCorrect": true,
+        "baselineCorrect": true,
+        "baseline": [
+          {
+            "id": "b0",
+            "sourceQuote": "Payments must arrive securely in my bank account.",
+            "reviewNotes": "Keyword baseline; review before measuring.",
+            "kind": "unverified",
+            "params": {
+              "reason": "Requires manual evidence or clarification."
+            }
+          }
+        ]
+      },
+      {
+        "id": "held-ur-text",
+        "language": "ur-Latn",
+        "brief": "Hero mein \"Made by hand\" saaf nazar aana chahiye.",
+        "expectedKinds": [
+          "visible_text"
+        ],
+        "expectedText": "Made by hand",
+        "draft": {
+          "checks": [
+            {
+              "id": "c1",
+              "sourceQuote": "Hero mein \"Made by hand\" saaf nazar aana chahiye.",
+              "kind": "visible_text",
+              "params": {
+                "text": "Made by hand"
+              },
+              "reviewNotes": "Exact visible text only."
+            }
+          ],
+          "raw": "[\n  {\n    \"id\": \"c1\",\n    \"sourceQuote\": \"Hero mein \\\"Made by hand\\\" saaf nazar aana chahiye.\",\n    \"kind\": \"visible_text\",\n    \"params\": {\n      \"text\": \"Made by hand\"\n    },\n    \"reviewNotes\": \"Exact visible text only.\"\n  }\n]",
+          "model": "qwen3:1.7b",
+          "elapsedMs": 9205,
+          "settings": {
+            "temperature": 0,
+            "num_ctx": 4096,
+            "num_predict": 1400
+          },
+          "runtimeMs": 9201.6392
+        },
+        "mappingCorrect": true,
+        "baselineCorrect": true,
+        "baseline": [
+          {
+            "id": "b0",
+            "sourceQuote": "Hero mein \"Made by hand\" saaf nazar aana chahiye.",
+            "reviewNotes": "Keyword baseline; review before measuring.",
+            "kind": "visible_text",
+            "params": {
+              "text": "Made by hand"
+            }
+          }
+        ]
+      },
+      {
+        "id": "held-ur-link",
+        "language": "ur-Latn",
+        "brief": "\"Rabtaa\" label ka link mailto:salam@example.test par lagao.",
+        "expectedKinds": [
+          "link_destination"
+        ],
+        "expectedLabel": "Rabtaa",
+        "expectedHref": "mailto:salam@example.test",
+        "draft": {
+          "checks": [
+            {
+              "id": "c1",
+              "sourceQuote": "\"Rabtaa\" label ka link mailto:salam@example.test par lagao.",
+              "kind": "link_destination",
+              "params": {
+                "label": "Rabtaa",
+                "hrefPrefix": "mailto:salam@example.test"
+              },
+              "reviewNotes": "Destination only; email delivery is not tested."
+            }
+          ],
+          "raw": "[\n  {\n    \"id\": \"c1\",\n    \"sourceQuote\": \"\\\"Rabtaa\\\" label ka link mailto:salam@example.test par lagao.\",\n    \"kind\": \"link_destination\",\n    \"params\": {\n      \"label\": \"Rabtaa\",\n      \"hrefPrefix\": \"mailto:salam@example.test\"\n    },\n    \"reviewNotes\": \"Destination only; email delivery is not tested.\"\n  }\n]",
+          "model": "qwen3:1.7b",
+          "elapsedMs": 10774,
+          "settings": {
+            "temperature": 0,
+            "num_ctx": 4096,
+            "num_predict": 1400
+          },
+          "runtimeMs": 10771.3783
+        },
+        "mappingCorrect": true,
+        "baselineCorrect": true,
+        "baseline": [
+          {
+            "id": "b0",
+            "sourceQuote": "\"Rabtaa\" label ka link mailto:salam@example.test par lagao.",
+            "reviewNotes": "Keyword baseline; review before measuring.",
+            "kind": "link_destination",
+            "params": {
+              "label": "Rabtaa",
+              "hrefPrefix": "mailto:salam@example.test"
+            }
+          }
+        ]
+      },
+      {
+        "id": "held-ur-form",
+        "language": "ur-Latn",
+        "brief": "Form mein \"Naam\" aur \"Paigham\" label ke fields rakho, dono required hon.",
+        "expectedKinds": [
+          "form_structure"
+        ],
+        "expectedLabels": [
+          "Naam",
+          "Paigham"
+        ],
+        "expectedRequiredLabels": [
+          "Naam",
+          "Paigham"
+        ],
+        "draft": {
+          "checks": [
+            {
+              "id": "c1",
+              "sourceQuote": "Form mein \"Naam\" aur \"Paigham\" label ke fields rakho, dono required hon.",
+              "kind": "form_structure",
+              "params": {
+                "labels": [
+                  "Naam",
+                  "Paigham"
+                ],
+                "requiredLabels": [
+                  "Naam"
+                ]
+              },
+              "reviewNotes": "Labels explicitly named; required labels are a subset."
+            }
+          ],
+          "raw": "[\n  {\n    \"id\": \"c1\",\n    \"sourceQuote\": \"Form mein \\\"Naam\\\" aur \\\"Paigham\\\" label ke fields rakho, dono required hon.\",\n    \"kind\": \"form_structure\",\n    \"params\": {\n      \"labels\": [\"Naam\", \"Paigham\"],\n      \"requiredLabels\": [\"Naam\"]\n    },\n    \"reviewNotes\": \"Labels explicitly named; required labels are a subset.\"\n  }\n]",
+          "model": "qwen3:1.7b",
+          "elapsedMs": 10844,
+          "settings": {
+            "temperature": 0,
+            "num_ctx": 4096,
+            "num_predict": 1400
+          },
+          "runtimeMs": 10840.7387
+        },
+        "mappingCorrect": false,
+        "baselineCorrect": true,
+        "baseline": [
+          {
+            "id": "b0",
+            "sourceQuote": "Form mein \"Naam\" aur \"Paigham\" label ke fields rakho, dono required hon.",
+            "reviewNotes": "Keyword baseline; review before measuring.",
+            "kind": "form_structure",
+            "params": {
+              "labels": [
+                "Naam",
+                "Paigham"
+              ],
+              "requiredLabels": [
+                "Naam",
+                "Paigham"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": "held-ur-overflow",
+        "language": "ur-Latn",
+        "brief": "Phone ki screen par page daein baein scroll na ho.",
+        "expectedKinds": [
+          "horizontal_overflow"
+        ],
+        "draft": {
+          "checks": [
+            {
+              "id": "c1",
+              "sourceQuote": "Phone ki screen par page daein baein scroll na ho.",
+              "kind": "horizontal_overflow",
+              "params": {},
+              "reviewNotes": "Horizontal overflow check at two sizes, not general responsiveness."
+            }
+          ],
+          "raw": "[\n  {\n    \"id\": \"c1\",\n    \"sourceQuote\": \"Phone ki screen par page daein baein scroll na ho.\",\n    \"kind\": \"horizontal_overflow\",\n    \"params\": {},\n    \"reviewNotes\": \"Horizontal overflow check at two sizes, not general responsiveness.\"\n  }\n]",
+          "model": "qwen3:1.7b",
+          "elapsedMs": 7954,
+          "settings": {
+            "temperature": 0,
+            "num_ctx": 4096,
+            "num_predict": 1400
+          },
+          "runtimeMs": 7950.8711
+        },
+        "mappingCorrect": true,
+        "baselineCorrect": false,
+        "baseline": [
+          {
+            "id": "b0",
+            "sourceQuote": "Phone ki screen par page daein baein scroll na ho.",
+            "reviewNotes": "Keyword baseline; review before measuring.",
+            "kind": "unverified",
+            "params": {
+              "reason": "Keyword baseline cannot map this requirement."
+            }
+          }
+        ]
+      },
+      {
+        "id": "held-ur-delivery",
+        "language": "ur-Latn",
+        "brief": "Form se bheja gaya paigham mere inbox tak zaroor pohanchna chahiye.",
+        "expectedKinds": [
+          "unverified"
+        ],
+        "draft": {
+          "checks": [
+            {
+              "id": "c1",
+              "sourceQuote": "Form se bheja gaya paigham mere inbox tak zaroor pohanchna chahiye.",
+              "kind": "unverified",
+              "params": {
+                "reason": "Requires an actual delivery test outside this inspector."
+              },
+              "reviewNotes": "Manual evidence needed."
+            }
+          ],
+          "raw": "[\n  {\n    \"id\": \"c1\",\n    \"sourceQuote\": \"Form se bheja gaya paigham mere inbox tak zaroor pohanchna chahiye.\",\n    \"kind\": \"unverified\",\n    \"params\": {\n      \"reason\": \"Requires an actual delivery test outside this inspector.\"\n    },\n    \"reviewNotes\": \"Manual evidence needed.\"\n  }\n]",
+          "model": "qwen3:1.7b",
+          "elapsedMs": 9368,
+          "settings": {
+            "temperature": 0,
+            "num_ctx": 4096,
+            "num_predict": 1400
+          },
+          "runtimeMs": 9364.7048
+        },
+        "mappingCorrect": true,
+        "baselineCorrect": true,
+        "baseline": [
+          {
+            "id": "b0",
+            "sourceQuote": "Form se bheja gaya paigham mere inbox tak zaroor pohanchna chahiye.",
+            "reviewNotes": "Keyword baseline; review before measuring.",
+            "kind": "unverified",
+            "params": {
+              "reason": "Keyword baseline cannot map this requirement."
+            }
+          }
+        ]
+      },
+      {
+        "id": "held-ur-optional",
+        "language": "ur-Latn",
+        "brief": "Agar waqt milay to gallery laga dena, lazmi nahi.",
+        "expectedKinds": [
+          "unverified"
+        ],
+        "draft": {
+          "checks": [
+            {
+              "id": "c1",
+              "sourceQuote": "Agar waqt milay to gallery laga dena, lazmi nahi.",
+              "kind": "unverified",
+              "params": {
+                "reason": "Requires an actual delivery test outside this inspector."
+              },
+              "reviewNotes": "Manual evidence needed."
+            }
+          ],
+          "raw": "[\n  {\n    \"id\": \"c1\",\n    \"sourceQuote\": \"Agar waqt milay to gallery laga dena, lazmi nahi.\",\n    \"kind\": \"unverified\",\n    \"params\": {\n      \"reason\": \"Requires an actual delivery test outside this inspector.\"\n    },\n    \"reviewNotes\": \"Manual evidence needed.\"\n  }\n]",
+          "model": "qwen3:1.7b",
+          "elapsedMs": 9147,
+          "settings": {
+            "temperature": 0,
+            "num_ctx": 4096,
+            "num_predict": 1400
+          },
+          "runtimeMs": 9143.8107
+        },
+        "mappingCorrect": true,
+        "baselineCorrect": true,
+        "baseline": [
+          {
+            "id": "b0",
+            "sourceQuote": "Agar waqt milay to gallery laga dena, lazmi nahi.",
+            "reviewNotes": "Keyword baseline; review before measuring.",
+            "kind": "unverified",
+            "params": {
+              "reason": "Keyword baseline cannot map this requirement."
+            }
+          }
+        ]
+      },
+      {
+        "id": "held-ur-vague",
+        "language": "ur-Latn",
+        "brief": "Website ka hero classy aur premium feel dena chahiye.",
+        "expectedKinds": [
+          "unverified"
+        ],
+        "draft": {
+          "checks": [
+            {
+              "id": "c1",
+              "sourceQuote": "Website ka hero classy aur premium feel dena chahiye.",
+              "kind": "visible_text",
+              "params": {
+                "text": "Website ka hero classy aur premium feel dena chahiye."
+              },
+              "reviewNotes": "Exact visible text only."
+            }
+          ],
+          "raw": "[\n  {\n    \"id\": \"c1\",\n    \"sourceQuote\": \"Website ka hero classy aur premium feel dena chahiye.\",\n    \"kind\": \"visible_text\",\n    \"params\": {\n      \"text\": \"Website ka hero classy aur premium feel dena chahiye.\"\n    },\n    \"reviewNotes\": \"Exact visible text only.\"\n  }\n]",
+          "model": "qwen3:1.7b",
+          "elapsedMs": 9819,
+          "settings": {
+            "temperature": 0,
+            "num_ctx": 4096,
+            "num_predict": 1400
+          },
+          "runtimeMs": 9815.8286
+        },
+        "mappingCorrect": false,
+        "baselineCorrect": true,
+        "baseline": [
+          {
+            "id": "b0",
+            "sourceQuote": "Website ka hero classy aur premium feel dena chahiye.",
+            "reviewNotes": "Keyword baseline; review before measuring.",
+            "kind": "unverified",
+            "params": {
+              "reason": "Keyword baseline cannot map this requirement."
+            }
+          }
+        ]
+      },
+      {
+        "id": "held-ur-conflict",
+        "language": "ur-Latn",
+        "brief": "\"Order now\" button dikhao lekin \"Order now\" button bilkul mat dikhana.",
+        "expectedKinds": [
+          "unverified"
+        ],
+        "draft": {
+          "checks": [
+            {
+              "id": "c1",
+              "sourceQuote": "\"Order now\" button dikhao lekin \"Order now\" button bilkul mat dikhana.",
+              "kind": "visible_text",
+              "params": {
+                "text": "Order now"
+              },
+              "reviewNotes": "Exact visible text only."
+            },
+            {
+              "id": "c2",
+              "sourceQuote": "\"Order now\" button dikhao lekin \"Order now\" button bilkul mat dikhana.",
+              "kind": "unverified",
+              "params": {
+                "reason": "Requires an actual delivery test outside this inspector."
+              },
+              "reviewNotes": "Manual evidence needed."
+            }
+          ],
+          "raw": "[{\"id\":\"c1\",\"sourceQuote\":\"\\\"Order now\\\" button dikhao lekin \\\"Order now\\\" button bilkul mat dikhana.\",\"kind\":\"visible_text\",\"params\":{\"text\":\"Order now\"},\"reviewNotes\":\"Exact visible text only.\"},{\"id\":\"c2\",\"sourceQuote\":\"\\\"Order now\\\" button dikhao lekin \\\"Order now\\\" button bilkul mat dikhana.\",\"kind\":\"unverified\",\"params\":{\"reason\":\"Requires an actual delivery test outside this inspector.\"},\"reviewNotes\":\"Manual evidence needed.\"}]",
+          "model": "qwen3:1.7b",
+          "elapsedMs": 13807,
+          "settings": {
+            "temperature": 0,
+            "num_ctx": 4096,
+            "num_predict": 1400
+          },
+          "runtimeMs": 13804.547
+        },
+        "mappingCorrect": false,
+        "baselineCorrect": false,
+        "baseline": [
+          {
+            "id": "b0",
+            "sourceQuote": "\"Order now\" button dikhao lekin \"Order now\" button bilkul mat dikhana.",
+            "reviewNotes": "Keyword baseline; review before measuring.",
+            "kind": "visible_text",
+            "params": {
+              "text": "Order now"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "defects": {
+    "totalAssertions": 5,
+    "correct": 5,
+    "falseVerified": 0,
+    "rows": [
+      {
+        "id": "defective-cafe",
+        "expectedStatuses": {
+          "hours": "Failed",
+          "contact": "Failed",
+          "form": "Failed",
+          "mobile": "Failed",
+          "delivery": "Unverified"
+        },
+        "results": [
+          {
+            "checkId": "hours",
+            "status": "Failed",
+            "measuredFacts": [
+              "1366px: 0 visible exact text matches: \"Open daily, 8am–6pm\"",
+              "390px: 0 visible exact text matches: \"Open daily, 8am–6pm\""
+            ],
+            "limitations": [
+              "Visible text only; this does not prove correctness of the underlying claim."
+            ],
+            "evidenceIds": [
+              "1366",
+              "390"
+            ]
+          },
+          {
+            "checkId": "contact",
+            "status": "Failed",
+            "measuredFacts": [
+              "1366px: Observed href: \"mailto:wrong@junipercafe.test\"; expected: \"mailto:hello@junipercafe.test\"",
+              "390px: Observed href: \"mailto:wrong@junipercafe.test\"; expected: \"mailto:hello@junipercafe.test\""
+            ],
+            "limitations": [
+              "Exact normalized destination only; clicking or downstream delivery is not tested."
+            ],
+            "evidenceIds": [
+              "1366",
+              "390"
+            ]
+          },
+          {
+            "checkId": "form",
+            "status": "Failed",
+            "measuredFacts": [
+              "1366px: Name: {\"tag\":\"INPUT\",\"required\":true,\"disabled\":false,\"form\":true,\"formIndex\":0}",
+              "1366px: Email: {\"tag\":\"INPUT\",\"required\":false,\"disabled\":false,\"form\":true,\"formIndex\":0}",
+              "390px: Name: {\"tag\":\"INPUT\",\"required\":true,\"disabled\":false,\"form\":true,\"formIndex\":0}",
+              "390px: Email: {\"tag\":\"INPUT\",\"required\":false,\"disabled\":false,\"form\":true,\"formIndex\":0}"
+            ],
+            "limitations": [
+              "Visible enabled labelled form fields and native required attributes only. No submission or email delivery was tested."
+            ],
+            "evidenceIds": [
+              "1366",
+              "390"
+            ]
+          },
+          {
+            "checkId": "mobile",
+            "status": "Failed",
+            "measuredFacts": [
+              "1366px: Content 1366px; viewport 1366px.",
+              "390px: Content 972px; viewport 390px."
+            ],
+            "limitations": [
+              "Horizontal overflow only at this viewport; not a general responsive-design assessment."
+            ],
+            "evidenceIds": [
+              "1366",
+              "390"
+            ]
+          },
+          {
+            "checkId": "delivery",
+            "status": "Unverified",
+            "measuredFacts": [
+              "1366px: No automated measurement supports this promise.",
+              "390px: No automated measurement supports this promise."
+            ],
+            "limitations": [
+              "Not submitted; real delivery proof needed"
+            ],
+            "evidenceIds": [
+              "1366",
+              "390"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "eightCheckLatency": {
+    "brief": "Show \"Open daily\". Show \"Fresh coffee\". Show \"Visit us\". Show \"Made locally\". Add a link labelled \"Email\" to hello@example.test. Add a link labelled \"Call\" to tel:+12025550123. The form has a field labelled \"Name\", required. No horizontal scrolling on mobile.",
+    "error": "Model request aborted or timed out"
+  }
+}

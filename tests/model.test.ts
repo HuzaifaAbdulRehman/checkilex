@@ -16,3 +16,11 @@ test('rejects incomplete output and protects system instructions',async()=>{
 });
 
 test('rejects a token-limited response even when its JSON closes',async()=>{await assert.rejects(createDrafter(async()=>new Response(JSON.stringify({message:{content:'[]'},done:true,done_reason:'length'})))(brief,new AbortController().signal),/incomplete/i)});
+
+test('rejects ungrounded literal text and optional concrete checks',async()=>{
+ for(const [input,item] of [
+ ['Show "Hours".',{id:'c1',sourceQuote:'Show "Hours".',kind:'visible_text',params:{text:'Invented'},reviewNotes:''}],
+ ['Maybe show "Gallery" later.',{id:'c1',sourceQuote:'Maybe show "Gallery" later.',kind:'visible_text',params:{text:'Gallery'},reviewNotes:''}],
+ ['The form has "Name" and "Email", both required.',{id:'c1',sourceQuote:'The form has "Name" and "Email", both required.',kind:'form_structure',params:{labels:['Name','Email'],requiredLabels:['Name']},reviewNotes:''}]
+ ] as const)await assert.rejects(createDrafter(async()=>response(JSON.stringify([item])))(input,new AbortController().signal),/ground|manual|required/i);
+});

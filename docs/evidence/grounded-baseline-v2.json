@@ -1,0 +1,591 @@
+{
+  "date": "2026-10-14T12:29:47.346Z",
+  "synthetic": true,
+  "definition": "English keyword comparator followed by the same assertGrounded veto; rejected checks become explicitly Unverified in this evaluation-only comparator. Never used in app.",
+  "totalCases": 16,
+  "mappingCorrect": 11,
+  "baselineCorrect": 8,
+  "extractionErrors": 0,
+  "rows": [
+    {
+      "id": "v2-en-text",
+      "language": "en",
+      "brief": "Show \"A repair worth keeping\".",
+      "expectedKinds": [
+        "visible_text"
+      ],
+      "expectedText": "A repair worth keeping",
+      "draft": {
+        "checks": [
+          {
+            "id": "b0",
+            "sourceQuote": "Show \"A repair worth keeping\".",
+            "reviewNotes": "Keyword baseline; review before measuring.",
+            "kind": "visible_text",
+            "params": {
+              "text": "A repair worth keeping"
+            }
+          }
+        ]
+      },
+      "mappingCorrect": true,
+      "baselineCorrect": true,
+      "baseline": [
+        {
+          "id": "b0",
+          "sourceQuote": "Show \"A repair worth keeping\".",
+          "reviewNotes": "Keyword baseline; review before measuring.",
+          "kind": "visible_text",
+          "params": {
+            "text": "A repair worth keeping"
+          }
+        }
+      ]
+    },
+    {
+      "id": "v2-en-link",
+      "language": "en",
+      "brief": "Add a link labelled \"Ring the studio\" to tel:+442079460123.",
+      "expectedKinds": [
+        "link_destination"
+      ],
+      "expectedLabel": "Ring the studio",
+      "expectedHref": "tel:+442079460123",
+      "draft": {
+        "checks": [
+          {
+            "id": "b0",
+            "sourceQuote": "Add a link labelled \"Ring the studio\" to tel:+442079460123.",
+            "reviewNotes": "Keyword baseline; review before measuring.",
+            "kind": "visible_text",
+            "params": {
+              "text": "Ring the studio"
+            }
+          }
+        ]
+      },
+      "mappingCorrect": false,
+      "baselineCorrect": false,
+      "baseline": [
+        {
+          "id": "b0",
+          "sourceQuote": "Add a link labelled \"Ring the studio\" to tel:+442079460123.",
+          "reviewNotes": "Keyword baseline; review before measuring.",
+          "kind": "visible_text",
+          "params": {
+            "text": "Ring the studio"
+          }
+        }
+      ]
+    },
+    {
+      "id": "v2-en-form",
+      "language": "en",
+      "brief": "The enquiry form has fields labelled \"Company\" and \"Project\", both required.",
+      "expectedKinds": [
+        "form_structure"
+      ],
+      "expectedLabels": [
+        "Company",
+        "Project"
+      ],
+      "expectedRequiredLabels": [
+        "Company",
+        "Project"
+      ],
+      "draft": {
+        "checks": [
+          {
+            "id": "b0",
+            "sourceQuote": "The enquiry form has fields labelled \"Company\" and \"Project\", both required.",
+            "reviewNotes": "Keyword baseline; review before measuring.",
+            "kind": "form_structure",
+            "params": {
+              "labels": [
+                "Company",
+                "Project"
+              ],
+              "requiredLabels": [
+                "Company",
+                "Project"
+              ]
+            }
+          }
+        ]
+      },
+      "mappingCorrect": true,
+      "baselineCorrect": true,
+      "baseline": [
+        {
+          "id": "b0",
+          "sourceQuote": "The enquiry form has fields labelled \"Company\" and \"Project\", both required.",
+          "reviewNotes": "Keyword baseline; review before measuring.",
+          "kind": "form_structure",
+          "params": {
+            "labels": [
+              "Company",
+              "Project"
+            ],
+            "requiredLabels": [
+              "Company",
+              "Project"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "v2-en-scroll",
+      "language": "en",
+      "brief": "Do not let the mobile page scroll horizontally.",
+      "expectedKinds": [
+        "horizontal_overflow"
+      ],
+      "draft": {
+        "checks": [
+          {
+            "id": "b0",
+            "sourceQuote": "Do not let the mobile page scroll horizontally.",
+            "reviewNotes": "Keyword baseline; review before measuring.",
+            "kind": "unverified",
+            "params": {
+              "reason": "Requires manual evidence or clarification."
+            }
+          }
+        ]
+      },
+      "mappingCorrect": false,
+      "baselineCorrect": false,
+      "baseline": [
+        {
+          "id": "b0",
+          "sourceQuote": "Do not let the mobile page scroll horizontally.",
+          "reviewNotes": "Keyword baseline; review before measuring.",
+          "kind": "unverified",
+          "params": {
+            "reason": "Requires manual evidence or clarification."
+          }
+        }
+      ]
+    },
+    {
+      "id": "v2-en-negated",
+      "language": "en",
+      "brief": "Do not include \"Subscribe\" on this page.",
+      "expectedKinds": [
+        "unverified"
+      ],
+      "draft": {
+        "checks": [
+          {
+            "id": "b0",
+            "sourceQuote": "Do not include \"Subscribe\" on this page.",
+            "reviewNotes": "Keyword baseline; review before measuring.",
+            "kind": "unverified",
+            "params": {
+              "reason": "Requires manual evidence or clarification."
+            }
+          }
+        ]
+      },
+      "mappingCorrect": true,
+      "baselineCorrect": true,
+      "baseline": [
+        {
+          "id": "b0",
+          "sourceQuote": "Do not include \"Subscribe\" on this page.",
+          "reviewNotes": "Keyword baseline; review before measuring.",
+          "kind": "unverified",
+          "params": {
+            "reason": "Requires manual evidence or clarification."
+          }
+        }
+      ]
+    },
+    {
+      "id": "v2-en-optional",
+      "language": "en",
+      "brief": "A \"Testimonials\" section would be nice, but it is optional.",
+      "expectedKinds": [
+        "unverified"
+      ],
+      "draft": {
+        "checks": [
+          {
+            "id": "b0",
+            "sourceQuote": "A \"Testimonials\" section would be nice, but it is optional.",
+            "reviewNotes": "Keyword baseline; review before measuring.",
+            "kind": "unverified",
+            "params": {
+              "reason": "Requires manual evidence or clarification."
+            }
+          }
+        ]
+      },
+      "mappingCorrect": true,
+      "baselineCorrect": true,
+      "baseline": [
+        {
+          "id": "b0",
+          "sourceQuote": "A \"Testimonials\" section would be nice, but it is optional.",
+          "reviewNotes": "Keyword baseline; review before measuring.",
+          "kind": "unverified",
+          "params": {
+            "reason": "Requires manual evidence or clarification."
+          }
+        }
+      ]
+    },
+    {
+      "id": "v2-en-vague",
+      "language": "en",
+      "brief": "The site should have an expensive-looking premium aesthetic.",
+      "expectedKinds": [
+        "unverified"
+      ],
+      "draft": {
+        "checks": [
+          {
+            "id": "b0",
+            "sourceQuote": "The site should have an expensive-looking premium aesthetic.",
+            "reviewNotes": "Keyword baseline; review before measuring.",
+            "kind": "unverified",
+            "params": {
+              "reason": "Keyword baseline cannot map this requirement."
+            }
+          }
+        ]
+      },
+      "mappingCorrect": true,
+      "baselineCorrect": true,
+      "baseline": [
+        {
+          "id": "b0",
+          "sourceQuote": "The site should have an expensive-looking premium aesthetic.",
+          "reviewNotes": "Keyword baseline; review before measuring.",
+          "kind": "unverified",
+          "params": {
+            "reason": "Keyword baseline cannot map this requirement."
+          }
+        }
+      ]
+    },
+    {
+      "id": "v2-en-delivery",
+      "language": "en",
+      "brief": "Every enquiry must reach the owner’s inbox.",
+      "expectedKinds": [
+        "unverified"
+      ],
+      "draft": {
+        "checks": [
+          {
+            "id": "b0",
+            "sourceQuote": "Every enquiry must reach the owner’s inbox.",
+            "reviewNotes": "Keyword baseline; review before measuring.",
+            "kind": "unverified",
+            "params": {
+              "reason": "Keyword baseline cannot map this requirement."
+            }
+          }
+        ]
+      },
+      "mappingCorrect": true,
+      "baselineCorrect": true,
+      "baseline": [
+        {
+          "id": "b0",
+          "sourceQuote": "Every enquiry must reach the owner’s inbox.",
+          "reviewNotes": "Keyword baseline; review before measuring.",
+          "kind": "unverified",
+          "params": {
+            "reason": "Keyword baseline cannot map this requirement."
+          }
+        }
+      ]
+    },
+    {
+      "id": "v2-ur-text",
+      "language": "ur-Latn",
+      "brief": "Upar \"Karachi, made fresh\" likha nazar aaye.",
+      "expectedKinds": [
+        "visible_text"
+      ],
+      "expectedText": "Karachi, made fresh",
+      "draft": {
+        "checks": [
+          {
+            "id": "b0",
+            "sourceQuote": "Upar \"Karachi, made fresh\" likha nazar aaye.",
+            "reviewNotes": "Keyword baseline; review before measuring.",
+            "kind": "visible_text",
+            "params": {
+              "text": "Karachi, made fresh"
+            }
+          }
+        ]
+      },
+      "mappingCorrect": true,
+      "baselineCorrect": true,
+      "baseline": [
+        {
+          "id": "b0",
+          "sourceQuote": "Upar \"Karachi, made fresh\" likha nazar aaye.",
+          "reviewNotes": "Keyword baseline; review before measuring.",
+          "kind": "visible_text",
+          "params": {
+            "text": "Karachi, made fresh"
+          }
+        }
+      ]
+    },
+    {
+      "id": "v2-ur-link",
+      "language": "ur-Latn",
+      "brief": "\"Dukaan\" label ka link tel:+923005550123 par set karo.",
+      "expectedKinds": [
+        "link_destination"
+      ],
+      "expectedLabel": "Dukaan",
+      "expectedHref": "tel:+923005550123",
+      "draft": {
+        "checks": [
+          {
+            "id": "b0",
+            "sourceQuote": "\"Dukaan\" label ka link tel:+923005550123 par set karo.",
+            "reviewNotes": "Keyword baseline; review before measuring.",
+            "kind": "visible_text",
+            "params": {
+              "text": "Dukaan"
+            }
+          }
+        ]
+      },
+      "mappingCorrect": false,
+      "baselineCorrect": false,
+      "baseline": [
+        {
+          "id": "b0",
+          "sourceQuote": "\"Dukaan\" label ka link tel:+923005550123 par set karo.",
+          "reviewNotes": "Keyword baseline; review before measuring.",
+          "kind": "visible_text",
+          "params": {
+            "text": "Dukaan"
+          }
+        }
+      ]
+    },
+    {
+      "id": "v2-ur-form",
+      "language": "ur-Latn",
+      "brief": "Rabtay ke khanay mein \"Naam\" aur \"Kaam\" label ke fields hon, dono required hon.",
+      "expectedKinds": [
+        "form_structure"
+      ],
+      "expectedLabels": [
+        "Naam",
+        "Kaam"
+      ],
+      "expectedRequiredLabels": [
+        "Naam",
+        "Kaam"
+      ],
+      "draft": {
+        "checks": [
+          {
+            "id": "b0",
+            "sourceQuote": "Rabtay ke khanay mein \"Naam\" aur \"Kaam\" label ke fields hon, dono required hon.",
+            "reviewNotes": "Keyword baseline; review before measuring.",
+            "kind": "visible_text",
+            "params": {
+              "text": "Naam"
+            }
+          }
+        ]
+      },
+      "mappingCorrect": false,
+      "baselineCorrect": false,
+      "baseline": [
+        {
+          "id": "b0",
+          "sourceQuote": "Rabtay ke khanay mein \"Naam\" aur \"Kaam\" label ke fields hon, dono required hon.",
+          "reviewNotes": "Keyword baseline; review before measuring.",
+          "kind": "visible_text",
+          "params": {
+            "text": "Naam"
+          }
+        }
+      ]
+    },
+    {
+      "id": "v2-ur-scroll",
+      "language": "ur-Latn",
+      "brief": "Chhoti screen pe daein baein scroll na karna paray.",
+      "expectedKinds": [
+        "horizontal_overflow"
+      ],
+      "draft": {
+        "checks": [
+          {
+            "id": "b0",
+            "sourceQuote": "Chhoti screen pe daein baein scroll na karna paray.",
+            "reviewNotes": "Keyword baseline; review before measuring.",
+            "kind": "unverified",
+            "params": {
+              "reason": "Keyword baseline cannot map this requirement."
+            }
+          }
+        ]
+      },
+      "mappingCorrect": false,
+      "baselineCorrect": false,
+      "baseline": [
+        {
+          "id": "b0",
+          "sourceQuote": "Chhoti screen pe daein baein scroll na karna paray.",
+          "reviewNotes": "Keyword baseline; review before measuring.",
+          "kind": "unverified",
+          "params": {
+            "reason": "Keyword baseline cannot map this requirement."
+          }
+        }
+      ]
+    },
+    {
+      "id": "v2-ur-negated",
+      "language": "ur-Latn",
+      "brief": "Page par \"Sale\" bilkul nahi dikhana.",
+      "expectedKinds": [
+        "unverified"
+      ],
+      "draft": {
+        "checks": [
+          {
+            "id": "b0",
+            "sourceQuote": "Page par \"Sale\" bilkul nahi dikhana.",
+            "kind": "unverified",
+            "params": {
+              "reason": "Keyword proposal did not pass the same grounding rules."
+            },
+            "reviewNotes": "Evaluation comparator only."
+          }
+        ]
+      },
+      "mappingCorrect": true,
+      "baselineCorrect": false,
+      "baseline": [
+        {
+          "id": "b0",
+          "sourceQuote": "Page par \"Sale\" bilkul nahi dikhana.",
+          "reviewNotes": "Keyword baseline; review before measuring.",
+          "kind": "visible_text",
+          "params": {
+            "text": "Sale"
+          }
+        }
+      ]
+    },
+    {
+      "id": "v2-ur-optional",
+      "language": "ur-Latn",
+      "brief": "Shayad \"Gallery\" baad mein laga dein, abhi zaroori nahi.",
+      "expectedKinds": [
+        "unverified"
+      ],
+      "draft": {
+        "checks": [
+          {
+            "id": "b0",
+            "sourceQuote": "Shayad \"Gallery\" baad mein laga dein, abhi zaroori nahi.",
+            "kind": "unverified",
+            "params": {
+              "reason": "Keyword proposal did not pass the same grounding rules."
+            },
+            "reviewNotes": "Evaluation comparator only."
+          }
+        ]
+      },
+      "mappingCorrect": true,
+      "baselineCorrect": false,
+      "baseline": [
+        {
+          "id": "b0",
+          "sourceQuote": "Shayad \"Gallery\" baad mein laga dein, abhi zaroori nahi.",
+          "reviewNotes": "Keyword baseline; review before measuring.",
+          "kind": "visible_text",
+          "params": {
+            "text": "Gallery"
+          }
+        }
+      ]
+    },
+    {
+      "id": "v2-ur-vague",
+      "language": "ur-Latn",
+      "brief": "Tasveeron aur rangon se mehnga sa ehsaas aana chahiye.",
+      "expectedKinds": [
+        "unverified"
+      ],
+      "draft": {
+        "checks": [
+          {
+            "id": "b0",
+            "sourceQuote": "Tasveeron aur rangon se mehnga sa ehsaas aana chahiye.",
+            "reviewNotes": "Keyword baseline; review before measuring.",
+            "kind": "unverified",
+            "params": {
+              "reason": "Keyword baseline cannot map this requirement."
+            }
+          }
+        ]
+      },
+      "mappingCorrect": true,
+      "baselineCorrect": true,
+      "baseline": [
+        {
+          "id": "b0",
+          "sourceQuote": "Tasveeron aur rangon se mehnga sa ehsaas aana chahiye.",
+          "reviewNotes": "Keyword baseline; review before measuring.",
+          "kind": "unverified",
+          "params": {
+            "reason": "Keyword baseline cannot map this requirement."
+          }
+        }
+      ]
+    },
+    {
+      "id": "v2-ur-conflict",
+      "language": "ur-Latn",
+      "brief": "\"Buy now\" dikhana hai lekin \"Buy now\" mat dikhana.",
+      "expectedKinds": [
+        "unverified"
+      ],
+      "draft": {
+        "checks": [
+          {
+            "id": "b0",
+            "sourceQuote": "\"Buy now\" dikhana hai lekin \"Buy now\" mat dikhana.",
+            "kind": "unverified",
+            "params": {
+              "reason": "Keyword proposal did not pass the same grounding rules."
+            },
+            "reviewNotes": "Evaluation comparator only."
+          }
+        ]
+      },
+      "mappingCorrect": true,
+      "baselineCorrect": false,
+      "baseline": [
+        {
+          "id": "b0",
+          "sourceQuote": "\"Buy now\" dikhana hai lekin \"Buy now\" mat dikhana.",
+          "reviewNotes": "Keyword baseline; review before measuring.",
+          "kind": "visible_text",
+          "params": {
+            "text": "Buy now"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "frozenAt": "2026-10-14T12:25:26.210Z",
+  "hashes": {
+    "src/model.ts": "3282bb30fe6e665e9e8a4402e6f7d29d2de0a658e7147f021dfa560725d9a8e5",
+    "src/grounding.ts": "000bb1fe2d2a96d2c18497cd02e8557c9afdf7c2c1fd2f35cccf86028be0cd44",
+    "scripts/baseline.ts": "fb11b83671a0e5e430ab8f23b1692aec056e9c2045a1e706e02b087aee014c45",
+    "fixtures/briefs/heldout-v2.json": "ffd5bca776b8932ad0d0f1a674f5608d0d9b6f2b49ef480eca3443a5b04f2306"
+  },
+  "rule": "New 16-case balanced holdout; V1 cases now development evidence; no changes after freeze. This evaluates the complete model plus grounding rules, not model-only skill."
+}

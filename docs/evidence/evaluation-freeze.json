@@ -1,0 +1,10 @@
+{
+  "frozenAt": "2026-10-14T12:15:11.827Z",
+  "hashes": {
+    "src/model.ts": "7901c2d3ba2879d246a2deafeab43ecb61c85d3785eedfea5c270baba2842aa6",
+    "scripts/baseline.ts": "fb11b83671a0e5e430ab8f23b1692aec056e9c2045a1e706e02b087aee014c45",
+    "fixtures/briefs/development.json": "fb958b4623bc4b771c48e81b7d436e0591be90e1e8c4820672243308d0e96d68",
+    "fixtures/briefs/heldout.json": "b7f6b66e0b012635214e13fea4d9fdce263c9a4ffae2028d989a77e8944c65d2"
+  },
+  "rule": "No held-out prompt/label tuning; extraction failures remain denominator; per-case kind and named literal constraints must all match."
+}

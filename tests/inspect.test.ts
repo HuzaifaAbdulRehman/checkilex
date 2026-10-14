@@ -5,7 +5,7 @@ import { readFile } from 'node:fs/promises';
 import { inspectPage,validateTargetUrl } from '../src/inspect.ts';
 import type {CheckSpec} from '../src/checks.ts';
 const checks:CheckSpec[]=[
- {id:'hours',sourceQuote:'Show opening hours',kind:'visible_text',params:{text:'Open daily, 8amâ€“6pm'}},
+ {id:'hours',sourceQuote:'Show opening hours',kind:'visible_text',params:{text:'Open daily, 8am–6pm'}},
  {id:'contact',sourceQuote:'Email link',kind:'link_destination',params:{label:'Email',hrefPrefix:'mailto:hello@junipercafe.test'}},
  {id:'form',sourceQuote:'Name and Email required',kind:'form_structure',params:{labels:['Name','Email'],requiredLabels:['Name','Email']}},
  {id:'mobile',sourceQuote:'No overflow',kind:'horizontal_overflow',params:{}},

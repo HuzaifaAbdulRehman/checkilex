@@ -1,0 +1,10 @@
+import {readFile,writeFile} from 'node:fs/promises';import {createHash} from 'node:crypto';
+import {evaluateCases} from './evaluate.ts';import {draftChecks} from '../src/model.ts';
+const hashes:Record<string,string>={};for(const p of ['src/model.ts','src/grounding.ts','scripts/baseline.ts','fixtures/briefs/heldout-v2.json'])hashes[p]=createHash('sha256').update(await readFile(p)).digest('hex');
+const frozenAt=new Date().toISOString();await writeFile('docs/evidence/evaluation-freeze-v2.json',JSON.stringify({frozenAt,hashes,rule:'New 16-case balanced holdout; V1 cases now development evidence; no changes after freeze. This evaluates the complete model plus grounding rules, not model-only skill.'},null,2));
+const cases=JSON.parse((await readFile('fixtures/briefs/heldout-v2.json','utf8')).replace(/^\uFEFF/,''));
+const result=await evaluateCases(cases,brief=>draftChecks(brief,new AbortController().signal),async rows=>{const r=rows.at(-1);console.log(rows.length+'/'+cases.length,r.id,r.mappingCorrect?'correct':r.error||'mapping miss',r.draft?.elapsedMs||'');await writeFile('docs/evidence/evaluation-progress-v2.json',JSON.stringify({frozenAt,hashes,rows},null,2))});
+const output:any={frozenAt,hashes,synthetic:true,heldout:result,qualification:'Complete constrained pipeline. No model-only or statistical generalization claim.'};
+const eightBrief='Show "Open daily". Show "Fresh coffee". Show "Visit us". Show "Made locally". Add a link labelled "Email" to hello@example.test. Add a link labelled "Call" to tel:+12025550123. The form has a field labelled "Name", required. No horizontal scrolling on mobile.';
+try{output.eightCheckLatency={brief:eightBrief,...await draftChecks(eightBrief,new AbortController().signal)}}catch(e){output.eightCheckLatency={brief:eightBrief,error:e instanceof Error?e.message:String(e)}}
+await writeFile('docs/evidence/evaluation-v2.json',JSON.stringify(output,null,2));console.log('DONE',JSON.stringify({correct:result.mappingCorrect,total:result.totalCases,baseline:result.baselineCorrect,errors:result.extractionErrors,eightCheckMs:output.eightCheckLatency.elapsedMs,eightCheckError:output.eightCheckLatency.error}));

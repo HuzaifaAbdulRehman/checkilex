@@ -1,0 +1,207 @@
+{
+  "schemaVersion": 1,
+  "project": "site-delivery-check",
+  "updatedAt": "2026-10-14",
+  "operator": {
+    "legalName": "Huzaifa Abdul Rehman",
+    "country": "Pakistan",
+    "region": "Not established for this local source prototype; wider release scope remains unconfirmed.",
+    "noticeContact": "Planned project GitHub issue tracker after publication."
+  },
+  "launch": {
+    "userCountries": [
+      "Pakistan (initial prototype)"
+    ],
+    "salesChannels": [
+      "Free source distribution; no sales"
+    ],
+    "audiences": [
+      "Independent web developers testing their own local pages"
+    ]
+  },
+  "triggers": {
+    "accounts": false,
+    "personalData": true,
+    "nonEssentialStorage": false,
+    "payments": false,
+    "subscriptions": false,
+    "userContent": false,
+    "marketplace": false,
+    "children": false,
+    "regulatedData": false,
+    "b2bProcessor": false,
+    "businessCustomers": false,
+    "distributedSoftware": true,
+    "mobileApp": false,
+    "marketing": false,
+    "workers": false,
+    "aiDataUse": true,
+    "aiHighImpact": false
+  },
+  "documents": {
+    "terms": {
+      "decision": "required",
+      "reason": "Local source distribution and possible client text; owner release review pending.",
+      "path": "terms.md",
+      "status": "drafted",
+      "version": "0.1.0",
+      "sha256": "fdb07f9ff515bbc6982a5b17334406dd3033240decf1e5511aa287a8fb77084d",
+      "reviewedBy": "",
+      "reviewedAt": null
+    },
+    "privacy": {
+      "decision": "required",
+      "reason": "Local source distribution and possible client text; owner release review pending.",
+      "path": "privacy-notice.md",
+      "status": "drafted",
+      "version": "0.1.0",
+      "sha256": "7526e3601e4e462690846b63204edf7b797a312f2196cb1319b9ba32aa82ab69",
+      "reviewedBy": "",
+      "reviewedAt": null
+    },
+    "cookies": {
+      "decision": "not-required",
+      "reason": "No corresponding accounts, tracking, commerce, hosted content, processor contract or workforce activity exists.",
+      "path": "cookie-storage-notice.md",
+      "status": "not-required",
+      "version": "",
+      "sha256": "",
+      "reviewedBy": "",
+      "reviewedAt": null
+    },
+    "acceptableUse": {
+      "decision": "not-required",
+      "reason": "No corresponding accounts, tracking, commerce, hosted content, processor contract or workforce activity exists.",
+      "path": "acceptable-use.md",
+      "status": "not-required",
+      "version": "",
+      "sha256": "",
+      "reviewedBy": "",
+      "reviewedAt": null
+    },
+    "refundCancellation": {
+      "decision": "not-required",
+      "reason": "No corresponding accounts, tracking, commerce, hosted content, processor contract or workforce activity exists.",
+      "path": "refund-cancellation.md",
+      "status": "not-required",
+      "version": "",
+      "sha256": "",
+      "reviewedBy": "",
+      "reviewedAt": null
+    },
+    "userContent": {
+      "decision": "not-required",
+      "reason": "No corresponding accounts, tracking, commerce, hosted content, processor contract or workforce activity exists.",
+      "path": "user-content-moderation.md",
+      "status": "not-required",
+      "version": "",
+      "sha256": "",
+      "reviewedBy": "",
+      "reviewedAt": null
+    },
+    "dataProcessing": {
+      "decision": "not-required",
+      "reason": "No corresponding accounts, tracking, commerce, hosted content, processor contract or workforce activity exists.",
+      "path": "vendor-data-processing.md",
+      "status": "not-required",
+      "version": "",
+      "sha256": "",
+      "reviewedBy": "",
+      "reviewedAt": null
+    },
+    "businessAgreement": {
+      "decision": "not-required",
+      "reason": "No corresponding accounts, tracking, commerce, hosted content, processor contract or workforce activity exists.",
+      "path": "business-agreement.md",
+      "status": "not-required",
+      "version": "",
+      "sha256": "",
+      "reviewedBy": "",
+      "reviewedAt": null
+    },
+    "workerConfidentialityIp": {
+      "decision": "not-required",
+      "reason": "No corresponding accounts, tracking, commerce, hosted content, processor contract or workforce activity exists.",
+      "path": "worker-confidentiality-ip.md",
+      "status": "not-required",
+      "version": "",
+      "sha256": "",
+      "reviewedBy": "",
+      "reviewedAt": null
+    }
+  },
+  "review": {
+    "owner": "Huzaifa Abdul Rehman",
+    "ownerStatus": "pending",
+    "counselRequired": false,
+    "counselReason": "Initial local free prototype in Pakistan, without commerce, hosted client processing, regulated decisions or other listed counsel triggers. Reassess a wider or commercial release.",
+    "counselReviewer": "",
+    "counselStatus": "not-required",
+    "jurisdictionsReviewed": [],
+    "reviewedAt": null,
+    "openQuestions": [
+      "Owner approval of public release, MIT terms, local-data notice and support channel is pending."
+    ]
+  },
+  "evidence": {
+    "acceptance": {
+      "status": "passed",
+      "runId": "local-data-lifecycle",
+      "note": "MIT file hash recorded with source. No clickwrap or collected assent is claimed."
+    },
+    "checkout": {
+      "status": "not-required",
+      "runId": "",
+      "note": "No corresponding activity in this local prototype."
+    },
+    "cancellation": {
+      "status": "not-required",
+      "runId": "",
+      "note": "No corresponding activity in this local prototype."
+    },
+    "deletion": {
+      "status": "passed",
+      "runId": "local-data-lifecycle",
+      "note": "Clear/reload removes UI state; zero app cookies/storage; no marker in app stdout. Not secure erasure or deletion of explicit downloads."
+    },
+    "tracking": {
+      "status": "not-required",
+      "runId": "",
+      "note": "No corresponding activity in this local prototype."
+    },
+    "moderation": {
+      "status": "not-required",
+      "runId": "",
+      "note": "No corresponding activity in this local prototype."
+    },
+    "vendorFlow": {
+      "status": "not-required",
+      "runId": "",
+      "note": "No corresponding activity in this local prototype."
+    },
+    "marketingOptOut": {
+      "status": "not-required",
+      "runId": "",
+      "note": "No corresponding activity in this local prototype."
+    },
+    "aiDisclosure": {
+      "status": "passed",
+      "runId": "local-data-lifecycle",
+      "note": "Running UI visibly says Qwen suggests checks and the user decides; draft is not a verdict."
+    },
+    "storePolicy": {
+      "status": "not-required",
+      "runId": "",
+      "note": "No corresponding activity in this local prototype."
+    }
+  },
+  "runs": [
+    {
+      "id": "local-data-lifecycle",
+      "command": "node .runtime/lifecycle.mjs",
+      "exitCode": 0,
+      "ranAt": "2026-10-14T12:28:54.423Z",
+      "result": "Real production UI clearing, reload, zero cookies/storage, model disclosure and no synthetic brief marker in app stdout; MIT hash recorded. See docs/evidence/data-lifecycle.json."
+    }
+  ]
+}

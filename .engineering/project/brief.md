@@ -1,13 +1,13 @@
 # Site Delivery Check
 
-Status: planning complete; clarify the technical assumption before a full build.
+Status: measured prototype; release review and publication approval pending.
 Owner: Huzaifa Abdul Rehman. Decision date: 14 October 2026.
 
 ## Project profile
 
 ML/AI project delivered as a local Windows web app, public source and a recorded
 demo. Normal risk. Node 24.13.0, TypeScript 5.9.3, React/React DOM 19.3.0,
-Vite 8.3.1, Playwright 1.63.0, Ollama 0.40.0 and Qwen3 1.7B are proposed.
+Vite 8.3.1, Playwright 1.63.0, Ollama 0.40.0 and Qwen3 1.7B are installed and measured.
 Triggered overlays and their boundaries are recorded in evidence.json.
 
 ## Problem
@@ -98,3 +98,10 @@ release review, submission approval and outcome decision. Each gate's trigger,
 evidence and date are in evidence.json. Future targets use plannedFor because
 the checker rejects future targetDate values; that bug remains recorded.
 outcomes.md stays unfilled until measurements exist.
+
+## Measured checkpoint
+
+V1 missed mapping/baseline targets. V2 adds disclosed literal grounding and passed
+16/16 fresh targeted synthetic cases, versus11/16 with the same rules after
+keywords. General reliability and demand remain unconfirmed. Eight-check latency
+still fails; the four-check demo took32.1s. See outcomes.md and docs/evaluation.md.

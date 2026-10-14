@@ -1,0 +1,8 @@
+﻿# Keep recorded evaluation hashes stable across checkouts.
+src/model.ts -text
+src/grounding.ts -text
+scripts/baseline.ts -text
+fixtures/briefs/development.json -text
+fixtures/briefs/heldout.json -text
+fixtures/briefs/heldout-v2.json -text
+

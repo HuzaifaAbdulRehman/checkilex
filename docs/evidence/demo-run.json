@@ -1,0 +1,290 @@
+{
+  "date": "2026-10-14T12:34:59.016Z",
+  "synthetic": true,
+  "walkthrough": "Automated operation of actual UI, local model and inspector; synthetic expected checks reviewed by script. Not customer feedback or a human testing session.",
+  "draft": {
+    "checks": [
+      {
+        "id": "c1",
+        "sourceQuote": "Show \"Open daily, 8am–6pm\".",
+        "kind": "visible_text",
+        "params": {
+          "text": "Open daily, 8am–6pm"
+        },
+        "reviewNotes": "Exact visible text only."
+      },
+      {
+        "id": "c2",
+        "sourceQuote": "Add a link labelled \"Email\" to hello@junipercafe.test.",
+        "kind": "link_destination",
+        "params": {
+          "label": "Email",
+          "hrefPrefix": "mailto:hello@junipercafe.test"
+        },
+        "reviewNotes": "Destination only; email delivery is not tested."
+      },
+      {
+        "id": "c3",
+        "sourceQuote": "Mobile par horizontal scroll nahi hona chahiye.",
+        "kind": "horizontal_overflow",
+        "params": {},
+        "reviewNotes": "Horizontal overflow check at two sizes, not general responsiveness."
+      },
+      {
+        "id": "c4",
+        "sourceQuote": "Contact form must deliver email.",
+        "kind": "unverified",
+        "params": {
+          "reason": "Requires an actual delivery test outside this inspector."
+        },
+        "reviewNotes": "Manual evidence needed."
+      }
+    ],
+    "raw": "[\n  {\n    \"id\": \"c1\",\n    \"sourceQuote\": \"Show \\\"Open daily, 8am–6pm\\\".\",\n    \"kind\": \"visible_text\",\n    \"params\": {\n      \"text\": \"Open daily, 8am–6pm\"\n    },\n    \"reviewNotes\": \"Exact visible text only.\"\n  },\n  {\n    \"id\": \"c2\",\n    \"sourceQuote\": \"Add a link labelled \\\"Email\\\" to hello@junipercafe.test.\",\n    \"kind\": \"link_destination\",\n    \"params\": {\n      \"label\": \"Email\",\n      \"hrefPrefix\": \"mailto:hello@junipercafe.test\"\n    },\n    \"reviewNotes\": \"Destination only; email delivery is not tested.\"\n  },\n  {\n    \"id\": \"c3\",\n    \"sourceQuote\": \"Mobile par horizontal scroll nahi hona chahiye.\",\n    \"kind\": \"horizontal_overflow\",\n    \"params\": {\n      },\n    \"reviewNotes\": \"Horizontal overflow check at two sizes, not general responsiveness.\"\n  },\n  {\n    \"id\": \"c4\",\n    \"sourceQuote\": \"Contact form must deliver email.\",\n    \"kind\": \"unverified\",\n    \"params\": {\n      \"reason\": \"Requires an actual delivery test outside this inspector.\"\n    },\n    \"reviewNotes\": \"Manual evidence needed.\"\n  }\n]",
+    "model": "qwen3:1.7b",
+    "elapsedMs": 32095,
+    "settings": {
+      "temperature": 0,
+      "num_ctx": 4096,
+      "num_predict": 1400
+    },
+    "runtimeMs": 32047.1856
+  },
+  "bad": {
+    "checks": [
+      {
+        "id": "c1",
+        "sourceQuote": "Show \"Open daily, 8am–6pm\".",
+        "kind": "visible_text",
+        "params": {
+          "text": "Open daily, 8am–6pm"
+        }
+      },
+      {
+        "id": "c2",
+        "sourceQuote": "Add a link labelled \"Email\" to hello@junipercafe.test.",
+        "kind": "link_destination",
+        "params": {
+          "label": "Email",
+          "hrefPrefix": "mailto:hello@junipercafe.test"
+        }
+      },
+      {
+        "id": "c3",
+        "sourceQuote": "Mobile par horizontal scroll nahi hona chahiye.",
+        "kind": "horizontal_overflow",
+        "params": {}
+      },
+      {
+        "id": "c4",
+        "sourceQuote": "Contact form must deliver email.",
+        "kind": "unverified",
+        "params": {
+          "reason": "Requires an actual delivery test outside this inspector."
+        }
+      }
+    ],
+    "results": [
+      {
+        "checkId": "c1",
+        "status": "Failed",
+        "measuredFacts": [
+          "1366px: 0 visible exact text matches: \"Open daily, 8am–6pm\"",
+          "390px: 0 visible exact text matches: \"Open daily, 8am–6pm\""
+        ],
+        "limitations": [
+          "Visible text only; this does not prove correctness of the underlying claim."
+        ],
+        "evidenceIds": [
+          "1366",
+          "390"
+        ]
+      },
+      {
+        "checkId": "c2",
+        "status": "Failed",
+        "measuredFacts": [
+          "1366px: Observed href: \"mailto:wrong@junipercafe.test\"; expected: \"mailto:hello@junipercafe.test\"",
+          "390px: Observed href: \"mailto:wrong@junipercafe.test\"; expected: \"mailto:hello@junipercafe.test\""
+        ],
+        "limitations": [
+          "Exact normalized destination only; clicking or downstream delivery is not tested."
+        ],
+        "evidenceIds": [
+          "1366",
+          "390"
+        ]
+      },
+      {
+        "checkId": "c3",
+        "status": "Failed",
+        "measuredFacts": [
+          "1366px: Content 1366px; viewport 1366px.",
+          "390px: Content 972px; viewport 390px."
+        ],
+        "limitations": [
+          "Horizontal overflow only at this viewport; not a general responsive-design assessment."
+        ],
+        "evidenceIds": [
+          "1366",
+          "390"
+        ]
+      },
+      {
+        "checkId": "c4",
+        "status": "Unverified",
+        "measuredFacts": [
+          "1366px: No automated measurement supports this promise.",
+          "390px: No automated measurement supports this promise."
+        ],
+        "limitations": [
+          "Requires an actual delivery test outside this inspector."
+        ],
+        "evidenceIds": [
+          "1366",
+          "390"
+        ]
+      }
+    ],
+    "captures": [
+      {
+        "id": "1366",
+        "width": 1366,
+        "height": 900
+      },
+      {
+        "id": "390",
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "targetUrl": "http://127.0.0.1:4319/defective",
+    "timestamp": "2026-10-14T12:34:52.581Z",
+    "versions": {
+      "chromium": "153.0.8010.12",
+      "playwright": "1.63.0"
+    },
+    "fingerprint": "373f1acf482d3bac160569547b7b5172720ddcada9c96f6d607c094f9fe82548",
+    "notices": []
+  },
+  "good": {
+    "checks": [
+      {
+        "id": "c1",
+        "sourceQuote": "Show \"Open daily, 8am–6pm\".",
+        "kind": "visible_text",
+        "params": {
+          "text": "Open daily, 8am–6pm"
+        }
+      },
+      {
+        "id": "c2",
+        "sourceQuote": "Add a link labelled \"Email\" to hello@junipercafe.test.",
+        "kind": "link_destination",
+        "params": {
+          "label": "Email",
+          "hrefPrefix": "mailto:hello@junipercafe.test"
+        }
+      },
+      {
+        "id": "c3",
+        "sourceQuote": "Mobile par horizontal scroll nahi hona chahiye.",
+        "kind": "horizontal_overflow",
+        "params": {}
+      },
+      {
+        "id": "c4",
+        "sourceQuote": "Contact form must deliver email.",
+        "kind": "unverified",
+        "params": {
+          "reason": "Requires an actual delivery test outside this inspector."
+        }
+      }
+    ],
+    "results": [
+      {
+        "checkId": "c1",
+        "status": "Verified",
+        "measuredFacts": [
+          "1366px: 1 visible exact text matches: \"Open daily, 8am–6pm\"",
+          "390px: 1 visible exact text matches: \"Open daily, 8am–6pm\""
+        ],
+        "limitations": [
+          "Visible text only; this does not prove correctness of the underlying claim."
+        ],
+        "evidenceIds": [
+          "1366",
+          "390"
+        ]
+      },
+      {
+        "checkId": "c2",
+        "status": "Verified",
+        "measuredFacts": [
+          "1366px: Observed href: \"mailto:hello@junipercafe.test\"; expected: \"mailto:hello@junipercafe.test\"",
+          "390px: Observed href: \"mailto:hello@junipercafe.test\"; expected: \"mailto:hello@junipercafe.test\""
+        ],
+        "limitations": [
+          "Exact normalized destination only; clicking or downstream delivery is not tested."
+        ],
+        "evidenceIds": [
+          "1366",
+          "390"
+        ]
+      },
+      {
+        "checkId": "c3",
+        "status": "Verified",
+        "measuredFacts": [
+          "1366px: Content 1366px; viewport 1366px.",
+          "390px: Content 390px; viewport 390px."
+        ],
+        "limitations": [
+          "Horizontal overflow only at this viewport; not a general responsive-design assessment."
+        ],
+        "evidenceIds": [
+          "1366",
+          "390"
+        ]
+      },
+      {
+        "checkId": "c4",
+        "status": "Unverified",
+        "measuredFacts": [
+          "1366px: No automated measurement supports this promise.",
+          "390px: No automated measurement supports this promise."
+        ],
+        "limitations": [
+          "Requires an actual delivery test outside this inspector."
+        ],
+        "evidenceIds": [
+          "1366",
+          "390"
+        ]
+      }
+    ],
+    "captures": [
+      {
+        "id": "1366",
+        "width": 1366,
+        "height": 900
+      },
+      {
+        "id": "390",
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "targetUrl": "http://127.0.0.1:4319/",
+    "timestamp": "2026-10-14T12:34:56.765Z",
+    "versions": {
+      "chromium": "153.0.8010.12",
+      "playwright": "1.63.0"
+    },
+    "fingerprint": "ea88532eeeb9373f18fabf0fc0949df1629c952cd988f8db4b7faeba0cdb340e",
+    "notices": []
+  },
+  "invalidatedAfterTargetEdit": true,
+  "elapsedMs": 44770,
+  "editing": "No video time cuts; silent recording. Viewport changes are visible."
+}
