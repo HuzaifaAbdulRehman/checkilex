@@ -37,6 +37,11 @@ Current Checkilex captures: [desktop](screenshots/checkilex-start-desktop.png),
 synthetic draft and collect fresh browser measurements; no new inference timing
 is claimed.
 
+[Readable results](screenshots/checkilex-report-readable.png) and a
+[single-check detail](screenshots/checkilex-report-detail.png) were recaptured
+at a 720px app viewport with double pixel density for article readability.
+They replay the recorded synthetic draft and use fresh inspector measurements.
+
 To recapture, start the app, local model and café fixture using the README,
 then run `node scripts/capture-demo.ts`. The script expects a clean synthetic
 session and overwrites the demo artifacts. The native WebM format avoids adding
