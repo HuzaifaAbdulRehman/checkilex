@@ -1,0 +1,27 @@
+{
+  "date": "2026-10-14T14:06:03.849Z",
+  "synthetic": true,
+  "model": "Replayed the recorded demo draft; no new inference or latency claim.",
+  "inspection": "Fresh real API and bounded browser measurements against the defective fixture.",
+  "statuses": [
+    "Failed",
+    "Failed",
+    "Failed",
+    "Unverified"
+  ],
+  "pageTitle": "Checkilex",
+  "brandLink": "Checkilex home",
+  "exportFilename": "checkilex-report.md",
+  "exportTitle": "# Checkilex",
+  "viewports": [
+    {
+      "width": 1366,
+      "height": 900
+    },
+    {
+      "width": 390,
+      "height": 844
+    }
+  ],
+  "horizontalOverflow": false
+}

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "project": "site-delivery-check",
+  "project": "checkilex",
   "updatedAt": "2026-10-14",
   "operator": {
     "legalName": "Huzaifa Abdul Rehman",
@@ -45,7 +45,7 @@
       "path": "terms.md",
       "status": "drafted",
       "version": "0.1.0",
-      "sha256": "fdb07f9ff515bbc6982a5b17334406dd3033240decf1e5511aa287a8fb77084d",
+      "sha256": "6c9b3d7dad7b5ad24218616fb6017af0667f88351b367004e03a47a6cb04e9fb",
       "reviewedBy": "",
       "reviewedAt": null
     },

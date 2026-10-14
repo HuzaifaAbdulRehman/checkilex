@@ -1,5 +1,5 @@
 ---
-title: "Site Delivery Check: local AI for the final handoff"
+title: "Checkilex: local AI for the final handoff"
 published: false
 tags: devchallenge, hf26challenge, opensource, ai
 ---
@@ -12,7 +12,7 @@ A landing page can look finished while its contact link points to the wrong addr
 Another promise is harder to judge: a form can have the right fields without
 delivering a message.
 
-Site Delivery Check helps a freelance web developer turn a brief into a reviewed
+Checkilex helps a freelance web developer turn a brief into a reviewed
 checklist and a record of what the page actually proves.
 
 Paste an English or Roman Urdu brief. A local Qwen model proposes up to eight
@@ -27,13 +27,15 @@ measured time-saving evidence yet.
 
 ## Demo
 
-[Watch the 45-second walkthrough](https://github.com/HuzaifaAbdulRehman/site-delivery-check/blob/build/local-evidence/docs/demo.webm).
+[Watch the 45-second walkthrough](https://github.com/HuzaifaAbdulRehman/checkilex/blob/build/local-evidence/docs/demo.webm).
 
-![Actual report for a fictional café with planted defects](https://raw.githubusercontent.com/HuzaifaAbdulRehman/site-delivery-check/refs/heads/build/local-evidence/docs/screenshots/app-report-desktop.png)
+![Actual report for a fictional café with planted defects](https://raw.githubusercontent.com/HuzaifaAbdulRehman/checkilex/refs/heads/build/local-evidence/docs/screenshots/checkilex-report-desktop.png)
 
 This is automated operation of the real local app with synthetic data, not a
 customer session. The recording is silent and uncut, including the 32.1-second
-inference wait.
+inference wait. It was recorded before the Checkilex rename, under the name
+Site Delivery Check. The screenshot above uses the current name, replays that
+recorded model draft, and collects fresh browser measurements.
 
 The defective café produces three Failed checks: hidden hours, the wrong email
 destination and mobile overflow. Switching to the good fixture produces three
@@ -44,7 +46,7 @@ message reached an inbox. The report preserves that limit beside its findings.
 
 ## Code
 
-[Source, setup instructions and evaluation evidence](https://github.com/HuzaifaAbdulRehman/site-delivery-check).
+[Source, setup instructions and evaluation evidence](https://github.com/HuzaifaAbdulRehman/checkilex).
 
 The application is MIT licensed. All application code, café fixtures and evaluation
 briefs were written during this challenge window. Previously downloaded runtime,

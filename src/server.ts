@@ -66,7 +66,7 @@ export async function startApp(production=process.argv.includes('--production'))
   const {createServer}=await import('vite');const vite=await createServer({server:{middlewareMode:true,hmr:false},appType:'spa'});ui=(req,res)=>vite.middlewares(req,res);closeUi=()=>vite.close();
  }
  const server=createServer({draftChecks,inspectPage},ui);await new Promise<void>((resolve,reject)=>{server.once('error',reject);server.listen(4318,'127.0.0.1',resolve)});
- console.log('Site Delivery Check: http://127.0.0.1:4318');
+ console.log('Checkilex: http://127.0.0.1:4318');
  const close=()=>{server.closeAllConnections();server.close();void closeUi()};
  process.once('SIGINT',close);process.once('SIGTERM',close);
  return {server,close};

@@ -1,10 +1,10 @@
-# Site Delivery Check
+# Checkilex
 
 A local delivery checklist for freelance web developers. Paste an English or
 Roman Urdu brief, review the proposed checks, and inspect one page you control.
 Download a Markdown report and desktop/mobile evidence.
 
-![The running local app, using synthetic demo content](docs/screenshots/app-start-desktop.png)
+![The running local app, using synthetic demo content](docs/screenshots/checkilex-start-desktop.png)
 
 Qwen proposes data. Fixed Playwright checks measure the page. Review is mandatory:
 the small model can misread requirements, and this is a prototype.
@@ -74,9 +74,10 @@ default when `SDC_RESOURCES` is unset. `SDC_CHROMIUM` can override the browser
 executable. Neither setting changes the fixed local model endpoint.
 
 [Watch the real synthetic-data walkthrough](docs/demo.webm) or read the
-[demo notes](docs/demo.md).
+[demo notes](docs/demo.md). The video was recorded before the Checkilex rename.
+Current screenshots replay its recorded model draft and collect fresh browser evidence.
 
-![Actual report for planted café defects](docs/screenshots/app-report-desktop.png)
+![Current Checkilex report: recorded draft replayed, fresh browser measurements](docs/screenshots/checkilex-report-desktop.png)
 
 ## What the report means
 

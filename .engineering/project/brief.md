@@ -1,4 +1,4 @@
-# Site Delivery Check
+# Checkilex
 
 Status: measured prototype; release review and publication approval pending.
 Owner: Huzaifa Abdul Rehman. Decision date: 14 October 2026.

@@ -5,7 +5,8 @@
 The recording uses the real production UI, local Qwen inference and fixed
 Playwright inspection. It is automated operation of review controls with
 synthetic expected checks, not a customer session. No inference wait was cut:
-drafting takes 32.1 seconds. Pause to inspect the checklist and results.
+drafting takes 32.1 seconds. The video and original captures below retain the
+pre-rename name, Site Delivery Check. Pause to inspect the checklist and results.
 
 The walkthrough switches between two fictional fixtures; it does not show an
 automatic code repair. The defective page yields three Failed checks and one
@@ -28,6 +29,13 @@ comes from the running app; none is a generated mockup.
 All images were visually inspected. Four decoded video frames were inspected
 at 2, 20, 36 and 43 seconds; automated assertions also checked the actual draft,
 both inspection responses and removal of results after a target edit.
+
+Current Checkilex captures: [desktop](screenshots/checkilex-start-desktop.png),
+[mobile](screenshots/checkilex-start-mobile.png),
+[desktop report](screenshots/checkilex-report-desktop.png) and
+[mobile report](screenshots/checkilex-report-mobile.png). These replay the recorded
+synthetic draft and collect fresh browser measurements; no new inference timing
+is claimed.
 
 To recapture, start the app, local model and café fixture using the README,
 then run `node scripts/capture-demo.ts`. The script expects a clean synthetic

@@ -2,7 +2,7 @@
 
 Version 0.1.0, prepared 14 October 2026. Owner approval pending.
 
-Site Delivery Check is free MIT-licensed source software from Huzaifa Abdul Rehman.
+Checkilex is free MIT-licensed source software from Huzaifa Abdul Rehman.
 The permission, notice requirements and warranty disclaimer in the repository's
 LICENSE file apply to the application. Separately downloaded dependencies,
 runtime and weights retain their own licences.

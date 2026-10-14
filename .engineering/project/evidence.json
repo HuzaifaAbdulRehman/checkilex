@@ -43,7 +43,7 @@
       "public-source-licensing",
       "legal-release"
     ],
-    "name": "Site Delivery Check",
+    "name": "Checkilex",
     "problem": "Freelance web developers manually compare a finished page with a client brief and lack a compact record of exactly what was checked.",
     "user": "An independent web developer preparing a small business landing page for client delivery from their own local build.",
     "outcome": "A reviewed checklist tied to brief quotes and actual browser measurements; reduced preparation effort is a hypothesis to measure.",
@@ -489,6 +489,13 @@
       "command": "npm run typecheck; npm run build; npm test; npm run test:browser",
       "exitCode": 0,
       "result": "One independent whole-branch review; three important findings plus two author findings fixed RED to GREEN. 33 Node tests and 2 browser journeys pass; typecheck/build and four-file LSP diagnostics clean. See docs/release-review.md."
+    },
+    {
+      "id": "checkilex-rename",
+      "ranAt": "2026-10-14T14:06:55.480Z",
+      "command": "npm run typecheck; npm run build; node --test tests/report.test.ts tests/server.test.ts; npm run test:browser; node .runtime/capture-checkilex.mjs",
+      "exitCode": 0,
+      "result": "Checkilex app/report/package branding and repository links updated; 5 affected Node tests, 2 browser journeys, production build/typecheck and three-file diagnostics pass. Real inspection using replayed synthetic draft plus title/export assertions and 4 inspected screenshots. Historical video and frozen benchmark bytes retained. GitHub metadata confirms public empty repository; local origin configured, no push."
     }
   ],
   "claims": [
@@ -697,6 +704,12 @@
         "constrained-mapping"
       ],
       "text": "Retain V1 failures; ground literals/required labels and known qualifiers; freeze fresh16-case holdout. Disclose rules and unmet latency; no silent keyword fallback."
+    },
+    {
+      "id": "checkilex-name",
+      "status": "accepted",
+      "claimIds": [],
+      "text": "Owner chose Checkilex and supplied the public repository URL. Update current branding/links and local origin; preserve frozen evaluation inputs and historical recording. Local folder remains site-delivery-check. No push or DEV publication authorized."
     }
   ],
   "gates": [

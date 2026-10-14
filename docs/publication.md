@@ -13,10 +13,11 @@ Optional agent-session, first-user and partner-category sections are omitted:
 no such claim is substantiated. Both required tags are present.
 No private session or account material is included.
 
-Before publication, obtain explicit authorization to create/push the public
-GitHub repository and publish this DEV entry. The planned repository is
-HuzaifaAbdulRehman/site-delivery-check; the current branch is build/local-evidence.
-These planned public links are not yet live or verified.
+The owner created the public repository
+[HuzaifaAbdulRehman/checkilex](https://github.com/HuzaifaAbdulRehman/checkilex).
+Read-only GitHub metadata confirmed it is empty. The local branch is
+build/local-evidence. Obtain explicit authorization to push and publish this DEV
+entry. Source and media URLs in the post remain pending that push.
 
 After approval:
 
