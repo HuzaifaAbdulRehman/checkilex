@@ -1,0 +1,665 @@
+{
+    "schemaVersion":  3,
+    "phase":  "discovery",
+    "recommendation":  "clarify",
+    "recommendationReason":  "The customer workflow and technical scope are defined. Validate small-model classification and human-reviewed check usefulness before committing the full build; paid demand remains untested.",
+    "researchCompletedAt":  "2026-10-14",
+    "createdAt":  "2026-10-14",
+    "refreshedAt":  "2026-10-14",
+    "research":  {
+                     "ceilingMinutes":  20,
+                     "coverage":  "Existing DEV sample plus official model, browser, discovery, security and exact package sources; three repository finalists; no clones.",
+                     "stopCondition":  "Stop after scope, prior art, version fit and first proof are decision-ready; do not extend research to manufacture customer evidence."
+                 },
+    "project":  {
+                    "type":  "ml-ai",
+                    "deliverySurface":  "Local web app on Windows; public source repository and recorded demo",
+                    "riskClass":  "normal",
+                    "stack":  [
+                                  "Node 24.13.0",
+                                  "TypeScript 5.9.3",
+                                  "React 19.3.0",
+                                  "React DOM 19.3.0",
+                                  "Vite 8.3.1",
+                                  "Playwright 1.63.0 / Chromium 1243",
+                                  "Ollama 0.40.0",
+                                  "Qwen3 1.7B"
+                              ],
+                    "failureCosts":  [
+                                         "False verified claim causes a freelancer to deliver an incomplete page",
+                                         "Browser or prompt input crosses the local privacy and execution boundary",
+                                         "Model latency or unreliable extraction consumes the challenge window"
+                                     ],
+                    "triggeredOverlays":  [
+                                              "personal-data",
+                                              "user-interface",
+                                              "internationalisation",
+                                              "performance-budget",
+                                              "external-dependency",
+                                              "distributed-behavior",
+                                              "operated-service",
+                                              "distributed-artifact",
+                                              "ai-assisted",
+                                              "public-source-licensing",
+                                              "legal-release"
+                                          ],
+                    "name":  "Site Delivery Check",
+                    "problem":  "Freelance web developers manually compare a finished page with a client brief and lack a compact record of exactly what was checked.",
+                    "user":  "An independent web developer preparing a small business landing page for client delivery from their own local build.",
+                    "outcome":  "A reviewed checklist tied to brief quotes and actual browser measurements; reduced preparation effort is a hypothesis to measure.",
+                    "deadline":  "2026-10-19T11:59:00+05:00",
+                    "overlayDecision":  "Briefs and exported evidence may contain client text, so privacy applies. UI and English/Roman Urdu input trigger interface/i18n. Draft latency and browser resource bounds trigger performance. npm, model and runtime trigger dependencies/licensing/distribution. Browser and model jobs trigger concurrency and local operation. Public developer-facing source/demo triggers release review. No billing, auth, financial execution, model training, hosted service, behavioral telemetry, regulated-sector claim, migration or continuity promise is planned.",
+                    "operatorCountry":  "Pakistan",
+                    "initialUserCountry":  "Pakistan for any voluntarily recruited tester; broader distribution unknown.",
+                    "dataPolicy":  "Synthetic demos, client-authorized brief text only, no stored client histories, no remote inference. Reports persist only through explicit local export.",
+                    "commercialHypothesis":  "Freelancers might pay for local setup/support or the time saved before delivery. No price, revenue or willingness-to-pay claim is verified.",
+                    "model":  {
+                                  "tag":  "qwen3:1.7b",
+                                  "weightDigest":  "sha256:3d0b790534fe4b79525fc3692950408dca41171676ed7e21db57af5c65ef6ab6",
+                                  "license":  "Apache-2.0",
+                                  "integrity":  "SHA-256 verified against the local manifest on 14 October 2026. Task performance remains untested."
+                              }
+                },
+    "repositorySearch":  {
+                             "status":  "completed",
+                             "capability":  "Local brief-to-reviewable check mapping, bounded page inspection, and evidence reports without generated-code execution.",
+                             "completedAt":  "2026-10-14",
+                             "shortlistCount":  3,
+                             "summary":  "Adopt the official browser and already downloaded runtime; inspect one exact test-generation comparator. No application repository removes the need for our small review/report workflow. Search results do not establish novelty."
+                         },
+    "sources":  [
+                    {
+                        "id":  "challenge",
+                        "title":  "Week 2 official rules",
+                        "url":  "https://dev.to/page/hacktoberfest-week2-2026-10-12-contest-rules",
+                        "accessedAt":  "2026-10-14",
+                        "decisionImpact":  "New project, open AI core, demo, code and deadline constrain scope."
+                    },
+                    {
+                        "id":  "discovery",
+                        "title":  "GOV.UK discovery",
+                        "url":  "https://www.gov.uk/service-manual/agile-delivery/how-the-discovery-phase-works",
+                        "accessedAt":  "2026-10-14",
+                        "decisionImpact":  "Keep customer value and stop conditions separate from available technology."
+                    },
+                    {
+                        "id":  "rfc",
+                        "title":  "Rust RFC template",
+                        "url":  "https://github.com/rust-lang/rfcs/blob/main/0000-template.md",
+                        "accessedAt":  "2026-10-14",
+                        "decisionImpact":  "Use motivation, alternatives and unresolved questions; copy no template text."
+                    },
+                    {
+                        "id":  "scopecraft",
+                        "title":  "ScopeCraft author report",
+                        "url":  "https://dev.to/harshalranjhani/scopecraft-a-clearer-scope-a-fairer-quote-and-a-model-you-can-own-2cla",
+                        "accessedAt":  "2026-10-14",
+                        "decisionImpact":  "Disconfirms novelty of generic brief-to-proposal generation."
+                    },
+                    {
+                        "id":  "playwright-context",
+                        "title":  "Playwright browser contexts",
+                        "url":  "https://playwright.dev/docs/api/class-browsercontext",
+                        "accessedAt":  "2026-10-14",
+                        "decisionImpact":  "Fresh nonpersistent contexts and route controls support isolated inspection; test the boundary."
+                    },
+                    {
+                        "id":  "playwright-browsers",
+                        "title":  "Playwright 1.63.0 browser manifest",
+                        "url":  "https://raw.githubusercontent.com/microsoft/playwright/1b025d7e20a026371cd5f98ba0cdce48892737c8/packages/playwright-core/browsers.json",
+                        "accessedAt":  "2026-10-14",
+                        "decisionImpact":  "Revision 1243 matches the preserved Chromium."
+                    },
+                    {
+                        "id":  "playwright-security",
+                        "title":  "Playwright security policy",
+                        "url":  "https://github.com/microsoft/playwright/blob/main/SECURITY.md",
+                        "accessedAt":  "2026-10-14",
+                        "decisionImpact":  "Record supported dependency and reporting boundaries."
+                    },
+                    {
+                        "id":  "playwright-docker",
+                        "title":  "Playwright trusted and untrusted sites",
+                        "url":  "https://playwright.dev/docs/docker",
+                        "accessedAt":  "2026-10-14",
+                        "decisionImpact":  "A browser context is not an OS sandbox; the MVP targets developer-controlled local pages."
+                    },
+                    {
+                        "id":  "ollama-structured",
+                        "title":  "Ollama structured output",
+                        "url":  "https://docs.ollama.com/capabilities/structured-outputs",
+                        "accessedAt":  "2026-10-14",
+                        "decisionImpact":  "Schema output still requires application validation and task evaluation."
+                    },
+                    {
+                        "id":  "ollama-faq",
+                        "title":  "Ollama FAQ",
+                        "url":  "https://docs.ollama.com/faq",
+                        "accessedAt":  "2026-10-14",
+                        "decisionImpact":  "Local binding, model path and cloud configuration need explicit verification."
+                    },
+                    {
+                        "id":  "qwen-card",
+                        "title":  "Qwen3 1.7B model card",
+                        "url":  "https://huggingface.co/Qwen/Qwen3-1.7B",
+                        "accessedAt":  "2026-10-14",
+                        "decisionImpact":  "Apache-2.0 and nonthinking support enable a local starting model; language accuracy is unproven."
+                    },
+                    {
+                        "id":  "testgen",
+                        "title":  "Acceptance-criteria test-generation comparator",
+                        "url":  "https://github.com/TinasheBA/playwright-ai-testgen",
+                        "accessedAt":  "2026-10-14",
+                        "decisionImpact":  "Model-generated coverage declarations can disagree with code; use actual evidence and a finite executor."
+                    },
+                    {
+                        "id":  "ssrf",
+                        "title":  "OWASP SSRF description",
+                        "url":  "https://community.owasp.org/attacks/Server_Side_Request_Forgery",
+                        "accessedAt":  "2026-10-14",
+                        "decisionImpact":  "Untrusted URLs may reach privileged resources; constrain the explicit inspection origin and reserved ports."
+                    },
+                    {
+                        "id":  "wcag",
+                        "title":  "WCAG 2.2",
+                        "url":  "https://www.w3.org/TR/WCAG22/",
+                        "accessedAt":  "2026-10-14",
+                        "decisionImpact":  "Target keyboard, focus, labels, contrast and reflow in our interface; do not claim full conformance."
+                    },
+                    {
+                        "id":  "playwright-pkg",
+                        "title":  "Playwright exact package metadata",
+                        "url":  "https://api.deps.dev/v3/systems/npm/packages/playwright/versions/1.63.0",
+                        "accessedAt":  "2026-10-14",
+                        "decisionImpact":  "Node version and direct advisory checks support the browser version choice."
+                    },
+                    {
+                        "id":  "typescript-pkg",
+                        "title":  "TypeScript exact package metadata",
+                        "url":  "https://api.deps.dev/v3/systems/npm/packages/typescript/versions/5.9.3",
+                        "accessedAt":  "2026-10-14",
+                        "decisionImpact":  "Retain a familiar declared compiler rather than adopting a major compiler migration for this deadline."
+                    },
+                    {
+                        "id":  "react-pkg",
+                        "title":  "React exact package metadata",
+                        "url":  "https://api.deps.dev/v3/systems/npm/packages/react/versions/19.3.0",
+                        "accessedAt":  "2026-10-14",
+                        "decisionImpact":  "Version and license inspection support the UI choice."
+                    },
+                    {
+                        "id":  "reactdom-pkg",
+                        "title":  "React DOM exact package metadata",
+                        "url":  "https://api.deps.dev/v3/systems/npm/packages/react-dom/versions/19.3.0",
+                        "accessedAt":  "2026-10-14",
+                        "decisionImpact":  "Use the matching React DOM version."
+                    },
+                    {
+                        "id":  "vite-pkg",
+                        "title":  "Vite exact package metadata",
+                        "url":  "https://api.deps.dev/v3/systems/npm/packages/vite/versions/8.3.1",
+                        "accessedAt":  "2026-10-14",
+                        "decisionImpact":  "Engine fits Node 24; direct advisory metadata is not a transitive-lockfile scan."
+                    }
+                ],
+    "repositories":  [
+                         {
+                             "checkedAt":  "2026-10-14",
+                             "cloned":  false,
+                             "sourceInspected":  true,
+                             "validationRunIds":  [
+                                                      "repo-report",
+                                                      "exact-refs"
+                                                  ],
+                             "id":  "playwright",
+                             "url":  "https://github.com/microsoft/playwright",
+                             "commit":  "1b025d7e20a026371cd5f98ba0cdce48892737c8",
+                             "license":  "Apache-2.0",
+                             "decision":  "adopt",
+                             "reason":  "Use the published browser automation library, not copied application code.",
+                             "inspectedPaths":  [
+                                                    "LICENSE",
+                                                    "SECURITY.md",
+                                                    "packages/playwright-core/browsers.json",
+                                                    "official BrowserContext API"
+                                                ],
+                             "maintenance":  "Pushed 2026-10-14; current release 1.64.0, proposed 1.63.0 matches existing browser.",
+                             "versionFit":  "Node \u003e=20; current Node 24.13.0 fits.",
+                             "adoptionCost":  "Two nodes in the exact package graph; local browser download already present.",
+                             "securityPosture":  "Security policy exists. Inspection origin and request controls remain our responsibility.",
+                             "upgradePath":  "Upgrade library and bundled browser together after rerunning fixtures.",
+                             "exitCost":  "Replace the bounded inspector adapter; checklist/report contract stays independent."
+                         },
+                         {
+                             "checkedAt":  "2026-10-14",
+                             "cloned":  false,
+                             "sourceInspected":  true,
+                             "validationRunIds":  [
+                                                      "repo-report",
+                                                      "exact-refs"
+                                                  ],
+                             "id":  "ollama",
+                             "url":  "https://github.com/ollama/ollama",
+                             "commit":  "0d0720e51fb2fd9aa58781c3d720c06d720c2e7b",
+                             "license":  "MIT",
+                             "decision":  "adopt",
+                             "reason":  "Reuse the existing standalone local inference runtime through built-in HTTP fetch; no Ollama SDK dependency.",
+                             "inspectedPaths":  [
+                                                    "LICENSE",
+                                                    "official structured-output API",
+                                                    "FAQ",
+                                                    "security policy"
+                                                ],
+                             "maintenance":  "Pushed 2026-10-14; selected existing runtime v0.40.0.",
+                             "versionFit":  "Windows x64 artifact and Qwen weights exist; actual inference compatibility still requires first-slice proof.",
+                             "adoptionCost":  "Model blob 1,359,279,776 bytes is already local; hardware and electricity remain real costs.",
+                             "securityPosture":  "Bind loopback, disable cloud, create a fresh isolated local profile; do not inspect or copy old credentials.",
+                             "upgradePath":  "Change the runtime only for a demonstrated compatibility or security need.",
+                             "exitCost":  "A small HTTP adapter can target another locally hosted compatible runtime."
+                         },
+                         {
+                             "checkedAt":  "2026-10-14",
+                             "cloned":  false,
+                             "sourceInspected":  true,
+                             "validationRunIds":  [
+                                                      "repo-report",
+                                                      "exact-refs",
+                                                      "prior-art-source"
+                                                  ],
+                             "id":  "testgen",
+                             "url":  "https://github.com/TinasheBA/playwright-ai-testgen",
+                             "commit":  "bbf003c6f78ceb719de1669d1af0c53d84d5d072",
+                             "license":  "MIT",
+                             "decision":  "inspect",
+                             "reason":  "Relevant evaluation lessons; hosted model and generated-code execution do not fit our finite local checker.",
+                             "inspectedPaths":  [
+                                                    "README.md",
+                                                    "LICENSE",
+                                                    "package.json",
+                                                    "src/eval/coverageCheck.ts"
+                                                ],
+                             "maintenance":  "Four commits; latest meaningful update 2026-09-09; no releases or issue history establish long-term support.",
+                             "versionFit":  "Node \u003e=20 fits, but the Anthropic dependency conflicts with the chosen local generation boundary.",
+                             "adoptionCost":  "SDK, dotenv, tsx and Vitest would add unnecessary dependencies.",
+                             "securityPosture":  "No security policy inspected. Source coverage checks cannot establish semantic correctness.",
+                             "upgradePath":  "Read-only reference; no integration to upgrade.",
+                             "exitCost":  "None; write original fixtures and executor, copy no code."
+                         }
+                     ],
+    "runs":  [
+                 {
+                     "id":  "repo-report",
+                     "ranAt":  "2026-10-14",
+                     "command":  "node D:\\Programming\\Projects\\engineering-playbook\\scripts\\check-repo.mjs microsoft/playwright ollama/ollama TinasheBA/playwright-ai-testgen",
+                     "exitCode":  0,
+                     "result":  "All three exist, are unarchived and have usable root licenses. Name/committer warnings for product names are false heuristics, not adverse provenance evidence."
+                 },
+                 {
+                     "id":  "exact-refs",
+                     "ranAt":  "2026-10-14",
+                     "command":  "gh api repos/microsoft/playwright/commits/v1.63.0; gh api repos/ollama/ollama/commits/v0.40.0; gh api repos/TinasheBA/playwright-ai-testgen/commits/main; gh api repos/microsoft/playwright/contents/packages/playwright-core/browsers.json?ref=v1.63.0",
+                     "exitCode":  0,
+                     "result":  "Recorded exact revisions; browser manifest selects Chromium revision 1243."
+                 },
+                 {
+                     "id":  "pkg-0",
+                     "ranAt":  "2026-10-14",
+                     "command":  "node D:\\Programming\\Projects\\engineering-playbook\\scripts\\check-package.mjs npm playwright 1.63.0 --json",
+                     "exitCode":  0,
+                     "result":  "Metadata report completed, no direct advisories, dependency graph returned without errors. Does not scan the project\u0027s future resolved lockfile."
+                 },
+                 {
+                     "id":  "pkg-1",
+                     "ranAt":  "2026-10-14",
+                     "command":  "node D:\\Programming\\Projects\\engineering-playbook\\scripts\\check-package.mjs npm typescript 5.9.3 --json",
+                     "exitCode":  0,
+                     "result":  "Metadata report completed, no direct advisories, dependency graph returned without errors. Does not scan the project\u0027s future resolved lockfile."
+                 },
+                 {
+                     "id":  "pkg-2",
+                     "ranAt":  "2026-10-14",
+                     "command":  "node D:\\Programming\\Projects\\engineering-playbook\\scripts\\check-package.mjs npm react 19.3.0 --json",
+                     "exitCode":  0,
+                     "result":  "Metadata report completed, no direct advisories, dependency graph returned without errors. Does not scan the project\u0027s future resolved lockfile."
+                 },
+                 {
+                     "id":  "pkg-3",
+                     "ranAt":  "2026-10-14",
+                     "command":  "node D:\\Programming\\Projects\\engineering-playbook\\scripts\\check-package.mjs npm react-dom 19.3.0 --json",
+                     "exitCode":  0,
+                     "result":  "Metadata report completed, no direct advisories, dependency graph returned without errors. Does not scan the project\u0027s future resolved lockfile."
+                 },
+                 {
+                     "id":  "pkg-4",
+                     "ranAt":  "2026-10-14",
+                     "command":  "node D:\\Programming\\Projects\\engineering-playbook\\scripts\\check-package.mjs npm vite 8.3.1 --json",
+                     "exitCode":  0,
+                     "result":  "Metadata report completed, no direct advisories, dependency graph returned without errors. Does not scan the project\u0027s future resolved lockfile."
+                 },
+                 {
+                     "id":  "prior-art-source",
+                     "ranAt":  "2026-10-14",
+                     "command":  "gh api repos/TinasheBA/playwright-ai-testgen/contents/{LICENSE,package.json,src/eval/coverageCheck.ts}?ref=bbf003c6f78ceb719de1669d1af0c53d84d5d072 (three separate requests)",
+                     "exitCode":  0,
+                     "result":  "MIT verified; Node \u003e=20; hosted Anthropic dependency; source inspects assertion presence, not semantic correctness. No code copied."
+                 },
+                 {
+                     "id":  "init",
+                     "ranAt":  "2026-10-14",
+                     "command":  "node D:\\Programming\\Projects\\engineering-playbook\\scripts\\project-evidence.mjs init --dir D:\\Programming\\Open_Source\\site-delivery-check",
+                     "exitCode":  0,
+                     "result":  "Created three planning artifacts only."
+                 },
+                 {
+                     "id":  "pack-check-initial",
+                     "ranAt":  "2026-10-14",
+                     "command":  "node D:\\Programming\\Projects\\engineering-playbook\\scripts\\project-evidence.mjs check --dir D:\\Programming\\Open_Source\\site-delivery-check --strict",
+                     "exitCode":  1,
+                     "result":  "Five findings: all future gate.targetDate values rejected. Source tracing confirmed a past-only validator also used for planned dates."
+                 },
+                 {
+                     "id":  "direct-write-launch",
+                     "ranAt":  "2026-10-14",
+                     "command":  "exec_command with inline brief and evidence here-strings",
+                     "exitCode":  -1,
+                     "result":  "Process was not created: Windows command-length limit (error 206). Use temporary local files and literal-path copies; no project artifact changed in this failed launch."
+                 },
+                 {
+                     "id":  "pack-check-final",
+                     "ranAt":  "2026-10-14",
+                     "command":  "node D:\\Programming\\Projects\\engineering-playbook\\scripts\\project-evidence.mjs check --dir D:\\Programming\\Open_Source\\site-delivery-check --strict",
+                     "exitCode":  0,
+                     "result":  "Strict check passed after planned future dates were retained in plannedFor. Status showed three open assumptions and the documented checker contradiction; no application has been built or measured."
+                 },
+                 {
+                     "id":  "implementation-plan-check",
+                     "ranAt":  "2026-10-14",
+                     "command":  "Verify six task sections, absent placeholders, and resolved specification link in docs/superpowers/plans/2026-10-14-site-delivery-check.md",
+                     "exitCode":  0,
+                     "result":  "Plan saved and self-reviewed against the compact brief. Initial relative specification link was one directory too high; corrected and verified. No application code or dependencies created."
+                 },
+                 {
+                     "id":  "preserved-assets-integrity",
+                     "ranAt":  "2026-10-14",
+                     "command":  "Get-FileHash -LiteralPath \u003cpreserved Qwen3 1.7B model blob\u003e -Algorithm SHA256; inspect preserved Chromium executable ProductVersion",
+                     "exitCode":  0,
+                     "result":  "The 1,359,279,776-byte model blob matches its local manifest SHA-256 digest; Chromium 153.0.8010.12 is present and matches Playwright revision 1243. No inference was run."
+                 }
+             ],
+    "claims":  [
+                   {
+                       "id":  "deadline",
+                       "status":  "verified",
+                       "text":  "Week 2 requires a new open-AI project, published DEV entry, demo and repository before 18 October 23:59 PDT.",
+                       "sourceIds":  [
+                                         "challenge"
+                                     ],
+                       "runIds":  [
+
+                                  ]
+                   },
+                   {
+                       "id":  "overlap",
+                       "status":  "verified",
+                       "text":  "ScopeCraft\u0027s published description substantially overlaps our original generic brief-to-proposal suggestion.",
+                       "sourceIds":  [
+                                         "scopecraft"
+                                     ],
+                       "runIds":  [
+
+                                  ]
+                   },
+                   {
+                       "id":  "browser-fit",
+                       "status":  "verified",
+                       "text":  "Playwright 1.63.0\u0027s official manifest specifies Chromium revision 1243, matching the preserved directory.",
+                       "sourceIds":  [
+                                         "playwright-browsers"
+                                     ],
+                       "runIds":  [
+                                      "exact-refs"
+                                  ]
+                   },
+                   {
+                       "id":  "package-reports",
+                       "status":  "verified",
+                       "text":  "All five exact proposed package reports completed with no direct advisory records and no dependency-graph errors; this is not a resolved-lockfile scan.",
+                       "sourceIds":  [
+                                         "playwright-pkg",
+                                         "typescript-pkg",
+                                         "react-pkg",
+                                         "reactdom-pkg",
+                                         "vite-pkg"
+                                     ],
+                       "runIds":  [
+                                      "pkg-0",
+                                      "pkg-1",
+                                      "pkg-2",
+                                      "pkg-3",
+                                      "pkg-4"
+                                  ]
+                   },
+                   {
+                       "id":  "model-license",
+                       "status":  "verified",
+                       "text":  "The upstream Qwen3 1.7B card declares Apache-2.0; task accuracy and Roman Urdu quality are unproven.",
+                       "sourceIds":  [
+                                         "qwen-card"
+                                     ],
+                       "runIds":  [
+
+                                  ]
+                   },
+                   {
+                       "id":  "customer-value",
+                       "status":  "candidate",
+                       "text":  "The reviewed report may reduce checklist preparation and clarify website delivery discussions.",
+                       "sourceIds":  [
+                                         "discovery"
+                                     ],
+                       "runIds":  [
+
+                                  ]
+                   },
+                   {
+                       "id":  "model-fit",
+                       "status":  "candidate",
+                       "text":  "The preserved small model may reliably classify supported requirements with exact source quotes within the latency budget.",
+                       "sourceIds":  [
+                                         "qwen-card",
+                                         "ollama-structured"
+                                     ],
+                       "runIds":  [
+
+                                  ]
+                   },
+                   {
+                       "id":  "preserved-assets-integrity",
+                       "status":  "verified",
+                       "text":  "Preserved model content matches its local manifest digest, and the browser binary version matches the selected Playwright browser manifest. This establishes integrity/version fit, not task accuracy.",
+                       "sourceIds":  [
+                                         "playwright-browsers"
+                                     ],
+                       "runIds":  [
+                                      "preserved-assets-integrity"
+                                  ]
+                   }
+               ],
+    "assumptions":  [
+                        {
+                            "id":  "need",
+                            "status":  "open",
+                            "text":  "A freelancer has repeated brief-to-page checking work and values an evidence report.",
+                            "nextCheck":  "Observe a consenting developer\u0027s existing checklist workflow; record usefulness and pay interest separately."
+                        },
+                        {
+                            "id":  "classification",
+                            "status":  "open",
+                            "text":  "Qwen3 1.7B can map English and Roman Urdu requests to the finite check catalog without misreading negation or optional requests.",
+                            "nextCheck":  "Eight development briefs, then sixteen frozen held-out briefs; retain raw responses, quote failures and coverage misses."
+                        },
+                        {
+                            "id":  "performance",
+                            "status":  "open",
+                            "text":  "A warm eight-check draft completes within 30 seconds on this laptop.",
+                            "nextCheck":  "Measure actual end-to-end requests; keep hardware and model settings with results."
+                        }
+                    ],
+    "contradictions":  [
+                           {
+                               "id":  "novelty",
+                               "status":  "resolved",
+                               "claimIds":  [
+                                                "overlap"
+                                            ],
+                               "text":  "The generic scope proposal was described as a promising differentiator, but DEV contains close implementations.",
+                               "resolution":  "Refine toward actual page-delivery evidence; claim no universal uniqueness."
+                           },
+                           {
+                               "id":  "latest-stack",
+                               "status":  "resolved",
+                               "claimIds":  [
+                                                "browser-fit",
+                                                "package-reports"
+                                            ],
+                               "text":  "Current latest Playwright, TypeScript and Vite differ from the familiar versions.",
+                               "resolution":  "Use inspected compatible versions for the first proof; the existing browser fits exactly. Revisit for a real advisory or compatibility failure."
+                           },
+                           {
+                               "id":  "future-gate-validation",
+                               "status":  "open",
+                               "claimIds":  [
+
+                                            ],
+                               "text":  "The checker rejects legitimate future lifecycle target dates (validDate at project-evidence.mjs:554-570; called for gate.targetDate).",
+                               "resolution":  "Project dates remain accurate in plannedFor and the delivery path; the underlying checker bug is outside this project\u0027s requested scope."
+                           }
+                       ],
+    "decisions":  [
+                      {
+                          "id":  "direction",
+                          "status":  "accepted",
+                          "claimIds":  [
+                                           "overlap"
+                                       ],
+                          "text":  "User delegated the refinement choice; select brief-to-website delivery checks and use the chosen site-delivery-check folder."
+                      },
+                      {
+                          "id":  "finite-checks",
+                          "status":  "proposed",
+                          "claimIds":  [
+                                           "model-fit"
+                                       ],
+                          "text":  "Qwen proposes quote-grounded data; reviewed parameters drive fixed browser checks. Never execute model-written code or treat its verdict as measurement."
+                      },
+                      {
+                          "id":  "local-target",
+                          "status":  "proposed",
+                          "claimIds":  [
+                                           "browser-fit"
+                                       ],
+                          "text":  "Initial scope is one developer-controlled local HTTP page on a selected 127.0.0.1 port, fresh browser sessions, bounded reads, two viewports and explicit incomplete-resource notices."
+                      },
+                      {
+                          "id":  "partners",
+                          "status":  "proposed",
+                          "claimIds":  [
+                                           "deadline"
+                                       ],
+                          "text":  "Target the overall challenge; enter no partner category without meaningful implemented use."
+                      },
+                      {
+                          "id":  "execution-plan",
+                          "status":  "proposed",
+                          "claimIds":  [
+
+                                       ],
+                          "text":  "Execute six reviewed tasks in this session; awaiting user review of the written implementation plan."
+                      }
+                  ],
+    "gates":  [
+                  {
+                      "id":  "first-proof",
+                      "stage":  "during",
+                      "trigger":  "After Huzaifa reviews the written brief, before full product implementation.",
+                      "requiredEvidence":  "A real local classification run, exact quote validation, planted correct/defective page evidence, unsupported promise kept Unverified, and a recorded pass/revise decision.",
+                      "owner":  "Huzaifa Abdul Rehman",
+                      "targetDate":  null,
+                      "status":  "planned",
+                      "claimIds":  [
+
+                                   ],
+                      "runIds":  [
+
+                                 ],
+                      "plannedFor":  "2026-10-15"
+                  },
+                  {
+                      "id":  "coherent-slice",
+                      "stage":  "during",
+                      "trigger":  "Reviewed checklist, inspector and report operate together.",
+                      "requiredEvidence":  "Meaningful passing and failing fixtures; source-to-check trace; edited inputs invalidate results; model/browser failure preserves the brief; concurrent work and cleanup bounded.",
+                      "owner":  "Huzaifa Abdul Rehman",
+                      "targetDate":  null,
+                      "status":  "planned",
+                      "claimIds":  [
+
+                                   ],
+                      "runIds":  [
+
+                                 ],
+                      "plannedFor":  "2026-10-16"
+                  },
+                  {
+                      "id":  "release",
+                      "stage":  "release",
+                      "trigger":  "Before distributing source or publishing the demo.",
+                      "requiredEvidence":  "Frozen eval and baseline, zero false Verified on planted defects, measured latency, keyboard/mobile checks, local network/retention checks, clean setup, exact lockfile advisory scan, selected dependency/licenses and applicable legal-release owner review, actual demo video and README.",
+                      "owner":  "Huzaifa Abdul Rehman",
+                      "targetDate":  null,
+                      "status":  "planned",
+                      "claimIds":  [
+
+                                   ],
+                      "runIds":  [
+
+                                 ],
+                      "plannedFor":  "2026-10-18"
+                  },
+                  {
+                      "id":  "submission",
+                      "stage":  "release",
+                      "trigger":  "Complete DEV draft and public assets are ready for final review.",
+                      "requiredEvidence":  "Final publication approval, explicit push authorization, English template and both tags, source/demo links work, published post and challenge entry verified before 19 October 11:59 Karachi.",
+                      "owner":  "Huzaifa Abdul Rehman",
+                      "targetDate":  null,
+                      "status":  "planned",
+                      "claimIds":  [
+
+                                   ],
+                      "runIds":  [
+
+                                 ],
+                      "plannedFor":  "2026-10-19"
+                  },
+                  {
+                      "id":  "outcome",
+                      "stage":  "outcome",
+                      "trigger":  "Technical evidence and any real tester session are available.",
+                      "requiredEvidence":  "Expected versus actual metrics, baseline result, failures, setup/support burden, authentic feedback if any, demand left unconfirmed when no evidence, and continue/revise/stop decision.",
+                      "owner":  "Huzaifa Abdul Rehman",
+                      "targetDate":  null,
+                      "status":  "planned",
+                      "claimIds":  [
+
+                                   ],
+                      "runIds":  [
+
+                                 ],
+                      "plannedFor":  "2026-10-19"
+                  }
+              ],
+    "validationNotes":  [
+                            "The current project-evidence checker rejects future gate.targetDate values through its generic past-only validDate function. Future planned dates are retained in plannedFor and in brief.md; targetDate is null. No playbook code or clock was changed."
+                        ]
+}
