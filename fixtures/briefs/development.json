@@ -1,0 +1,72 @@
+[
+  {
+    "id": "dev-en-text",
+    "language": "en",
+    "brief": "Show \"Open daily, 8am–6pm\".",
+    "expectedKinds": [
+      "visible_text"
+    ],
+    "expectedText": "Open daily, 8am–6pm"
+  },
+  {
+    "id": "dev-en-link",
+    "language": "en",
+    "brief": "Add a link labelled \"Email\" to hello@junipercafe.test.",
+    "expectedKinds": [
+      "link_destination"
+    ],
+    "expectedLabel": "Email",
+    "expectedHref": "mailto:hello@junipercafe.test"
+  },
+  {
+    "id": "dev-en-form",
+    "language": "en",
+    "brief": "Contact form must have fields labelled \"Name\" and \"Email\", both required.",
+    "expectedKinds": [
+      "form_structure"
+    ]
+  },
+  {
+    "id": "dev-en-unsupported",
+    "language": "en",
+    "brief": "Contact form must deliver email.",
+    "expectedKinds": [
+      "unverified"
+    ]
+  },
+  {
+    "id": "dev-ur-text",
+    "language": "ur-Latn",
+    "brief": "Page par \"Fresh coffee daily\" likha nazar aana chahiye.",
+    "expectedKinds": [
+      "visible_text"
+    ],
+    "expectedText": "Fresh coffee daily"
+  },
+  {
+    "id": "dev-ur-link",
+    "language": "ur-Latn",
+    "brief": "\"Call\" label wala link tel:+12025550123 par hona chahiye.",
+    "expectedKinds": [
+      "link_destination"
+    ],
+    "expectedLabel": "Call",
+    "expectedHref": "tel:+12025550123"
+  },
+  {
+    "id": "dev-ur-overflow",
+    "language": "ur-Latn",
+    "brief": "Mobile par horizontal scroll nahi hona chahiye.",
+    "expectedKinds": [
+      "horizontal_overflow"
+    ]
+  },
+  {
+    "id": "dev-ur-optional",
+    "language": "ur-Latn",
+    "brief": "Shayad baad mein dark mode rakh dein, abhi zaroori nahi.",
+    "expectedKinds": [
+      "unverified"
+    ]
+  }
+]

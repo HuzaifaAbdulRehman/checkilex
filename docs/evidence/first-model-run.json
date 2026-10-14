@@ -1,0 +1,46 @@
+{
+  "date": "2026-10-14T11:53:36.954Z",
+  "synthetic": true,
+  "brief": "Show \"Open daily, 8am–6pm\". Add a link labelled \"Email\" to hello@junipercafe.test. Contact form must deliver email.",
+  "checks": [
+    {
+      "id": "c1",
+      "sourceQuote": "Show \"Open daily, 8am–6pm\"",
+      "kind": "visible_text",
+      "params": {
+        "text": "Open daily, 8am–6pm"
+      },
+      "reviewNotes": "Exact visible text only."
+    },
+    {
+      "id": "c2",
+      "sourceQuote": "Add a link labelled \"Email\" to hello@junipercafe.test",
+      "kind": "link_destination",
+      "params": {
+        "label": "Email",
+        "hrefPrefix": "mailto:hello@junipercafe.test"
+      },
+      "reviewNotes": "Destination only; email delivery is not tested."
+    },
+    {
+      "id": "c3",
+      "sourceQuote": "Contact form must deliver email",
+      "kind": "unverified",
+      "params": {
+        "reason": "Requires an actual delivery test outside this inspector."
+      },
+      "reviewNotes": "Manual evidence needed."
+    }
+  ],
+  "raw": "[\n  {\n    \"id\": \"c1\",\n    \"sourceQuote\": \"Show \\\"Open daily, 8am–6pm\\\"\",\n    \"kind\": \"visible_text\",\n    \"params\": {\n      \"text\": \"Open daily, 8am–6pm\"\n    },\n    \"reviewNotes\": \"Exact visible text only.\"\n  },\n  {\n    \"id\": \"c2\",\n    \"sourceQuote\": \"Add a link labelled \\\"Email\\\" to hello@junipercafe.test\",\n    \"kind\": \"link_destination\",\n    \"params\": {\n      \"label\": \"Email\",\n      \"hrefPrefix\": \"mailto:hello@junipercafe.test\"\n    },\n    \"reviewNotes\": \"Destination only; email delivery is not tested.\"\n  },\n  {\n    \"id\": \"c3\",\n    \"sourceQuote\": \"Contact form must deliver email\",\n    \"kind\": \"unverified\",\n    \"params\": {\n      \"reason\": \"Requires an actual delivery test outside this inspector.\"\n    },\n    \"reviewNotes\": \"Manual evidence needed.\"\n  }\n]",
+  "model": "qwen3:1.7b",
+  "elapsedMs": 38264,
+  "settings": {
+    "temperature": 0,
+    "num_ctx": 4096,
+    "num_predict": 1400
+  },
+  "runtimeMs": 38164.8862,
+  "weightDigest": "sha256:3d0b790534fe4b79525fc3692950408dca41171676ed7e21db57af5c65ef6ab6",
+  "weightBytes": 1359279776
+}

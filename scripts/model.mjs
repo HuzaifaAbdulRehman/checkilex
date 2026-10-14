@@ -1,0 +1,10 @@
+import { spawn } from 'node:child_process';
+import { mkdir } from 'node:fs/promises';
+import path from 'node:path';
+const resources=process.env.SDC_RESOURCES || 'D:\\Programming\\Open_Source\\hacktoberfest-week2-resources';
+const profile=path.resolve('.runtime/ollama-profile');
+await mkdir(profile,{recursive:true});
+const child=spawn(path.join(resources,'ollama-v0.40.0','ollama.exe'),['serve'],{windowsHide:true,stdio:'inherit',env:{...process.env,USERPROFILE:profile,HOME:profile,OLLAMA_MODELS:path.join(resources,'models'),OLLAMA_HOST:'127.0.0.1:11434',OLLAMA_NO_CLOUD:'1'}});
+child.on('error',e=>{console.error('Could not start local model:',e.message);process.exitCode=1});
+child.on('exit',code=>{process.exitCode=code||0});
+for(const sig of ['SIGINT','SIGTERM'])process.on(sig,()=>child.kill());

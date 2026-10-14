@@ -1,0 +1,219 @@
+[
+  {
+    "id": "dev-en-text",
+    "language": "en",
+    "brief": "Show \"Open daily, 8am–6pm\".",
+    "expectedKinds": [
+      "visible_text"
+    ],
+    "expectedText": "Open daily, 8am–6pm",
+    "checks": [
+      {
+        "id": "c1",
+        "sourceQuote": "Show \"Open daily, 8am–6pm\"",
+        "kind": "visible_text",
+        "params": {
+          "text": "Open daily, 8am–6pm"
+        },
+        "reviewNotes": "Exact visible text only."
+      }
+    ],
+    "raw": "[\n  {\n    \"id\": \"c1\",\n    \"sourceQuote\": \"Show \\\"Open daily, 8am–6pm\\\"\",\n    \"kind\": \"visible_text\",\n    \"params\": {\n      \"text\": \"Open daily, 8am–6pm\"\n    },\n    \"reviewNotes\": \"Exact visible text only.\"\n  }\n]",
+    "model": "qwen3:1.7b",
+    "elapsedMs": 7543,
+    "settings": {
+      "temperature": 0,
+      "num_ctx": 4096,
+      "num_predict": 1400
+    },
+    "runtimeMs": 7448.1455
+  },
+  {
+    "id": "dev-en-link",
+    "language": "en",
+    "brief": "Add a link labelled \"Email\" to hello@junipercafe.test.",
+    "expectedKinds": [
+      "link_destination"
+    ],
+    "expectedLabel": "Email",
+    "expectedHref": "mailto:hello@junipercafe.test",
+    "checks": [
+      {
+        "id": "c1",
+        "sourceQuote": "Add a link labelled \"Email\" to hello@junipercafe.test",
+        "kind": "link_destination",
+        "params": {
+          "label": "Email",
+          "hrefPrefix": "mailto:hello@junipercafe.test"
+        },
+        "reviewNotes": "Destination only; email delivery is not tested."
+      }
+    ],
+    "raw": "[\n  {\n    \"id\": \"c1\",\n    \"sourceQuote\": \"Add a link labelled \\\"Email\\\" to hello@junipercafe.test\",\n    \"kind\": \"link_destination\",\n    \"params\": {\n      \"label\": \"Email\",\n      \"hrefPrefix\": \"mailto:hello@junipercafe.test\"\n    },\n    \"reviewNotes\": \"Destination only; email delivery is not tested.\"\n  }\n]",
+    "model": "qwen3:1.7b",
+    "elapsedMs": 10540,
+    "settings": {
+      "temperature": 0,
+      "num_ctx": 4096,
+      "num_predict": 1400
+    },
+    "runtimeMs": 10533.1132
+  },
+  {
+    "id": "dev-en-form",
+    "language": "en",
+    "brief": "Contact form must have fields labelled \"Name\" and \"Email\", both required.",
+    "expectedKinds": [
+      "form_structure"
+    ],
+    "checks": [
+      {
+        "id": "c1",
+        "sourceQuote": "Contact form must have fields labelled \"Name\" and \"Email\", both required.",
+        "kind": "form_structure",
+        "params": {
+          "labels": [
+            "Name",
+            "Email"
+          ],
+          "requiredLabels": [
+            "Email"
+          ]
+        },
+        "reviewNotes": "Labels must be explicitly named. Required labels are a subset."
+      }
+    ],
+    "raw": "[\n  {\n    \"id\": \"c1\",\n    \"sourceQuote\": \"Contact form must have fields labelled \\\"Name\\\" and \\\"Email\\\", both required.\",\n    \"kind\": \"form_structure\",\n    \"params\": {\n      \"labels\": [\"Name\", \"Email\"],\n      \"requiredLabels\": [\"Email\"]\n    },\n    \"reviewNotes\": \"Labels must be explicitly named. Required labels are a subset.\"\n  }\n]",
+    "model": "qwen3:1.7b",
+    "elapsedMs": 9455,
+    "settings": {
+      "temperature": 0,
+      "num_ctx": 4096,
+      "num_predict": 1400
+    },
+    "runtimeMs": 9447.2926
+  },
+  {
+    "id": "dev-en-unsupported",
+    "language": "en",
+    "brief": "Contact form must deliver email.",
+    "expectedKinds": [
+      "unverified"
+    ],
+    "checks": [
+      {
+        "id": "c1",
+        "sourceQuote": "Contact form must deliver email",
+        "kind": "unverified",
+        "params": {
+          "reason": "Requires an actual delivery test outside this inspector."
+        },
+        "reviewNotes": "Manual evidence needed."
+      }
+    ],
+    "raw": "[\n  {\n    \"id\": \"c1\",\n    \"sourceQuote\": \"Contact form must deliver email\",\n    \"kind\": \"unverified\",\n    \"params\": {\n      \"reason\": \"Requires an actual delivery test outside this inspector.\"\n    },\n    \"reviewNotes\": \"Manual evidence needed.\"\n  }\n]",
+    "model": "qwen3:1.7b",
+    "elapsedMs": 6614,
+    "settings": {
+      "temperature": 0,
+      "num_ctx": 4096,
+      "num_predict": 1400
+    },
+    "runtimeMs": 6607.4575
+  },
+  {
+    "id": "dev-ur-overflow",
+    "language": "ur-Latn",
+    "brief": "Mobile par horizontal scroll nahi hona chahiye.",
+    "expectedKinds": [
+      "horizontal_overflow"
+    ],
+    "checks": [
+      {
+        "id": "c1",
+        "sourceQuote": "Mobile par horizontal scroll nahi hona chahiye",
+        "kind": "horizontal_overflow",
+        "params": {},
+        "reviewNotes": "Horizontal overflow check at two sizes, not general responsiveness."
+      }
+    ],
+    "raw": "[\n  {\n    \"id\": \"c1\",\n    \"sourceQuote\": \"Mobile par horizontal scroll nahi hona chahiye\",\n    \"kind\": \"horizontal_overflow\",\n    \"params\": {},\n    \"reviewNotes\": \"Horizontal overflow check at two sizes, not general responsiveness.\"\n  }\n]",
+    "model": "qwen3:1.7b",
+    "elapsedMs": 6686,
+    "settings": {
+      "temperature": 0,
+      "num_ctx": 4096,
+      "num_predict": 1400
+    },
+    "runtimeMs": 6682.5808
+  },
+  {
+    "id": "dev-ur-optional",
+    "language": "ur-Latn",
+    "brief": "Shayad baad mein dark mode rakh dein, abhi zaroori nahi.",
+    "expectedKinds": [
+      "unverified"
+    ],
+    "checks": [
+      {
+        "id": "c1",
+        "sourceQuote": "Shayad baad mein dark mode rakh dein, abhi zaroori nahi.",
+        "kind": "unverified",
+        "params": {
+          "reason": "Requires an actual delivery test outside this inspector."
+        },
+        "reviewNotes": "Manual evidence needed."
+      }
+    ],
+    "raw": "[\n  {\n    \"id\": \"c1\",\n    \"sourceQuote\": \"Shayad baad mein dark mode rakh dein, abhi zaroori nahi.\",\n    \"kind\": \"unverified\",\n    \"params\": {\n      \"reason\": \"Requires an actual delivery test outside this inspector.\"\n    },\n    \"reviewNotes\": \"Manual evidence needed.\"\n  }\n]",
+    "model": "qwen3:1.7b",
+    "elapsedMs": 8942,
+    "settings": {
+      "temperature": 0,
+      "num_ctx": 4096,
+      "num_predict": 1400
+    },
+    "runtimeMs": 8937.9458
+  },
+  {
+    "id": "dev-ur-text",
+    "language": "ur-Latn",
+    "brief": "Page par \"Fresh coffee daily\" likha nazar aana chahiye.",
+    "expectedKinds": [
+      "visible_text"
+    ],
+    "expectedText": "Fresh coffee daily",
+    "checks": [
+      {
+        "id": "c1",
+        "sourceQuote": "Page par \"Fresh coffee daily\" likha nazar aana chahiye",
+        "kind": "visible_text",
+        "params": {
+          "text": "Fresh coffee daily"
+        },
+        "reviewNotes": "Exact visible text only."
+      }
+    ],
+    "raw": "[\n  {\n    \"id\": \"c1\",\n    \"sourceQuote\": \"Page par \\\"Fresh coffee daily\\\" likha nazar aana chahiye\",\n    \"kind\": \"visible_text\",\n    \"params\": {\n      \"text\": \"Fresh coffee daily\"\n    },\n    \"reviewNotes\": \"Exact visible text only.\"\n  }\n]",
+    "model": "qwen3:1.7b",
+    "elapsedMs": 15144,
+    "settings": {
+      "temperature": 0,
+      "num_ctx": 4096,
+      "num_predict": 1400
+    },
+    "runtimeMs": 15041.8015
+  },
+  {
+    "id": "dev-ur-link",
+    "language": "ur-Latn",
+    "brief": "\"Call\" label wala link tel:+12025550123 par hona chahiye.",
+    "expectedKinds": [
+      "link_destination"
+    ],
+    "expectedLabel": "Call",
+    "expectedHref": "tel:+12025550123",
+    "error": "Source quote must occur verbatim in brief",
+    "raw": "[\n  {\n    \"id\": \"c1\",\n    \"sourceQuote\": \"Call label wala link tel:+12025550123 par hona chahiye\",\n    \"kind\": \"link_destination\",\n    \"params\": {\n      \"label\": \"Call\",\n      \"hrefPrefix\": \"tel:+12025550123\"\n    },\n    \"reviewNotes\": \"Destination only; phone call delivery is not tested.\"\n  }\n]"
+  }
+]
