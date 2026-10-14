@@ -42,7 +42,7 @@ export function createDrafter(fetcher:typeof fetch=fetch,timeoutMs=45000){
   let bytes=0,body='';const decoder=new TextDecoder();
   try{while(true){const {value,done}=await reader.read();if(done)break;bytes+=value.length;if(bytes>128000)throw Error('Model response too large');body+=decoder.decode(value,{stream:true});}}finally{await reader.cancel();}
   const payload=JSON.parse(body);
-  if(payload.done!==true||!payload.message||typeof payload.message.content!=='string')throw Error('Incomplete model output');
+  if((payload.done_reason&&payload.done_reason!=='stop')||payload.done!==true||!payload.message||typeof payload.message.content!=='string')throw Error('Incomplete model output');
   const raw=payload.message.content;
   let parsed:unknown;try{parsed=JSON.parse(raw)}catch{throw Error('Invalid JSON from local model')}
   let checks:DraftCheck[];try{checks=validateDraft(brief,parsed)}catch(e){throw Object.assign(new Error(e instanceof Error?e.message:String(e)),{raw})}

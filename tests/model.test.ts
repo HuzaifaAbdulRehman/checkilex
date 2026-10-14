@@ -14,3 +14,5 @@ test('rejects incomplete output and protects system instructions',async()=>{
  const draft=await createDrafter(async(url,init)=>{assert.equal(String(url),'http://127.0.0.1:11434/api/chat');const b=JSON.parse(String(init?.body));assert.equal(b.messages[1].content,brief);assert.equal(b.think,false);return response(JSON.stringify([row]))})(brief,new AbortController().signal);
  assert.equal(draft.checks[0].kind,'visible_text');assert.equal(draft.raw,JSON.stringify([row]));
 });
+
+test('rejects a token-limited response even when its JSON closes',async()=>{await assert.rejects(createDrafter(async()=>new Response(JSON.stringify({message:{content:'[]'},done:true,done_reason:'length'})))(brief,new AbortController().signal),/incomplete/i)});

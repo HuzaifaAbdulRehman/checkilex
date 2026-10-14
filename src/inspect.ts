@@ -1,12 +1,22 @@
 import { launchBrowser } from '../scripts/browser.mjs';
 import { validateReviewed } from './checks.ts';
 import type { CheckSpec,CheckResult,InspectionReport,Capture } from './checks.ts';
-import type { Page } from 'playwright';
+import type { Page, Locator } from 'playwright';
 export function validateTargetUrl(raw:string,reservedPorts=[4318,11434]):URL {
  if(typeof raw!=='string'||raw.length>2000||/[\s\\]/.test(raw)||!/^http:\/\/127\.0\.0\.1:\d{4,5}(?:[/?#]|$)/.test(raw))throw Error('Invalid target: use http://127.0.0.1:PORT');
  const url=new URL(raw),port=Number(url.port);
  if(url.hostname!=='127.0.0.1'||url.protocol!=='http:'||url.username||url.password||port<1024||port>65535||reservedPorts.includes(port))throw Error('Invalid target port');
  return url;
+}
+async function perceptible(el:Locator):Promise<boolean>{
+ if(!await el.isVisible())return false;
+ return el.evaluate(node=>{
+  for(let current:Element|null=node;current;current=current.parentElement){
+   const style=getComputedStyle(current);
+   if(Number(style.opacity)===0||style.visibility==='hidden'||style.visibility==='collapse'||/opacity\(0(?:[.0%]*)\)/.test(style.filter))return false;
+  }
+  return true;
+ });
 }
 async function measure(page:Page,c:CheckSpec):Promise<Omit<CheckResult,'checkId'|'evidenceIds'>>{
  const result=(status:CheckResult['status'],fact:string,limitation:string)=>({status,measuredFacts:[fact],limitations:[limitation]});
@@ -14,27 +24,29 @@ async function measure(page:Page,c:CheckSpec):Promise<Omit<CheckResult,'checkId'
  case 'unverified':return result('Unverified','No automated measurement supports this promise.',c.params.reason);
  case 'visible_text':{
   const matches=page.getByText(c.params.text,{exact:true}), visible=[];
-  for(const el of await matches.all())if(await el.isVisible())visible.push(el);
+  for(const el of await matches.all())if(await perceptible(el))visible.push(el);
   return result(visible.length===1?'Verified':visible.length===0?'Failed':'Unverified',visible.length+' visible exact text matches: '+JSON.stringify(c.params.text),'Visible text only; this does not prove correctness of the underlying claim.');
  }
  case 'link_destination':{
   const matches=await page.getByRole('link',{name:c.params.label,exact:true}).all(),visible=[];
-  for(const el of matches)if(await el.isVisible())visible.push(el);
+  for(const el of matches)if(await perceptible(el))visible.push(el);
   if(visible.length!==1)return result(visible.length?'Unverified':'Failed',visible.length+' visible links labelled '+JSON.stringify(c.params.label),'Requires one unambiguous visible link; destination is not visited.');
   const href=await visible[0].getAttribute('href');let matchesHref=false;
   try{matchesHref=href!==null&&new URL(href,page.url()).href===new URL(c.params.hrefPrefix,page.url()).href}catch{}
   return result(matchesHref?'Verified':'Failed','Observed href: '+JSON.stringify(href)+'; expected: '+JSON.stringify(c.params.hrefPrefix),'Exact normalized destination only; clicking or downstream delivery is not tested.');
  }
  case 'form_structure':{
-  const facts:string[]=[];let status:CheckResult['status']='Verified';
+  const facts:string[]=[];const forms=new Set<number>();let status:CheckResult['status']='Verified';
   for(const label of c.params.labels){
    const all=await page.getByLabel(label,{exact:true}).all(),visible=[];
-   for(const el of all)if(await el.isVisible())visible.push(el);
+   for(const el of all)if(await perceptible(el))visible.push(el);
    if(visible.length!==1){facts.push(label+': '+visible.length+' visible fields');if(status!=='Failed')status=visible.length?'Unverified':'Failed';continue}
-   const data=await visible[0].evaluate(el=>({tag:el.tagName,required:(el as HTMLInputElement).required,disabled:(el as HTMLInputElement).disabled,form:Boolean((el as HTMLInputElement).form)}));
+   const data=await visible[0].evaluate(el=>({tag:el.tagName,required:(el as HTMLInputElement).required,disabled:(el as HTMLInputElement).disabled,form:Boolean((el as HTMLInputElement).form),formIndex:Array.from(document.forms).indexOf((el as HTMLInputElement).form!)}));
+   forms.add(data.formIndex);
    const ok=['INPUT','TEXTAREA','SELECT'].includes(data.tag)&&data.form&&!data.disabled&&(!c.params.requiredLabels.includes(label)||data.required);
    facts.push(label+': '+JSON.stringify(data));if(!ok)status='Failed';
   }
+  if(forms.size>1){status='Failed';facts.push('Fields belong to different forms.')}
   return {status,measuredFacts:facts,limitations:['Visible enabled labelled form fields and native required attributes only. No submission or email delivery was tested.']};
  }
  case 'horizontal_overflow':{
@@ -70,7 +82,7 @@ export async function inspectPage(targetUrl:string,rawChecks:CheckSpec[],signal:
     });
     const page=await context.newPage();page.on('popup',p=>{notices.add('Popup blocked.');void p.close()});page.on('dialog',d=>void d.dismiss());page.on('download',d=>{notices.add('Download blocked.');void d.cancel()});
     const response=await page.goto(url.href,{waitUntil:'networkidle',timeout:12000});
-    if(!response?.ok()||new URL(page.url()).origin!==url.origin)throw Error('Target page unavailable or redirected');
+    if(!response?.ok()||page.url()!==url.href)throw Error('Target page unavailable or redirected');
     await page.evaluate(()=>document.fonts.ready);
     for(const c of checks){const m=await measure(page,c);const rows=byCheck.get(c.id)||[];rows.push({checkId:c.id,...m,measuredFacts:m.measuredFacts.map(f=>viewport.width+'px: '+f),evidenceIds:[String(viewport.width)]});byCheck.set(c.id,rows)}
     const shot=await page.screenshot({type:'png',animations:'disabled',timeout:5000});

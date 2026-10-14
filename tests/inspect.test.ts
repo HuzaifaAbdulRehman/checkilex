@@ -5,7 +5,7 @@ import { readFile } from 'node:fs/promises';
 import { inspectPage,validateTargetUrl } from '../src/inspect.ts';
 import type {CheckSpec} from '../src/checks.ts';
 const checks:CheckSpec[]=[
- {id:'hours',sourceQuote:'Show opening hours',kind:'visible_text',params:{text:'Open daily, 8am–6pm'}},
+ {id:'hours',sourceQuote:'Show opening hours',kind:'visible_text',params:{text:'Open daily, 8amâ€“6pm'}},
  {id:'contact',sourceQuote:'Email link',kind:'link_destination',params:{label:'Email',hrefPrefix:'mailto:hello@junipercafe.test'}},
  {id:'form',sourceQuote:'Name and Email required',kind:'form_structure',params:{labels:['Name','Email'],requiredLabels:['Name','Email']}},
  {id:'mobile',sourceQuote:'No overflow',kind:'horizontal_overflow',params:{}},
@@ -44,4 +44,11 @@ test('blocksOtherOrigin, redirects, non-read methods, sockets and popups',async(
 test('closesOnAbort and reports unreachable pages',async()=>{
  const c=new AbortController();c.abort();await assert.rejects(inspectPage('http://127.0.0.1:4319',checks,c.signal));
  await assert.rejects(inspectPage('http://127.0.0.1:65534',checks,new AbortController().signal),/page|connect|ERR/i);
+});
+
+test('opacity-hidden text and fields split across forms cannot pass',async()=>{
+ await serve('<div style="opacity:0"><p>Hours</p></div><form><label>Name<input required></label></form><form><label>Email<input required></label></form>',async url=>{
+ const report=await inspectPage(url,[{...checks[0],kind:'visible_text',params:{text:'Hours'}},checks[2]],new AbortController().signal);
+ assert.deepEqual(report.results.map(r=>r.status),['Failed','Failed']);
+ });
 });
