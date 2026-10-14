@@ -1,8 +1,7 @@
 # Publication handoff
 
-Status: source release approved; DEV post remains a local draft.
+Status: source pushed; owner published the DEV post; challenge entry verified.
 Owner: Huzaifa Abdul Rehman. Deadline: 19 October 2026, 11:59 AM Karachi.
-Prepare publication by 10:30 AM.
 
 Review [the exact post](dev-submission.md), [the recording](demo.webm),
 [results and limitations](evaluation.md), the MIT LICENSE and
@@ -15,31 +14,17 @@ No private session or account material is included.
 
 The owner created the public repository
 [HuzaifaAbdulRehman/checkilex](https://github.com/HuzaifaAbdulRehman/checkilex).
-Before the first push, read-only GitHub metadata confirmed it was empty.
-The local branch is build/local-evidence. The owner explicitly authorised this
-source push on 14 October 2026. DEV publication still requires its own approval.
-Verify source and media URLs after the push.
+The source revision is 37abbbc on build/local-evidence.
 
-After approval:
+[Published DEV entry](https://dev.to/huzaifa_abdulrehman9/checkilex-local-ai-for-the-final-handoff-28c2).
+Published 14 October 2026, 20:24 Karachi. Owner publication was followed by
+public verification of its Week 2 submission badge, both required tags,
+tag-feed membership, rendered table and source/demo/image links.
 
-1. Source-scope approval is recorded from the owner’s explicit push instruction.
-   The strict legal-release check passes; this is not legal clearance.
-2. Publish the reviewed commit using the GitHub identity already configured on
-   this laptop. Do not include .runtime, profiles, node_modules or downloaded
-   binaries. Keep the evaluated frozen bytes.
-3. Confirm the public repository, raw screenshot and WebM links used in the post.
-   If the branch/ref differs, update those URLs before DEV publication.
-4. Publish the approved English post using the official challenge template.
-   Verify devchallenge and hf26challenge, code, image and demo links.
-5. Open the public post and challenge entries listing. Save its URL, timestamp,
-   published status, tags and actual challenge membership. A draft or successful
-   button click is insufficient.
-6. Update the project pack and outcome record with those receipts. Mark the
-   overall goal complete only after the verified challenge entry.
+[Submission receipt](evidence/submission-receipt.json) records the exact article
+ID, timestamp, body hash and successful link checks. The title retains quotation
+marks; removing them is optional polish.
 
-If DEV account access is unavailable, supply the prepared Markdown for manual
-publication, then verify the resulting public entry. Do not read authentication
-caches or upload private session history.
-
-The package retains the failed original benchmark and current latency timeout.
-Do not replace those disclosures with the revised targeted score.
+The original benchmark failures, latency timeout and absent customer evidence
+remain disclosed. Publication does not establish customer demand or guarantee
+a prize or organiser acceptance.

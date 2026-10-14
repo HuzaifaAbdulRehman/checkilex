@@ -1,0 +1,67 @@
+{
+  "verifiedAt": "2026-10-14T15:26:45.365Z",
+  "article": {
+    "id": 4850930,
+    "url": "https://dev.to/huzaifa_abdulrehman9/checkilex-local-ai-for-the-final-handoff-28c2",
+    "title": "\"Checkilex: Local AI for the Final Handoff\"",
+    "author": "huzaifa_abdulrehman9",
+    "publishedAt": "2026-10-14T15:24:10Z",
+    "publishedAtKarachi": "2026-10-14T20:24:10+05:00",
+    "tags": [
+      "devchallenge",
+      "hf26challenge",
+      "opensource",
+      "ai"
+    ],
+    "bodySha256": "2b135084580b593ec8429b390b90fd2fa2a6374b42fea7f7829c78a615b6c7ff"
+  },
+  "challenge": {
+    "url": "https://dev.to/challenges/hacktoberfest-week2-2026-10-12",
+    "badge": "Hacktoberfest Open-Source AI Challenge Week 2: Side Hustle Submission",
+    "badgePresent": true,
+    "officialViewEntriesUrl": "https://dev.to/t/hf26challenge",
+    "tagFeedApi": "https://dev.to/api/articles?tag=hf26challenge&per_page=100&page=1",
+    "articleListed": true
+  },
+  "content": {
+    "matchesCleanPreparedBody": true,
+    "helperInstructionsAbsent": true,
+    "weightDigestClaimCorrected": true,
+    "requiredSectionsPresent": true,
+    "tableRendered": true
+  },
+  "links": [
+    {
+      "url": "https://dev.to/huzaifa_abdulrehman9/checkilex-local-ai-for-the-final-handoff-28c2",
+      "httpStatus": 200,
+      "contentType": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://github.com/HuzaifaAbdulRehman/checkilex",
+      "httpStatus": 200,
+      "contentType": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://github.com/HuzaifaAbdulRehman/checkilex/blob/build/local-evidence/docs/demo.webm",
+      "httpStatus": 200,
+      "contentType": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/HuzaifaAbdulRehman/checkilex/refs/heads/build/local-evidence/docs/demo.webm",
+      "httpStatus": 200,
+      "contentType": "audio/webm"
+    },
+    {
+      "url": "https://media2.dev.to/dynamic/image/width=800%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fa01sgv5e13ipg5ksavgb.png",
+      "httpStatus": 200,
+      "contentType": "image/webp"
+    }
+  ],
+  "sourceRevision": "37abbbc0969fda7fa013d69e4705d99f03f66738",
+  "notes": [
+    "Public article and API read without authentication. Official View Entries resolves to hf26challenge; membership also verified in its public API feed.",
+    "The published title retains surrounding quotation marks; cosmetic only.",
+    "A public submission receipt does not guarantee eligibility, a prize or organizer acceptance.",
+    "Customer demand remains unconfirmed and the eight-check latency target remains unmet."
+  ]
+}

@@ -1,8 +1,8 @@
 {
   "schemaVersion": 3,
-  "phase": "release",
+  "phase": "live",
   "recommendation": "clarify",
-  "recommendationReason": "Measured local prototype: V1 failed; V2 passed a fresh targeted synthetic set with disclosed grounding rules. Eight-check latency still fails; demand and public release approval remain unconfirmed.",
+  "recommendationReason": "Challenge submission verified and objective complete. Product follow-up needs authentic customer feedback and improved eight-check latency before a paid-ready claim.",
   "researchCompletedAt": "2026-10-14",
   "createdAt": "2026-10-14",
   "refreshedAt": "2026-10-14",
@@ -503,6 +503,13 @@
       "command": "Owner: push; node scripts/legal-release.mjs check --dir . --strict",
       "exitCode": 0,
       "result": "Owner explicitly authorised the prepared GitHub source push; strict legal-release check passed after recording source-scope approval. No qualified legal review or DEV publication claimed."
+    },
+    {
+      "id": "verified-dev-submission",
+      "ranAt": "2026-10-14T15:26:45.365Z",
+      "command": "Public DEV article/API, challenge badge and tag-feed lookup; HEAD checks on source, screenshot and demo links",
+      "exitCode": 0,
+      "result": "Article4850930 publicly published14October2026 20:24:10Karachi, both required tags, exact cleaned body, Week2SideHustle submission badge and tag-feed membership verified. Source/screenshot/demo HTTP200. See docs/evidence/submission-receipt.json."
     }
   ],
   "claims": [
@@ -792,10 +799,13 @@
       "requiredEvidence": "Final publication approval, explicit push authorization, English template and both tags, source/demo links work, published post and challenge entry verified before 19 October 11:59 Karachi.",
       "owner": "Huzaifa Abdul Rehman",
       "targetDate": null,
-      "status": "planned",
+      "status": "passed",
       "claimIds": [],
-      "runIds": [],
-      "plannedFor": "2026-10-19"
+      "runIds": [
+        "verified-dev-submission"
+      ],
+      "plannedFor": "2026-10-19",
+      "note": "Owner manually published; public post, explicit Week2 badge, feed membership, required tags and asset links verified."
     },
     {
       "id": "outcome",
@@ -804,19 +814,20 @@
       "requiredEvidence": "Expected versus actual metrics, baseline result, failures, setup/support burden, authentic feedback if any, demand left unconfirmed when no evidence, and continue/revise/stop decision.",
       "owner": "Huzaifa Abdul Rehman",
       "targetDate": null,
-      "status": "ready",
+      "status": "passed",
       "claimIds": [],
       "runIds": [
         "evaluation-v1",
         "evaluation-v2",
-        "local-lifecycle"
+        "local-lifecycle",
+        "verified-dev-submission"
       ],
       "plannedFor": "2026-10-19",
-      "note": "Technical outcome says iterate; no consented tester supplied."
+      "note": "Submission objective complete. Technical outcome remains iterate; demand unconfirmed and latency target unmet."
     }
   ],
   "validationNotes": [
     "The current project-evidence checker rejects future gate.targetDate values through its generic past-only validDate function. Future planned dates are retained in plannedFor and in brief.md; targetDate is null. No playbook code or clock was changed.",
-    "Implementation and prepared free-source release approved. DEV publication remains pending; verify GitHub receipt after pushing."
+    "Source pushed and owner manually published DEV post; article4850930 and challenge membership verified on14October2026."
   ]
 }

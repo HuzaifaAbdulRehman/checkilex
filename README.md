@@ -1,5 +1,7 @@
 # Checkilex
 
+[Hacktoberfest Week 2 submission](https://dev.to/huzaifa_abdulrehman9/checkilex-local-ai-for-the-final-handoff-28c2)
+
 A local delivery checklist for freelance web developers. Paste an English or
 Roman Urdu brief, review the proposed checks, and inspect one page you control.
 Download a Markdown report and desktop/mobile evidence.
